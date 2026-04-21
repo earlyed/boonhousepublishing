@@ -25,12 +25,12 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 
 /* BANNER HERO */
 .banner-hero{position:relative;width:100%;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:2.5rem;background:var(--hero-bg,linear-gradient(135deg,#f6f2ec,#ebe4d8));display:grid;grid-template-columns:var(--split-left,40%) minmax(0,1fr);min-height:52vh}
-.banner-copy{padding:3.2rem clamp(1.5rem,4vw,3.5rem);display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(226,222,216,.45);background:linear-gradient(110deg,rgba(249,247,244,.92) 0%,rgba(249,247,244,.78) 52%,rgba(249,247,244,.22) 100%)}
+.banner-copy{padding:3.2rem clamp(1.5rem,4vw,3.5rem);display:flex;flex-direction:column;justify-content:center;border-right:none;background:linear-gradient(112deg,rgba(249,247,244,.94) 0%,rgba(249,247,244,.8) 52%,rgba(249,247,244,.28) 100%)}
 .banner-copy-inner{max-width:460px;transition:opacity .45s ease, transform .45s ease}
 .banner-copy-inner.is-fading{opacity:0;transform:translateY(8px)}
 .banner-track{display:flex;transition:transform .8s cubic-bezier(.25,.46,.45,.94)}
 .banner-media{position:relative;overflow:hidden;min-height:52vh;background:transparent}
-.banner-media::before{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(249,247,244,.95) 0%,rgba(249,247,244,.66) 24%,rgba(249,247,244,.24) 46%,rgba(249,247,244,.08) 64%,rgba(249,247,244,0) 80%);pointer-events:none;z-index:2}
+.banner-media::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(249,247,244,.9) 0%,rgba(249,247,244,.62) 20%,rgba(249,247,244,.25) 42%,rgba(249,247,244,.08) 58%,rgba(249,247,244,0) 74%);pointer-events:none;z-index:2}
 .banner-slide{flex:0 0 100%;position:relative;height:52vh;cursor:pointer}
 .banner-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:var(--banner-fit,contain);object-position:var(--banner-pos,center center);opacity:.93}
 .banner-eye{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-bottom:.8rem}
@@ -104,8 +104,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .cat-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--rule);padding-bottom:1.2rem;margin-bottom:1.5rem;flex-wrap:wrap}
 .cat-left{display:flex;align-items:center;gap:.85rem}
 .cat-label{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;font-style:italic;color:var(--ink)}
-.cat-reset{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);text-decoration:none;border:1px solid var(--rule);padding:8px 12px;background:var(--white);transition:all .2s;cursor:pointer}
-.cat-reset:hover{color:var(--ink);border-color:var(--ink)}
+.cat-reset{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid #d6cec3;padding:9px 14px;background:#fff;transition:all .2s;cursor:pointer;font-weight:500}
+.cat-reset:hover{color:var(--white);border-color:var(--ink);background:var(--ink)}
 .cat-search{font-family:'Jost',sans-serif;font-size:.75rem;padding:8px 14px;border:1px solid var(--rule);background:var(--white);color:var(--ink);outline:none;min-width:200px}
 .cat-search:focus{border-color:var(--soft)}
 .cat-search::placeholder{color:var(--soft)}
@@ -539,7 +539,8 @@ function bannerImage(id,fit="contain",pos="center center"){
 
 // ── COVER IMG helper ──────────────────────────────────────────────────────
 function coverImg(book, showPlaceholder = false) {
-  const fallback = `https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${book.a}.jpg`;
+  const asin = getAsin(book);
+  const fallback = `https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${asin}.jpg`;
   const primary = book.img || fallback;
   const onErr = showPlaceholder
     ? `if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${fallback}';return;}this.style.display='none';this.nextElementSibling.style.display='flex'`
@@ -547,11 +548,26 @@ function coverImg(book, showPlaceholder = false) {
   return `<img src="${primary}" alt="${book.t}" loading="lazy" decoding="async" onerror="${onErr}">`;
 }
 
+function titleKey(t){
+  return (t||'').toLowerCase().replace(/[^a-z0-9\u00C0-\u024F\u4E00-\u9FFF]+/g,'');
+}
+const ASIN_BY_TITLE = (() => {
+  const map = new Map();
+  [...ALL_BOOKS, ...BESTSELLERS, ...RISING].forEach(b => {
+    const k = titleKey(b.t);
+    if (k && b.a && !map.has(k)) map.set(k, b.a);
+  });
+  return map;
+})();
+function getAsin(book){
+  return ASIN_BY_TITLE.get(titleKey(book.t)) || book.a;
+}
+
 // ── THREE-COL TRIO ────────────────────────────────────────────────────────
 (function(){
   const g=document.getElementById('trioGrid');
   g.innerHTML=BESTSELLERS.slice(0,3).map(b=>{
-    const url=`https://www.amazon.com/dp/${b.a}`;
+    const url=`https://www.amazon.com/dp/${getAsin(b)}`;
     const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
     return `<div class="trio-item" onclick="window.open('${url}','_blank')">
       <div class="trio-img">
@@ -573,7 +589,7 @@ function buildSW(books, trackId, dotsId, arrLId, arrRId) {
   let idx=0;
   function vc(){return window.innerWidth<600?1:window.innerWidth<900?2:3}
   track.innerHTML=books.map(b=>{
-    const url=`https://www.amazon.com/dp/${b.a}`;
+    const url=`https://www.amazon.com/dp/${getAsin(b)}`;
     const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
     return `<div class="sw-slide" onclick="window.open('${url}','_blank')">
       <div class="sw-cover">
@@ -622,7 +638,7 @@ function buildCat(q){
         <span class="acc-meta"><span class="acc-cnt">${items.length} title${items.length!==1?'s':''}</span><span class="acc-chev">▾</span></span>
       </div>
       <div class="acc-body"><div class="mini-grid">${items.map(({b})=>{
-        const url=`https://www.amazon.com/dp/${b.a}`;
+        const url=`https://www.amazon.com/dp/${getAsin(b)}`;
         const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
         return `<div class="mini-card" onclick="window.open('${url}','_blank')">
           <div class="mini-cov">
