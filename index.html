@@ -442,9 +442,20 @@ const BANNERS = [
 ];
 
 function bannerImage(id){
-  const raw=`https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/banner${id}.jpg`;
-  const cdn=`https://cdn.jsdelivr.net/gh/earlyed/boonhousepublishing@main/images/banner${id}.jpg`;
-  return `<img src="${raw}" alt="" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7" onerror="if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${cdn}';return;}this.style.display='none'">`;
+  const baseRaw=`https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/banner${id}`;
+  const baseCdn=`https://cdn.jsdelivr.net/gh/earlyed/boonhousepublishing@main/images/banner${id}`;
+  const srcs=[
+    `${baseRaw}.jpg`,
+    `${baseCdn}.jpg`,
+    `${baseRaw}.jpeg`,
+    `${baseCdn}.jpeg`,
+    `${baseRaw}.png`,
+    `${baseCdn}.png`,
+    `${baseRaw}.webp`,
+    `${baseCdn}.webp`
+  ];
+  const srcList=srcs.join('|');
+  return `<img src="${srcs[0]}" data-srcs="${srcList}" data-i="0" alt="" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7" onerror="const a=this.dataset.srcs.split('|');let i=+this.dataset.i+1;if(i<a.length){this.dataset.i=String(i);this.src=a[i];}else{this.style.display='none';}">`;
 }
 
 (function(){
