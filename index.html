@@ -161,36 +161,7 @@ footer{padding:4rem var(--pad) 2.5rem;background:var(--white);border-top:1px sol
 
 <!-- BANNER HERO -->
 <div class="banner-hero">
-  <div class="banner-track" id="bannerTrack">
-    <div class="banner-slide" style="background:linear-gradient(135deg,#2C2C28,#6B5A42)"><img src="https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/banner1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7" onerror="this.style.display='none'">
-      <div class="banner-txt">
-        <div class="banner-eye">BoonHouse Publishing</div>
-        <div class="banner-title">Gentle books for little minds growing big</div>
-        <a href="#bestsellers" class="banner-cta">Explore Collection</a>
-      </div>
-    </div>
-    <div class="banner-slide" style="background:linear-gradient(135deg,#283428,#4A6A50)">
-      <div class="banner-txt">
-        <div class="banner-eye">Montessori Aligned</div>
-        <div class="banner-title">Real photos, calm language, growing confidence</div>
-        <a href="#bestsellers" class="banner-cta">View Bestsellers</a>
-      </div>
-    </div>
-    <div class="banner-slide" style="background:linear-gradient(135deg,#302028,#6A4050)">
-      <div class="banner-txt">
-        <div class="banner-eye">Little Heart, Big Feelings</div>
-        <div class="banner-title">Helping toddlers name what they feel</div>
-        <a href="https://www.amazon.com/stores/BoonHouse-Publishing/author/B0FB89CS8B" target="_blank" class="banner-cta">Shop on Amazon</a>
-      </div>
-    </div>
-    <div class="banner-slide" style="background:linear-gradient(135deg,#28302C,#405A48)">
-      <div class="banner-txt">
-        <div class="banner-eye">Bilingual &amp; Inclusive</div>
-        <div class="banner-title">Every child deserves to see themselves on the page</div>
-        <a href="#catalogue" class="banner-cta">Browse All Series</a>
-      </div>
-    </div>
-  </div>
+  <div class="banner-track" id="bannerTrack"></div>
   <button class="banner-arr banner-arr-l" id="bArrL">&#8592;</button>
   <button class="banner-arr banner-arr-r" id="bArrR">&#8594;</button>
   <div class="banner-dots" id="bannerDots"></div>
@@ -463,10 +434,32 @@ const ALL_BOOKS = [
 const SERIES_ORDER=["Little Heart, Big Feelings","Whole Brain Toddler","Transitions With Me","Little Detective","Real Ultimate Learning Series","Alphabet ABC Series","Little Traditions, Big Meanings","Future Minds","Colors Bilingual Series","Bilingual","Montessori Brain Builders","Everyday Is Fun","Famous People Series","Growing Minds Collection","Fiction","Inner Child Series","Understanding The World","Journals"];
 
 // ── BANNER ────────────────────────────────────────────────────────────────
+const BANNERS = [
+  {id:1,eye:"BoonHouse Publishing",title:"Gentle books for little minds growing big",ctaText:"Explore Collection",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#2C2C28,#6B5A42)",newTab:false},
+  {id:2,eye:"Montessori Aligned",title:"Real photos, calm language, growing confidence",ctaText:"View Bestsellers",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#283428,#4A6A50)",newTab:false},
+  {id:3,eye:"Little Heart, Big Feelings",title:"Helping toddlers name what they feel",ctaText:"Shop on Amazon",ctaHref:"https://www.amazon.com/stores/BoonHouse-Publishing/author/B0FB89CS8B",bg:"linear-gradient(135deg,#302028,#6A4050)",newTab:true},
+  {id:4,eye:"Bilingual & Inclusive",title:"Every child deserves to see themselves on the page",ctaText:"Browse All Series",ctaHref:"#catalogue",bg:"linear-gradient(135deg,#28302C,#405A48)",newTab:false}
+];
+
+function bannerImage(id){
+  const raw=`https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/banner${id}.jpg`;
+  const cdn=`https://cdn.jsdelivr.net/gh/earlyed/boonhousepublishing@main/images/banner${id}.jpg`;
+  return `<img src="${raw}" alt="" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7" onerror="if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${cdn}';return;}this.style.display='none'">`;
+}
+
 (function(){
   const track=document.getElementById('bannerTrack');
   const dotsEl=document.getElementById('bannerDots');
+  track.innerHTML=BANNERS.map(b=>`<div class="banner-slide" style="background:${b.bg}">
+    ${bannerImage(b.id)}
+    <div class="banner-txt">
+      <div class="banner-eye">${b.eye}</div>
+      <div class="banner-title">${b.title}</div>
+      <a href="${b.ctaHref}" ${b.newTab?'target="_blank"':''} class="banner-cta">${b.ctaText}</a>
+    </div>
+  </div>`).join('');
   const slides=track.querySelectorAll('.banner-slide');
+  if(!slides.length)return;
   let cur=0;
   dotsEl.innerHTML=[...slides].map((_,i)=>`<div class="banner-dot${i===0?' on':''}" data-i="${i}"></div>`).join('');
   dotsEl.querySelectorAll('.banner-dot').forEach(d=>d.addEventListener('click',()=>go(+d.dataset.i)));
@@ -491,6 +484,7 @@ function coverImg(book, showPlaceholder = false) {
   const g=document.getElementById('trioGrid');
   g.innerHTML=BESTSELLERS.slice(0,3).map(b=>{
     const url=`https://www.amazon.com/dp/${b.a}`;
+    const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
     return `<div class="trio-item" onclick="window.open('${url}','_blank')">
       <div class="trio-img">
         ${coverImg(b)}
