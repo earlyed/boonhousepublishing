@@ -58,7 +58,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .trio-item{border-right:1px solid var(--rule);cursor:pointer;display:flex;flex-direction:column}
 .trio-item:last-child{border-right:none}
 .trio-img{aspect-ratio:3/4;overflow:hidden;background:#EEE}
-.trio-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.trio-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .7s ease;background:#f0ede8}
 .trio-item:hover .trio-img img{transform:scale(1.03)}
 .trio-info{padding:1.5rem 1.25rem 2rem;border-top:1px solid var(--rule);text-align:center}
 .trio-series{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--soft);margin-bottom:.45rem}
@@ -72,7 +72,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .sw-track{display:flex;gap:1.5rem;transition:transform .55s cubic-bezier(.25,.46,.45,.94);will-change:transform}
 .sw-slide{flex:0 0 calc(33.333% - 1rem);min-width:0;cursor:pointer}
 .sw-cover{aspect-ratio:2/3;overflow:hidden;background:#EEE;margin-bottom:.85rem;position:relative}
-.sw-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.sw-cover img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .5s;background:#f0ede8}
 .sw-slide:hover .sw-cover img{transform:scale(1.04)}
 .sw-ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;font-style:italic;opacity:.15;color:var(--ink)}
 .sw-series{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:.35rem}
@@ -115,7 +115,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .mini-card{cursor:pointer;transition:transform .22s}
 .mini-card:hover{transform:translateY(-3px)}
 .mini-cov{aspect-ratio:2/3;background:#EEE;overflow:hidden;margin-bottom:.45rem;position:relative}
-.mini-cov img{width:100%;height:100%;object-fit:cover;display:block}
+.mini-cov img{width:100%;height:100%;object-fit:contain;display:block;background:#f0ede8}
 .mini-cov-ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-style:italic;opacity:.2;color:var(--ink)}
 .mini-t{font-family:'Cormorant Garamond',serif;font-size:.75rem;line-height:1.3;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:.3rem}
 .mini-buy{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none}
