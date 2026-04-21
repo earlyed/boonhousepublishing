@@ -24,46 +24,41 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .nav-cta:hover{background:var(--accent)!important}
 
 /* BANNER HERO */
-.banner-hero{position:relative;width:100%;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:2.5rem;background:var(--hero-bg,linear-gradient(135deg,#f6f2ec,#ebe4d8));display:grid;grid-template-columns:var(--split-left,40%) minmax(0,1fr);min-height:52vh}
-.banner-copy{padding:3.2rem clamp(1.5rem,4vw,3.5rem);display:flex;flex-direction:column;justify-content:center;border-right:none;background:linear-gradient(112deg,rgba(249,247,244,.94) 0%,rgba(249,247,244,.8) 52%,rgba(249,247,244,.28) 100%)}
-.banner-copy-inner{max-width:460px;transition:opacity .45s ease, transform .45s ease}
-.banner-copy-inner.is-fading{opacity:0;transform:translateY(8px)}
+.banner-hero{position:relative;width:100%;overflow:hidden;border-bottom:1px solid var(--rule)}
 .banner-track{display:flex;transition:transform .8s cubic-bezier(.25,.46,.45,.94)}
-.banner-media{position:relative;overflow:hidden;min-height:52vh;background:transparent}
-.banner-media::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(249,247,244,.9) 0%,rgba(249,247,244,.62) 20%,rgba(249,247,244,.25) 42%,rgba(249,247,244,.08) 58%,rgba(249,247,244,0) 74%);pointer-events:none;z-index:2}
-.banner-slide{flex:0 0 100%;position:relative;height:52vh;cursor:pointer}
-.banner-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:var(--banner-fit,contain);object-position:var(--banner-pos,center center);opacity:.93}
-.banner-eye{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-bottom:.8rem}
-.banner-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.4vw,3rem);font-weight:300;color:var(--ink);line-height:1.1;max-width:520px;margin-bottom:1.5rem}
-.banner-cta{display:inline-block;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border:1px solid var(--rule);padding:10px 22px;text-decoration:none;transition:all .25s;width:fit-content;background:transparent}
-.banner-cta:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
-.banner-controls{position:absolute;left:1.2rem;right:1.2rem;bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;pointer-events:none;z-index:3}
-.banner-dots{display:flex;gap:.5rem;pointer-events:auto}
-.banner-dot{width:6px;height:6px;border-radius:50%;background:#cbc5bc;cursor:pointer;transition:background .25s}
-.banner-dot.on{background:var(--ink)}
-.banner-arrows{display:flex;gap:.5rem;pointer-events:auto}
-.banner-arr{background:rgba(255,255,255,.9);border:1px solid var(--rule);width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);font-size:.85rem;transition:all .2s}
-.banner-arr:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.banner-slide{flex:0 0 100%;position:relative;cursor:pointer}
+.banner-slide img{width:100%;height:70vh;object-fit:cover;display:block}
+.banner-overlay{position:absolute;inset:0;background:linear-gradient(to right, rgba(26,26,24,.55) 0%, transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:4rem var(--pad)}
+.banner-eye{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.75rem}
+.banner-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:white;line-height:1.1;max-width:520px;margin-bottom:1.5rem}
+.banner-cta{display:inline-block;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:white;border:1px solid rgba(255,255,255,.5);padding:10px 22px;text-decoration:none;transition:all .25s;width:fit-content}
+.banner-cta:hover{background:white;color:var(--ink)}
+.banner-dots{position:absolute;bottom:1.5rem;right:var(--pad);display:flex;gap:.5rem}
+.banner-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:background .25s}
+.banner-dot.on{background:white}
+.banner-arr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:white;font-size:.9rem;transition:background .2s;backdrop-filter:blur(4px)}
+.banner-arr:hover{background:rgba(255,255,255,.3)}
+.banner-arr-l{left:var(--pad)}
+.banner-arr-r{right:var(--pad)}
 
 /* STRIP */
 .strip{display:flex;align-items:center;justify-content:center;gap:3rem;padding:1.2rem var(--pad);border-bottom:1px solid var(--rule);overflow-x:auto;flex-wrap:wrap}
-.si{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);white-space:nowrap;display:flex;align-items:center;gap:.5rem;text-decoration:none;cursor:pointer;transition:color .2s}
-.si:hover{color:var(--ink)}
+.si{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);white-space:nowrap;display:flex;align-items:center;gap:.5rem}
 .si::before{content:'—';opacity:.35}
 
 /* SECTION HEADER */
-.sec-head{text-align:center;padding:8rem var(--pad) 6rem}
+.sec-head{text-align:center;padding:5rem var(--pad) 3rem}
 .sec-eye{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:.9rem}
 .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:var(--ink);line-height:1.1}
 .sec-title em{font-style:italic;color:var(--accent)}
 .sec-rule{width:40px;height:1px;background:var(--rule);margin:1.2rem auto 0}
 
 /* THREE-COL AKB GRID */
-.trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;padding:0 var(--pad);border:none;margin:0 0 5rem 0}
-.trio-item{border:1px solid #ece8e2;cursor:pointer;display:flex;flex-direction:column;background:var(--white)}
-.trio-item:last-child{border-right:1px solid #ece8e2}
-.trio-img{background:none}
-.trio-img img{width:100%;height:auto;display:block;transition:transform .7s ease}
+.trio{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:0 0 0 0}
+.trio-item{border-right:1px solid var(--rule);cursor:pointer;display:flex;flex-direction:column}
+.trio-item:last-child{border-right:none}
+.trio-img{aspect-ratio:3/4;overflow:hidden;background:#EEE}
+.trio-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
 .trio-item:hover .trio-img img{transform:scale(1.03)}
 .trio-info{padding:1.5rem 1.25rem 2rem;border-top:1px solid var(--rule);text-align:center}
 .trio-series{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--soft);margin-bottom:.45rem}
@@ -72,12 +67,12 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .trio-buy:hover{color:var(--accent);border-color:var(--accent)}
 
 /* SLIDESHOW */
-.sw-wrap{padding:0 var(--pad) 9rem;position:relative}
+.sw-wrap{padding:0 var(--pad) 5rem;position:relative}
 .sw-outer{overflow:hidden}
-.sw-track{display:flex;gap:2rem;transition:transform .55s cubic-bezier(.25,.46,.45,.94);will-change:transform}
-.sw-slide{flex:0 0 calc(33.333% - 1.35rem);min-width:0;cursor:pointer}
-.sw-cover{background:none;margin-bottom:.85rem;position:relative}
-.sw-cover img{width:100%;height:auto;display:block;transition:transform .5s}
+.sw-track{display:flex;gap:1.5rem;transition:transform .55s cubic-bezier(.25,.46,.45,.94);will-change:transform}
+.sw-slide{flex:0 0 calc(33.333% - 1rem);min-width:0;cursor:pointer}
+.sw-cover{aspect-ratio:2/3;overflow:hidden;background:#EEE;margin-bottom:.85rem;position:relative}
+.sw-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 .sw-slide:hover .sw-cover img{transform:scale(1.04)}
 .sw-ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;font-style:italic;opacity:.15;color:var(--ink)}
 .sw-series{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:.35rem}
@@ -101,11 +96,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 
 /* CATALOGUE */
 .cat-wrap{padding:0 var(--pad) 6rem}
-.cat-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--rule);padding-bottom:1.2rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.cat-left{display:flex;align-items:center;gap:.85rem}
+.cat-top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);padding-bottom:1.2rem;margin-bottom:1.5rem}
 .cat-label{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;font-style:italic;color:var(--ink)}
-.cat-reset{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid #d6cec3;padding:9px 14px;background:#fff;transition:all .2s;cursor:pointer;font-weight:500}
-.cat-reset:hover{color:var(--white);border-color:var(--ink);background:var(--ink)}
 .cat-search{font-family:'Jost',sans-serif;font-size:.75rem;padding:8px 14px;border:1px solid var(--rule);background:var(--white);color:var(--ink);outline:none;min-width:200px}
 .cat-search:focus{border-color:var(--soft)}
 .cat-search::placeholder{color:var(--soft)}
@@ -116,14 +108,13 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .acc-cnt{font-size:.6rem;letter-spacing:.12em;color:var(--soft);text-transform:uppercase}
 .acc-chev{font-size:.65rem;color:var(--soft);transition:transform .3s}
 .acc.open .acc-chev{transform:rotate(180deg)}
-.acc-body{display:none;padding-bottom:2rem;animation:fadeIn .25s ease}
+.acc-body{display:none;padding-bottom:2rem}
 .acc.open .acc-body{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
 .mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:.75rem}
 .mini-card{cursor:pointer;transition:transform .22s}
 .mini-card:hover{transform:translateY(-3px)}
-.mini-cov{background:none;overflow:hidden;margin-bottom:.45rem;position:relative}
-.mini-cov img{width:100%;height:auto;display:block}
+.mini-cov{aspect-ratio:2/3;background:#EEE;overflow:hidden;margin-bottom:.45rem;position:relative}
+.mini-cov img{width:100%;height:100%;object-fit:cover;display:block}
 .mini-cov-ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-style:italic;opacity:.2;color:var(--ink)}
 .mini-t{font-family:'Cormorant Garamond',serif;font-size:.75rem;line-height:1.3;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:.3rem}
 .mini-buy{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none}
@@ -141,25 +132,14 @@ footer{padding:4rem var(--pad) 2.5rem;background:var(--white);border-top:1px sol
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .banner-hero{grid-template-columns:1fr;min-height:auto}
-  .banner-copy{border-right:none;border-bottom:1px solid var(--rule);padding:2.4rem var(--pad)}
-  .banner-media,.banner-slide{min-height:46vh;height:46vh}
-  .sec-head{padding:6rem var(--pad) 4.5rem}
-  .trio{grid-template-columns:1fr;gap:2rem}.trio-item{border-right:1px solid #ece8e2;border-bottom:1px solid #ece8e2}
+  .trio{grid-template-columns:1fr}.trio-item{border-right:none;border-bottom:1px solid var(--rule)}
   .sw-slide{flex:0 0 calc(50% - .75rem)}
-  .sw-wrap{padding:0 var(--pad) 7rem}
   .why{grid-template-columns:1fr}.why-c{border-right:none;border-bottom:1px solid var(--rule)}
   .ft{grid-template-columns:1fr}.ft-bar{flex-direction:column;gap:.4rem}
+  .banner-slide img{height:55vh}
 }
 @media(max-width:600px){
   .nav-r a:not(.nav-cta){display:none}
-  .sec-head{padding:4.8rem var(--pad) 3rem}
-  .banner-copy{padding:2rem var(--pad)}
-  .banner-media,.banner-slide{min-height:40vh;height:40vh}
-  .banner-title{font-size:clamp(1.45rem,7vw,2rem)}
-  .banner-bg{opacity:.92}
-  .trio{gap:1.4rem;margin:0 0 3.2rem 0}
-  .sw-wrap{padding:0 var(--pad) 5.2rem}
   .sw-slide{flex:0 0 100%}
   .mini-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
 }
@@ -180,33 +160,53 @@ footer{padding:4rem var(--pad) 2.5rem;background:var(--white);border-top:1px sol
 
 <!-- BANNER HERO -->
 <div class="banner-hero">
-  <div class="banner-copy">
-    <div class="banner-copy-inner" id="bannerCopy">
-      <div class="banner-eye" id="bannerEye"></div>
-      <div class="banner-title" id="bannerTitle"></div>
-      <a href="#" class="banner-cta" id="bannerCta"></a>
+  <div class="banner-track" id="bannerTrack">
+    <div class="banner-slide">
+      <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/f2be8c0d-888a-49d0-ab38-f0f8f276c93c.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="BoonHouse Publishing">
+      <div class="banner-overlay">
+        <div class="banner-eye">BoonHouse Publishing</div>
+        <div class="banner-title">Gentle books for little minds growing big</div>
+        <a href="#bestsellers" class="banner-cta">Explore Collection</a>
+      </div>
     </div>
-  </div>
-  <div class="banner-media">
-    <div class="banner-track" id="bannerTrack"></div>
-    <div class="banner-controls">
-      <div class="banner-dots" id="bannerDots"></div>
-      <div class="banner-arrows">
-        <button class="banner-arr" id="bArrL" aria-label="Previous banner">&#8592;</button>
-        <button class="banner-arr" id="bArrR" aria-label="Next banner">&#8594;</button>
+    <div class="banner-slide">
+      <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/3f0458e9-7ec4-4a91-8ad2-40e02ca0b6bc.__CR0,0,970,600_PT0_SX970_V1___.png" alt="BoonHouse Publishing">
+      <div class="banner-overlay">
+        <div class="banner-eye">Montessori Aligned</div>
+        <div class="banner-title">Real photos, calm language, growing confidence</div>
+        <a href="#bestsellers" class="banner-cta">View Bestsellers</a>
+      </div>
+    </div>
+    <div class="banner-slide">
+      <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/a317055f-e230-4277-abad-4538b5556bd7.__CR0,0,970,600_PT0_SX970_V1___.png" alt="BoonHouse Publishing">
+      <div class="banner-overlay">
+        <div class="banner-eye">Little Heart, Big Feelings</div>
+        <div class="banner-title">Helping toddlers name what they feel</div>
+        <a href="https://www.amazon.com/stores/BoonHouse-Publishing/author/B0FB89CS8B" target="_blank" class="banner-cta">Shop on Amazon</a>
+      </div>
+    </div>
+    <div class="banner-slide">
+      <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/bf214600-a1ce-453b-a683-83328b75f870.__CR0,0,970,600_PT0_SX970_V1___.png" alt="BoonHouse Publishing">
+      <div class="banner-overlay">
+        <div class="banner-eye">Bilingual &amp; Inclusive</div>
+        <div class="banner-title">Every child deserves to see themselves on the page</div>
+        <a href="#catalogue" class="banner-cta">Browse All Series</a>
       </div>
     </div>
   </div>
+  <button class="banner-arr banner-arr-l" id="bArrL">&#8592;</button>
+  <button class="banner-arr banner-arr-r" id="bArrR">&#8594;</button>
+  <div class="banner-dots" id="bannerDots"></div>
 </div>
 
 <!-- STRIP -->
 <div class="strip">
-  <a class="si" href="#catalogue" data-series="Little Heart, Big Feelings">Little Heart, Big Feelings</a>
-  <a class="si" href="#catalogue" data-series="Little Detective">Little Detective</a>
-  <a class="si" href="#catalogue" data-series="Future Minds">Future Minds</a>
-  <a class="si" href="#catalogue" data-series="Real Ultimate Learning Series">Real Ultimate Learning</a>
-  <a class="si" href="#catalogue" data-series="Transitions With Me">Transitions With Me</a>
-  <a class="si" href="#catalogue" data-series="Bilingual">Bilingual Editions</a>
+  <div class="si">Little Heart, Big Feelings</div>
+  <div class="si">Little Detective</div>
+  <div class="si">Future Minds</div>
+  <div class="si">Real Ultimate Learning</div>
+  <div class="si">Transitions With Me</div>
+  <div class="si">Bilingual Editions</div>
 </div>
 
 <!-- BESTSELLERS 3-COL -->
@@ -265,10 +265,7 @@ footer{padding:4rem var(--pad) 2.5rem;background:var(--white);border-top:1px sol
   </div>
   <div class="cat-wrap">
     <div class="cat-top">
-      <div class="cat-left">
-        <span class="cat-label">Browse by series</span>
-        <button class="cat-reset" id="catReset" type="button">All Titles</button>
-      </div>
+      <span class="cat-label">Browse by series</span>
       <input type="text" class="cat-search" id="catSearch" placeholder="Search titles…">
     </div>
     <div id="accContainer"></div>
@@ -309,43 +306,43 @@ footer{padding:4rem var(--pad) 2.5rem;background:var(--white);border-top:1px sol
 // ── BOOK DATA with real cover images ──────────────────────────────────────
 // Covers mapped in order provided
 const BESTSELLERS = [
-  {t:"Gentle Hands for Toddlers",a:"B0G26KPF2Q",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61kHFN7mLbL._SL1000_.jpg"},
-  {t:"Say Bye to Your Pacifier",a:"B0FHWCMYK7",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61GA42Inu3L._SL1000_.jpg"},
-  {t:"My First Haircut",a:"B0FJ8VZPFS",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61+7Ror32DL._SL1000_.jpg"},
-  {t:"REAL ULTIMATE BOOK OF VEHICLES FOR TODDLERS",a:"B0FHW2Z2ZS",s:"Real Ultimate Learning Series",img:"https://m.media-amazon.com/images/I/61TqmSvHz6L._SL1000_.jpg"},
-  {t:"Toddler Logic Puzzles Ages 3–5",a:"B0FDQ4GVRN",s:"Montessori Brain Builders",img:"https://m.media-amazon.com/images/I/61UBYTAo6cL._SL1000_.jpg"},
-  {t:"Sleep in My Own Bed",a:"B0G3DZDDFF",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61Vw2HjUf0L._SL1000_.jpg"},
-  {t:"My First Plane Ride",a:"B0FQJ63PLJ",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61PV0zX20WL._SL1000_.jpg"},
-  {t:"Spring Look and Find for Toddlers",a:"B0FXX2L1HV",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61V4VLOMq8L._SL1000_.jpg"},
-  {t:"My First Day of Preschool",a:"B0FJYL881D",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/71yCqnBGdTL._SL1000_.jpg"},
-  {t:"My Body is Getting Ready",a:"B0FJ8Z7JG7",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61hHk0iijRL._SL1000_.jpg"},
+  {t:"Gentle Hands for Toddlers",a:"B0G26KPF2Q",s:"Little Heart, Big Feelings"},
+  {t:"Say Bye to Your Pacifier",a:"B0FHWCMYK7",s:"Little Heart, Big Feelings"},
+  {t:"My First Haircut",a:"B0FJ8VZPFS",s:"Transitions With Me"},
+  {t:"REAL ULTIMATE BOOK OF VEHICLES FOR TODDLERS",a:"B0FHW2Z2ZS",s:"Real Ultimate Learning Series"},
+  {t:"Toddler Logic Puzzles Ages 3–5",a:"B0FDQ4GVRN",s:"Montessori Brain Builders"},
+  {t:"Sleep in My Own Bed",a:"B0G3DZDDFF",s:"Transitions With Me"},
+  {t:"My First Plane Ride",a:"B0FQJ63PLJ",s:"Transitions With Me"},
+  {t:"Spring Look and Find for Toddlers",a:"B0FXX2L1HV",s:"Little Detective"},
+  {t:"My First Day of Preschool",a:"B0FJYL881D",s:"Transitions With Me"},
+  {t:"My Body is Getting Ready",a:"B0FJ8Z7JG7",s:"Transitions With Me"},
 ];
 
 const RISING = [
-  {t:"What is War?",a:"B0GXL8LX82",s:"Understanding The World",img:"https://m.media-amazon.com/images/I/61T85Mgw4eL._SL1000_.jpg"},
-  {t:"People Who Invent: Nikola Tesla",a:"B0GN18F3DF",s:"Famous People Series",img:"https://m.media-amazon.com/images/I/618Xs0RsQPL._SL1000_.jpg"},
-  {t:"Mom and Dad, I Love You. I am still Learning to Control My Hands",a:"B0GL2JY4FJ",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61723Z6aYnL._SL1000_.jpg"},
-  {t:"Gentle Voice for Toddlers",a:"B0GWJSVH5D",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61s9IMFBP6L._SL1000_.jpg"},
-  {t:"My First Cruise",a:"B0GHYMD74Y",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/61YT4SmCCiL._SL1000_.jpg"},
-  {t:"People Who Observe Nature: Charles Darwin",a:"B0GHS28CMB",s:"Famous People Series",img:"https://m.media-amazon.com/images/I/61T6raxgcwL._SL1000_.jpg"},
-  {t:"When My Brain Feels Too Busy",a:"B0GG4SSPMR",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61+20-qngKL._SL1000_.jpg"},
-  {t:"Camping is Fun",a:"B0GGBY2LSY",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/61eXxLlIQvL._SL1000_.jpg"},
-  {t:"Rock Climbing is Fun",a:"B0GFXBVRL5",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/6128115UmOL._SL1000_.jpg"},
-  {t:"The Story of the Chinese Zodiac",a:"B0GFFWSCPF",s:"Little Traditions, Big Meanings",img:"https://m.media-amazon.com/images/I/61HLOIFdNkL._SL1000_.jpg"},
-  {t:"Lunar New Year Look and Find",a:"B0GFDJRVXB",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61awC--Bv5L._SL1000_.jpg"},
-  {t:"The Girl of Silver Seals",a:"B0GCKSB7LQ",s:"Fiction",img:"https://m.media-amazon.com/images/I/6145JI6uEvL._SL1000_.jpg"},
-  {t:"Why Someone I Love Died",a:"B0GCG8FWZC",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/612zKPV11rL._SL1000_.jpg"},
-  {t:"REAL ULTIMATE BOOK OF VEHICLES 2",a:"B0G9K6ZX9B",s:"Real Ultimate Learning Series",img:"https://m.media-amazon.com/images/I/61jHwE4QzDL._SL1000_.jpg"},
-  {t:"Why My Brain Worries",a:"B0G8K54NKZ",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61t-HTkfSXL._SL1000_.jpg"},
-  {t:"Why I was Born with a Birthmark",a:"B0G8JK58YG",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61cRDis1h7L._SL1000_.jpg"},
-  {t:"Why Some Bodies Look Different",a:"B0G7TJM2ZB",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61Bx0i6+ONL._SL1000_.jpg"},
-  {t:"I See Colors in My Own Way",a:"B0G78XP32Y",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61jCx790JjL._SL1000_.jpg"},
-  {t:"Alice in Christmasland",a:"B0G6TF6NJ3",s:"Fiction",img:"https://m.media-amazon.com/images/I/613e7Fh0SdL._SL1000_.jpg"},
-  {t:"My Body Belongs to Me",a:"B0G63PKWW6",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61QqxT0dGaL._SL1000_.jpg"},
-  {t:"I Can Feel Brave in the Dark",a:"B0G63T5N1C",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61ogd96hvzL._SL1000_.jpg"},
-  {t:"Opposites for Toddlers",a:"B0G6DRJ3FK",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61rzIzLBuuL._SL1000_.jpg"},
-  {t:"Camping de A à Z (French/English)",a:"B0G6FGF6Z4",s:"Alphabet ABC Series",img:"https://m.media-amazon.com/images/I/71-cXz8JxEL._SL1000_.jpg"},
-  {t:"Why We Say Sorry",a:"B0G5GJ36PZ",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/611f-35uuOL._SL1000_.jpg"},
+  {t:"What is War?",a:"B0GXL8LX82",s:"Understanding The World"},
+  {t:"People Who Invent: Nikola Tesla",a:"B0GN18F3DF",s:"Famous People Series"},
+  {t:"Mom and Dad, I Love You. I am still Learning to Control My Hands",a:"B0GL2JY4FJ",s:"Little Heart, Big Feelings"},
+  {t:"Gentle Voice for Toddlers",a:"B0GWJSVH5D",s:"Little Heart, Big Feelings"},
+  {t:"My First Cruise",a:"B0GHYMD74Y",s:"Everyday Is Fun"},
+  {t:"People Who Observe Nature: Charles Darwin",a:"B0GHS28CMB",s:"Famous People Series"},
+  {t:"When My Brain Feels Too Busy",a:"B0GG4SSPMR",s:"Little Heart, Big Feelings"},
+  {t:"Camping is Fun",a:"B0GGBY2LSY",s:"Everyday Is Fun"},
+  {t:"Rock Climbing is Fun",a:"B0GFXBVRL5",s:"Everyday Is Fun"},
+  {t:"The Story of the Chinese Zodiac",a:"B0GFFWSCPF",s:"Little Traditions, Big Meanings"},
+  {t:"Lunar New Year Look and Find",a:"B0GFDJRVXB",s:"Little Detective"},
+  {t:"The Girl of Silver Seals",a:"B0GCKSB7LQ",s:"Fiction"},
+  {t:"Why Someone I Love Died",a:"B0GCG8FWZC",s:"Whole Brain Toddler"},
+  {t:"REAL ULTIMATE BOOK OF VEHICLES 2",a:"B0G9K6ZX9B",s:"Real Ultimate Learning Series"},
+  {t:"Why My Brain Worries",a:"B0G8K54NKZ",s:"Whole Brain Toddler"},
+  {t:"Why I was Born with a Birthmark",a:"B0G8JK58YG",s:"Whole Brain Toddler"},
+  {t:"Why Some Bodies Look Different",a:"B0G7TJM2ZB",s:"Whole Brain Toddler"},
+  {t:"I See Colors in My Own Way",a:"B0G78XP32Y",s:"Whole Brain Toddler"},
+  {t:"Alice in Christmasland",a:"B0G6TF6NJ3",s:"Fiction"},
+  {t:"My Body Belongs to Me",a:"B0G63PKWW6",s:"Whole Brain Toddler"},
+  {t:"I Can Feel Brave in the Dark",a:"B0G63T5N1C",s:"Whole Brain Toddler"},
+  {t:"Opposites for Toddlers",a:"B0G6DRJ3FK",s:"Little Detective"},
+  {t:"Camping de A à Z (French/English)",a:"B0G6FGF6Z4",s:"Alphabet ABC Series"},
+  {t:"Why We Say Sorry",a:"B0G5GJ36PZ",s:"Little Heart, Big Feelings"},
 ];
 
 const ALL_BOOKS = [
@@ -364,18 +361,18 @@ const ALL_BOOKS = [
   {t:"Who is My Auntie at My Home?",a:"B0FHFKFP44",s:"Everyday Is Fun"},
   {t:"Cut and Paste Thinking Skills for Toddlers Ages 3 to 5",a:"B0FHBQVN94",s:"Montessori Brain Builders"},
   {t:"Teeth can do SO MUCH",a:"B0FHQ7MLK1",s:"Little Heart, Big Feelings"},
-  {t:"REAL ULTIMATE BOOK OF VEHICLES FOR TODDLERS",a:"B0FHW2Z2ZS",s:"Real Ultimate Learning Series",img:"https://m.media-amazon.com/images/I/61TqmSvHz6L._SL1000_.jpg"},
-  {t:"Say Bye to Your Pacifier",a:"B0FHWCMYK7",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61GA42Inu3L._SL1000_.jpg"},
-  {t:"My First Haircut",a:"B0FJ8VZPFS",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61+7Ror32DL._SL1000_.jpg"},
-  {t:"My Body is Getting Ready",a:"B0FJ8Z7JG7",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61hHk0iijRL._SL1000_.jpg"},
-  {t:"My First Day of Preschool",a:"B0FJYL881D",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/71yCqnBGdTL._SL1000_.jpg"},
+  {t:"REAL ULTIMATE BOOK OF VEHICLES FOR TODDLERS",a:"B0FHW2Z2ZS",s:"Real Ultimate Learning Series"},
+  {t:"Say Bye to Your Pacifier",a:"B0FHWCMYK7",s:"Little Heart, Big Feelings"},
+  {t:"My First Haircut",a:"B0FJ8VZPFS",s:"Transitions With Me"},
+  {t:"My Body is Getting Ready",a:"B0FJ8Z7JG7",s:"Transitions With Me"},
+  {t:"My First Day of Preschool",a:"B0FJYL881D",s:"Transitions With Me"},
   {t:"我的身体准备好了 My Body is Getting Ready (Bilingual)",a:"B0FJYNPDZQ",s:"Bilingual"},
   {t:"Bilingual Baby Colors / 宝宝的第一本颜色书",a:"B0FJWX8M16",s:"Colors Bilingual Series"},
   {t:"Colores bilingües para bebés (Español e Inglés)",a:"B0FJYMTW2G",s:"Colors Bilingual Series"},
   {t:"Can I Watch One More? [Reduce Screentime]",a:"B0FJWNHFSF",s:"Whole Brain Toddler"},
   {t:"The Day It Clicks - The Power of Yet",a:"B0FKYVPCN8",s:"Little Heart, Big Feelings"},
   {t:"Why Should I Wear My Hat?",a:"B0FKB78CXN",s:"Whole Brain Toddler"},
-  {t:"Toddler Logic Puzzles Ages 3–5 (Brain Builders Volume 1)",a:"B0FDQ4GVRN",s:"Montessori Brain Builders",img:"https://m.media-amazon.com/images/I/61UBYTAo6cL._SL1000_.jpg"},
+  {t:"Toddler Logic Puzzles Ages 3–5 (Brain Builders Volume 1)",a:"B0FDQ4GVRN",s:"Montessori Brain Builders"},
   {t:"Bilingual Baby Colors / Couleurs (French Edition)",a:"B0D6W6ZPCG",s:"Colors Bilingual Series"},
   {t:"Bilingual Baby Colors / 顏色 (Traditional Chinese Edition)",a:"B0D6RJM58P",s:"Colors Bilingual Series"},
   {t:"Simplified Meeting Notebook for Work",a:"B0D6YNX1C2",s:"Journals"},
@@ -385,7 +382,7 @@ const ALL_BOOKS = [
   {t:"Mid Autumn Festival ABC",a:"B0FMHVRDQX",s:"Alphabet ABC Series"},
   {t:"Future Minds: Baby AI",a:"B0FNXTHJNM",s:"Future Minds"},
   {t:"Future Minds: Baby Economics",a:"B0FNS6X7SB",s:"Future Minds"},
-  {t:"My First Plane Ride",a:"B0FQJ63PLJ",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61PV0zX20WL._SL1000_.jpg"},
+  {t:"My First Plane Ride",a:"B0FQJ63PLJ",s:"Transitions With Me"},
   {t:"All My Feelings: A Montessori Book of Emotions for Toddlers",a:"B0FQJCHSZZ",s:"Whole Brain Toddler"},
   {t:"My First Dentist Appointment",a:"B0FQ3TF8V2",s:"Transitions With Me"},
   {t:"Future Minds: Baby Leadership",a:"B0FP91SSRZ",s:"Future Minds"},
@@ -410,12 +407,12 @@ const ALL_BOOKS = [
   {t:"Bilingual Baby Colors / いろ (Japanese Edition)",a:"B0FWC2XT2R",s:"Colors Bilingual Series"},
   {t:"Halloween Look and Find for Toddlers",a:"B0FXLSCFSP",s:"Little Detective"},
   {t:"Winter Look and Find for Toddlers",a:"B0FXLR42W2",s:"Little Detective"},
-  {t:"Spring Look and Find for Toddlers",a:"B0FXX2L1HV",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61V4VLOMq8L._SL1000_.jpg"},
+  {t:"Spring Look and Find for Toddlers",a:"B0FXX2L1HV",s:"Little Detective"},
   {t:"Who is Saying Bye to the Pacifier",a:"B0FY3LMLHW",s:"Little Detective"},
   {t:"Real Ultimate Book of Trucks",a:"B0G3XDV714",s:"Real Ultimate Learning Series"},
   {t:"What is Homeschooling?",a:"B0G3VNLXRW",s:"Everyday Is Fun"},
   {t:"My Turn, Your Turn",a:"B0G3XRVV3M",s:"Transitions With Me"},
-  {t:"Sleep in My Own Bed",a:"B0G3DZDDFF",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61Vw2HjUf0L._SL1000_.jpg"},
+  {t:"Sleep in My Own Bed",a:"B0G3DZDDFF",s:"Transitions With Me"},
   {t:"Who is Getting Ready for Christmas",a:"B0G37JXQH4",s:"Little Detective"},
   {t:"Who is Santa Claus?",a:"B0G37FKS9B",s:"Little Traditions, Big Meanings"},
   {t:"A New Baby in Our Home",a:"B0G47DK64S",s:"Little Heart, Big Feelings"},
@@ -428,36 +425,36 @@ const ALL_BOOKS = [
   {t:"Why Do Parents Go To Work",a:"B0G51JPHYZ",s:"Transitions With Me"},
   {t:"I Want a Pet",a:"B0G58NJNZT",s:"Transitions With Me"},
   {t:"The Real Ultimate Book of Weather",a:"B0G574PT6Y",s:"Real Ultimate Learning Series"},
-  {t:"Why We Say Sorry",a:"B0G5GJ36PZ",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/611f-35uuOL._SL1000_.jpg"},
-  {t:"Camping de A à Z (French/English)",a:"B0G6FGF6Z4",s:"Alphabet ABC Series",img:"https://m.media-amazon.com/images/I/71-cXz8JxEL._SL1000_.jpg"},
-  {t:"Opposites for Toddlers",a:"B0G6DRJ3FK",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61rzIzLBuuL._SL1000_.jpg"},
-  {t:"I Can Feel Brave in the Dark",a:"B0G63T5N1C",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61ogd96hvzL._SL1000_.jpg"},
-  {t:"My Body Belongs to Me",a:"B0G63PKWW6",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61QqxT0dGaL._SL1000_.jpg"},
-  {t:"Alice in Christmasland",a:"B0G6TF6NJ3",s:"Fiction",img:"https://m.media-amazon.com/images/I/613e7Fh0SdL._SL1000_.jpg"},
-  {t:"I See Colors in My Own Way",a:"B0G78XP32Y",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61jCx790JjL._SL1000_.jpg"},
-  {t:"Why Some Bodies Look Different",a:"B0G7TJM2ZB",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61Bx0i6+ONL._SL1000_.jpg"},
-  {t:"Why I was Born with a Birthmark",a:"B0G8JK58YG",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61cRDis1h7L._SL1000_.jpg"},
-  {t:"Why My Brain Worries",a:"B0G8K54NKZ",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61t-HTkfSXL._SL1000_.jpg"},
-  {t:"REAL ULTIMATE BOOK OF VEHICLES 2",a:"B0G9K6ZX9B",s:"Real Ultimate Learning Series",img:"https://m.media-amazon.com/images/I/61jHwE4QzDL._SL1000_.jpg"},
-  {t:"Why Someone I Love Died",a:"B0GCG8FWZC",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/612zKPV11rL._SL1000_.jpg"},
-  {t:"The Girl of Silver Seals",a:"B0GCKSB7LQ",s:"Fiction",img:"https://m.media-amazon.com/images/I/6145JI6uEvL._SL1000_.jpg"},
-  {t:"Lunar New Year Look and Find",a:"B0GFDJRVXB",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61awC--Bv5L._SL1000_.jpg"},
+  {t:"Why We Say Sorry",a:"B0G5GJ36PZ",s:"Little Heart, Big Feelings"},
+  {t:"Camping de A à Z (French/English)",a:"B0G6FGF6Z4",s:"Alphabet ABC Series"},
+  {t:"Opposites for Toddlers",a:"B0G6DRJ3FK",s:"Little Detective"},
+  {t:"I Can Feel Brave in the Dark",a:"B0G63T5N1C",s:"Whole Brain Toddler"},
+  {t:"My Body Belongs to Me",a:"B0G63PKWW6",s:"Whole Brain Toddler"},
+  {t:"Alice in Christmasland",a:"B0G6TF6NJ3",s:"Fiction"},
+  {t:"I See Colors in My Own Way",a:"B0G78XP32Y",s:"Whole Brain Toddler"},
+  {t:"Why Some Bodies Look Different",a:"B0G7TJM2ZB",s:"Whole Brain Toddler"},
+  {t:"Why I was Born with a Birthmark",a:"B0G8JK58YG",s:"Whole Brain Toddler"},
+  {t:"Why My Brain Worries",a:"B0G8K54NKZ",s:"Whole Brain Toddler"},
+  {t:"REAL ULTIMATE BOOK OF VEHICLES 2",a:"B0G9K6ZX9B",s:"Real Ultimate Learning Series"},
+  {t:"Why Someone I Love Died",a:"B0GCG8FWZC",s:"Whole Brain Toddler"},
+  {t:"The Girl of Silver Seals",a:"B0GCKSB7LQ",s:"Fiction"},
+  {t:"Lunar New Year Look and Find",a:"B0GFDJRVXB",s:"Little Detective"},
   {t:"Hello, 2026!",a:"B0GFFF7YR1",s:"Montessori Brain Builders"},
-  {t:"The Story of the Chinese Zodiac",a:"B0GFFWSCPF",s:"Little Traditions, Big Meanings",img:"https://m.media-amazon.com/images/I/61HLOIFdNkL._SL1000_.jpg"},
+  {t:"The Story of the Chinese Zodiac",a:"B0GFFWSCPF",s:"Little Traditions, Big Meanings"},
   {t:"Happy Birthday to You!",a:"B0GFS7JTMK",s:"Everyday Is Fun"},
-  {t:"Rock Climbing is Fun",a:"B0GFXBVRL5",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/6128115UmOL._SL1000_.jpg"},
-  {t:"Camping is Fun",a:"B0GGBY2LSY",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/61eXxLlIQvL._SL1000_.jpg"},
-  {t:"When My Brain Feels Too Busy",a:"B0GG4SSPMR",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61+20-qngKL._SL1000_.jpg"},
-  {t:"My First Cruise",a:"B0GHYMD74Y",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/61YT4SmCCiL._SL1000_.jpg"},
-  {t:"People Who Observe Nature: Charles Darwin",a:"B0GHS28CMB",s:"Famous People Series",img:"https://m.media-amazon.com/images/I/61T6raxgcwL._SL1000_.jpg"},
-  {t:"Mom and Dad, I Love You. I am still Learning to Control My Hands",a:"B0GL2JY4FJ",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61723Z6aYnL._SL1000_.jpg"},
+  {t:"Rock Climbing is Fun",a:"B0GFXBVRL5",s:"Everyday Is Fun"},
+  {t:"Camping is Fun",a:"B0GGBY2LSY",s:"Everyday Is Fun"},
+  {t:"When My Brain Feels Too Busy",a:"B0GG4SSPMR",s:"Little Heart, Big Feelings"},
+  {t:"My First Cruise",a:"B0GHYMD74Y",s:"Everyday Is Fun"},
+  {t:"People Who Observe Nature: Charles Darwin",a:"B0GHS28CMB",s:"Famous People Series"},
+  {t:"Mom and Dad, I Love You. I am still Learning to Control My Hands",a:"B0GL2JY4FJ",s:"Little Heart, Big Feelings"},
   {t:"People Who Invent: Alfred Nobel",a:"B0GMPTGHK4",s:"Famous People Series"},
-  {t:"People Who Invent: Nikola Tesla",a:"B0GN18F3DF",s:"Famous People Series",img:"https://m.media-amazon.com/images/I/618Xs0RsQPL._SL1000_.jpg"},
+  {t:"People Who Invent: Nikola Tesla",a:"B0GN18F3DF",s:"Famous People Series"},
   {t:"People who Notice and Draw: Leonardo da Vinci",a:"B0GSZFKSPF",s:"Famous People Series"},
-  {t:"Gentle Voice for Toddlers",a:"B0GWJSVH5D",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61s9IMFBP6L._SL1000_.jpg"},
-  {t:"What is War?",a:"B0GXL8LX82",s:"Understanding The World",img:"https://m.media-amazon.com/images/I/61T85Mgw4eL._SL1000_.jpg"},
+  {t:"Gentle Voice for Toddlers",a:"B0GWJSVH5D",s:"Little Heart, Big Feelings"},
+  {t:"What is War?",a:"B0GXL8LX82",s:"Understanding The World"},
   {t:"How to Say Thank You Around the World",a:"B0G2R6G7GW",s:"Little Traditions, Big Meanings"},
-  {t:"Gentle Hands for Toddlers",a:"B0G26KPF2Q",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61kHFN7mLbL._SL1000_.jpg"},
+  {t:"Gentle Hands for Toddlers",a:"B0G26KPF2Q",s:"Little Heart, Big Feelings"},
   {t:"Real Ultimate Book of Dinosaurs",a:"B0G2S1LX6N",s:"Real Ultimate Learning Series"},
   {t:"Gentle Christmas Manners",a:"B0G2Y6Q1JT",s:"Everyday Is Fun"},
   {t:"When I Feel Sad",a:"B0G2Y7JXFS",s:"Little Heart, Big Feelings"},
@@ -469,109 +466,34 @@ const ALL_BOOKS = [
 const SERIES_ORDER=["Little Heart, Big Feelings","Whole Brain Toddler","Transitions With Me","Little Detective","Real Ultimate Learning Series","Alphabet ABC Series","Little Traditions, Big Meanings","Future Minds","Colors Bilingual Series","Bilingual","Montessori Brain Builders","Everyday Is Fun","Famous People Series","Growing Minds Collection","Fiction","Inner Child Series","Understanding The World","Journals"];
 
 // ── BANNER ────────────────────────────────────────────────────────────────
-const BANNERS = [
-  {id:1,eye:"BoonHouse Publishing",title:"Gentle books for little minds growing big",ctaText:"Explore Collection",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#f6efe5,#e7dac8)",newTab:false,fit:"contain",pos:"center center",split:"38%"},
-  {id:2,eye:"Montessori Aligned",title:"Real photos, calm language, growing confidence",ctaText:"View Bestsellers",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#edf2e8,#dce7d8)",newTab:false,fit:"contain",pos:"center center",split:"40%"},
-  {id:3,eye:"Little Heart, Big Feelings",title:"Helping toddlers name what they feel",ctaText:"Shop on Amazon",ctaHref:"https://www.amazon.com/stores/BoonHouse-Publishing/author/B0FB89CS8B",bg:"linear-gradient(135deg,#efe8eb,#e5d8de)",newTab:true,fit:"contain",pos:"center center",split:"37%"},
-  {id:4,eye:"Bilingual & Inclusive",title:"Every child deserves to see themselves on the page",ctaText:"Browse All Series",ctaHref:"#catalogue",bg:"linear-gradient(135deg,#e9efe9,#d9e4dc)",newTab:false,fit:"contain",pos:"center center",split:"39%"}
-];
-
-function bannerImage(id,fit="contain",pos="center center"){
-  const baseRaw=`https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/banner${id}`;
-  const baseCdn=`https://cdn.jsdelivr.net/gh/earlyed/boonhousepublishing@main/images/banner${id}`;
-  const srcs=[
-    `${baseRaw}.jpg`,
-    `${baseCdn}.jpg`,
-    `${baseRaw}.jpeg`,
-    `${baseCdn}.jpeg`,
-    `${baseRaw}.png`,
-    `${baseCdn}.png`,
-    `${baseRaw}.webp`,
-    `${baseCdn}.webp`
-  ];
-  const srcList=srcs.join('|');
-  return `<img class="banner-bg" style="--banner-fit:${fit};--banner-pos:${pos};" src="${srcs[0]}" data-srcs="${srcList}" data-i="0" alt="" loading="eager" decoding="async" onerror="const a=this.dataset.srcs.split('|');let i=+this.dataset.i+1;if(i<a.length){this.dataset.i=String(i);this.src=a[i];}else{this.style.display='none';}">`;
-}
-
 (function(){
   const track=document.getElementById('bannerTrack');
   const dotsEl=document.getElementById('bannerDots');
-  const hero=document.querySelector('.banner-hero');
-  const copy=document.getElementById('bannerCopy');
-  const eyeEl=document.getElementById('bannerEye');
-  const titleEl=document.getElementById('bannerTitle');
-  const ctaEl=document.getElementById('bannerCta');
-  track.innerHTML=BANNERS.map(b=>`<div class="banner-slide" style="background:${b.bg}">
-    ${bannerImage(b.id,b.fit,b.pos)}
-  </div>`).join('');
   const slides=track.querySelectorAll('.banner-slide');
-  if(!slides.length)return;
   let cur=0;
-  let timer=null;
-  function setCopy(i){
-    const b=BANNERS[i];
-    copy.classList.add('is-fading');
-    setTimeout(()=>{
-      hero.style.setProperty('--hero-bg',b.bg||'linear-gradient(135deg,#f6f2ec,#ebe4d8)');
-      hero.style.setProperty('--split-left',b.split||'40%');
-      eyeEl.textContent=b.eye;
-      titleEl.textContent=b.title;
-      ctaEl.textContent=b.ctaText;
-      ctaEl.href=b.ctaHref;
-      if(b.newTab){ctaEl.setAttribute('target','_blank');}
-      else{ctaEl.removeAttribute('target');}
-      copy.classList.remove('is-fading');
-    },180);
-  }
   dotsEl.innerHTML=[...slides].map((_,i)=>`<div class="banner-dot${i===0?' on':''}" data-i="${i}"></div>`).join('');
   dotsEl.querySelectorAll('.banner-dot').forEach(d=>d.addEventListener('click',()=>go(+d.dataset.i)));
-  function go(n){
-    cur=n;
-    track.style.transform=`translateX(-${cur*100}%)`;
-    dotsEl.querySelectorAll('.banner-dot').forEach((d,i)=>d.classList.toggle('on',i===cur));
-    setCopy(cur);
-  }
+  function go(n){cur=n;track.style.transform=`translateX(-${cur*100}%)`;dotsEl.querySelectorAll('.banner-dot').forEach((d,i)=>d.classList.toggle('on',i===cur));}
   document.getElementById('bArrL').addEventListener('click',()=>go((cur-1+slides.length)%slides.length));
   document.getElementById('bArrR').addEventListener('click',()=>go((cur+1)%slides.length));
-  setCopy(0);
-  timer=setInterval(()=>go((cur+1)%slides.length),6500);
+  setInterval(()=>go((cur+1)%slides.length),5000);
 })();
 
 // ── COVER IMG helper ──────────────────────────────────────────────────────
-function coverImg(book, showPlaceholder = false) {
-  const asin = getAsin(book);
-  const fallback = `https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${asin}.jpg`;
-  const primary = book.img || fallback;
-  const onErr = showPlaceholder
-    ? `if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${fallback}';return;}this.style.display='none';this.nextElementSibling.style.display='flex'`
-    : `if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${fallback}';return;}this.style.display='none'`;
-  return `<img src="${primary}" alt="${book.t}" loading="lazy" decoding="async" onerror="${onErr}">`;
-}
-
-function titleKey(t){
-  return (t||'').toLowerCase().replace(/[^a-z0-9\u00C0-\u024F\u4E00-\u9FFF]+/g,'');
-}
-const ASIN_BY_TITLE = (() => {
-  const map = new Map();
-  [...ALL_BOOKS, ...BESTSELLERS, ...RISING].forEach(b => {
-    const k = titleKey(b.t);
-    if (k && b.a && !map.has(k)) map.set(k, b.a);
-  });
-  return map;
-})();
-function getAsin(book){
-  return ASIN_BY_TITLE.get(titleKey(book.t)) || book.a;
+function covEl(book, letter) {
+  const ghUrl = `https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${book.a}.jpg`;
+  return `<img src="${ghUrl}" alt="${book.t}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`;
 }
 
 // ── THREE-COL TRIO ────────────────────────────────────────────────────────
 (function(){
   const g=document.getElementById('trioGrid');
   g.innerHTML=BESTSELLERS.slice(0,3).map(b=>{
-    const url=`https://www.amazon.com/dp/${getAsin(b)}`;
+    const url=`https://www.amazon.com/dp/${b.a}`;
     const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
     return `<div class="trio-item" onclick="window.open('${url}','_blank')">
       <div class="trio-img">
-        ${coverImg(b)}
+        <img src="https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${b.a}.jpg" alt="${b.t}" onerror="this.style.display='none'">
       </div>
       <div class="trio-info">
         <div class="trio-series">${b.s}</div>
@@ -589,11 +511,11 @@ function buildSW(books, trackId, dotsId, arrLId, arrRId) {
   let idx=0;
   function vc(){return window.innerWidth<600?1:window.innerWidth<900?2:3}
   track.innerHTML=books.map(b=>{
-    const url=`https://www.amazon.com/dp/${getAsin(b)}`;
+    const url=`https://www.amazon.com/dp/${b.a}`;
     const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
     return `<div class="sw-slide" onclick="window.open('${url}','_blank')">
       <div class="sw-cover">
-        ${coverImg(b,true)}
+        <img src="https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${b.a}.jpg" alt="${b.t}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="sw-ph" style="display:none">${L}</div>
       </div>
       <div class="sw-series">${b.s}</div>
@@ -638,11 +560,11 @@ function buildCat(q){
         <span class="acc-meta"><span class="acc-cnt">${items.length} title${items.length!==1?'s':''}</span><span class="acc-chev">▾</span></span>
       </div>
       <div class="acc-body"><div class="mini-grid">${items.map(({b})=>{
-        const url=`https://www.amazon.com/dp/${getAsin(b)}`;
+        const url=`https://www.amazon.com/dp/${b.a}`;
         const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
         return `<div class="mini-card" onclick="window.open('${url}','_blank')">
           <div class="mini-cov">
-            ${coverImg(b,true)}
+            <img src="https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${b.a}.jpg" alt="${b.t}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="mini-cov-ph" style="display:none">${L}</div>
           </div>
           <div class="mini-t">${b.t}</div>
@@ -657,27 +579,6 @@ document.getElementById('catSearch').addEventListener('input',e=>{
   if(e.target.value.trim())document.querySelectorAll('.acc').forEach(a=>a.classList.add('open'));
 });
 buildCat();
-
-document.querySelectorAll('.strip .si').forEach(link=>{
-  link.addEventListener('click',e=>{
-    const series=link.dataset.series||'';
-    const search=document.getElementById('catSearch');
-    if(search){
-      search.value=series;
-      buildCat(series);
-      document.querySelectorAll('.acc').forEach(a=>a.classList.add('open'));
-    }
-  });
-});
-
-document.getElementById('catReset').addEventListener('click',()=>{
-  const search=document.getElementById('catSearch');
-  if(search){
-    search.value='';
-    buildCat('');
-  }
-  document.querySelectorAll('.acc').forEach(a=>a.classList.remove('open'));
-});
 </script>
 </body>
 </html>
