@@ -48,16 +48,16 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .si::before{content:'—';opacity:.35}
 
 /* SECTION HEADER */
-.sec-head{text-align:center;padding:5rem var(--pad) 3rem}
+.sec-head{text-align:center;padding:8rem var(--pad) 6rem}
 .sec-eye{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:.9rem}
 .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:var(--ink);line-height:1.1}
 .sec-title em{font-style:italic;color:var(--accent)}
 .sec-rule{width:40px;height:1px;background:var(--rule);margin:1.2rem auto 0}
 
 /* THREE-COL AKB GRID */
-.trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;padding:0 var(--pad);border:none;margin:0 0 2rem 0}
-.trio-item{border:1px solid var(--rule);cursor:pointer;display:flex;flex-direction:column;background:var(--white)}
-.trio-item:last-child{border-right:1px solid var(--rule)}
+.trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;padding:0 var(--pad);border:none;margin:0 0 5rem 0}
+.trio-item{border:1px solid #ece8e2;cursor:pointer;display:flex;flex-direction:column;background:var(--white)}
+.trio-item:last-child{border-right:1px solid #ece8e2}
 .trio-img{background:none}
 .trio-img img{width:100%;height:auto;display:block;transition:transform .7s ease}
 .trio-item:hover .trio-img img{transform:scale(1.03)}
@@ -68,7 +68,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .trio-buy:hover{color:var(--accent);border-color:var(--accent)}
 
 /* SLIDESHOW */
-.sw-wrap{padding:0 var(--pad) 5.5rem;position:relative}
+.sw-wrap{padding:0 var(--pad) 9rem;position:relative}
 .sw-outer{overflow:hidden}
 .sw-track{display:flex;gap:2rem;transition:transform .55s cubic-bezier(.25,.46,.45,.94);will-change:transform}
 .sw-slide{flex:0 0 calc(33.333% - 1.35rem);min-width:0;cursor:pointer}
@@ -134,8 +134,10 @@ footer{padding:4rem var(--pad) 2.5rem;background:var(--white);border-top:1px sol
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .trio{grid-template-columns:1fr;gap:1rem}.trio-item{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .sec-head{padding:6rem var(--pad) 4.5rem}
+  .trio{grid-template-columns:1fr;gap:2rem}.trio-item{border-right:1px solid #ece8e2;border-bottom:1px solid #ece8e2}
   .sw-slide{flex:0 0 calc(50% - .75rem)}
+  .sw-wrap{padding:0 var(--pad) 7rem}
   .why{grid-template-columns:1fr}.why-c{border-right:none;border-bottom:1px solid var(--rule)}
   .ft{grid-template-columns:1fr}.ft-bar{flex-direction:column;gap:.4rem}
   .banner-slide{height:52vh}
@@ -143,9 +145,12 @@ footer{padding:4rem var(--pad) 2.5rem;background:var(--white);border-top:1px sol
 }
 @media(max-width:600px){
   .nav-r a:not(.nav-cta){display:none}
+  .sec-head{padding:4.8rem var(--pad) 3rem}
   .banner-slide{height:46vh}
   .banner-txt{height:46vh;padding:1.8rem var(--pad)}
   .banner-bg{opacity:.78}
+  .trio{gap:1.4rem;margin:0 0 3.2rem 0}
+  .sw-wrap{padding:0 var(--pad) 5.2rem}
   .sw-slide{flex:0 0 100%}
   .mini-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
 }
