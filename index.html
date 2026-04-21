@@ -28,7 +28,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .banner-track{display:flex;transition:transform .8s cubic-bezier(.25,.46,.45,.94)}
 .banner-slide{flex:0 0 100%;position:relative;cursor:pointer}
 .banner-slide{height:70vh;}
-.banner-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;opacity:.9;background:rgba(0,0,0,.08)}
+.banner-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:var(--banner-fit,contain);object-position:var(--banner-pos,center center);opacity:.9;background:rgba(0,0,0,.08)}
 .banner-txt{display:flex;flex-direction:column;justify-content:flex-end;padding:4rem var(--pad);height:70vh;}
 .banner-eye{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.75rem}
 .banner-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:white;line-height:1.1;max-width:520px;margin-bottom:1.5rem}
@@ -144,7 +144,7 @@ footer{padding:4rem var(--pad) 2.5rem;background:var(--white);border-top:1px sol
   .nav-r a:not(.nav-cta){display:none}
   .banner-slide{height:58vh}
   .banner-txt{height:58vh;padding:2.2rem var(--pad)}
-  .banner-bg{object-fit:cover;object-position:center 35%;opacity:.72}
+  .banner-bg{opacity:.8}
   .sw-slide{flex:0 0 100%}
   .mini-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
 }
@@ -439,13 +439,13 @@ const SERIES_ORDER=["Little Heart, Big Feelings","Whole Brain Toddler","Transiti
 
 // ── BANNER ────────────────────────────────────────────────────────────────
 const BANNERS = [
-  {id:1,eye:"BoonHouse Publishing",title:"Gentle books for little minds growing big",ctaText:"Explore Collection",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#2C2C28,#6B5A42)",newTab:false},
-  {id:2,eye:"Montessori Aligned",title:"Real photos, calm language, growing confidence",ctaText:"View Bestsellers",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#283428,#4A6A50)",newTab:false},
-  {id:3,eye:"Little Heart, Big Feelings",title:"Helping toddlers name what they feel",ctaText:"Shop on Amazon",ctaHref:"https://www.amazon.com/stores/BoonHouse-Publishing/author/B0FB89CS8B",bg:"linear-gradient(135deg,#302028,#6A4050)",newTab:true},
-  {id:4,eye:"Bilingual & Inclusive",title:"Every child deserves to see themselves on the page",ctaText:"Browse All Series",ctaHref:"#catalogue",bg:"linear-gradient(135deg,#28302C,#405A48)",newTab:false}
+  {id:1,eye:"BoonHouse Publishing",title:"Gentle books for little minds growing big",ctaText:"Explore Collection",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#2C2C28,#6B5A42)",newTab:false,fit:"contain",pos:"center center"},
+  {id:2,eye:"Montessori Aligned",title:"Real photos, calm language, growing confidence",ctaText:"View Bestsellers",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#283428,#4A6A50)",newTab:false,fit:"contain",pos:"center center"},
+  {id:3,eye:"Little Heart, Big Feelings",title:"Helping toddlers name what they feel",ctaText:"Shop on Amazon",ctaHref:"https://www.amazon.com/stores/BoonHouse-Publishing/author/B0FB89CS8B",bg:"linear-gradient(135deg,#302028,#6A4050)",newTab:true,fit:"contain",pos:"center center"},
+  {id:4,eye:"Bilingual & Inclusive",title:"Every child deserves to see themselves on the page",ctaText:"Browse All Series",ctaHref:"#catalogue",bg:"linear-gradient(135deg,#28302C,#405A48)",newTab:false,fit:"contain",pos:"center center"}
 ];
 
-function bannerImage(id){
+function bannerImage(id,fit="contain",pos="center center"){
   const baseRaw=`https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/banner${id}`;
   const baseCdn=`https://cdn.jsdelivr.net/gh/earlyed/boonhousepublishing@main/images/banner${id}`;
   const srcs=[
@@ -459,14 +459,14 @@ function bannerImage(id){
     `${baseCdn}.webp`
   ];
   const srcList=srcs.join('|');
-  return `<img class="banner-bg" src="${srcs[0]}" data-srcs="${srcList}" data-i="0" alt="" loading="eager" decoding="async" onerror="const a=this.dataset.srcs.split('|');let i=+this.dataset.i+1;if(i<a.length){this.dataset.i=String(i);this.src=a[i];}else{this.style.display='none';}">`;
+  return `<img class="banner-bg" style="--banner-fit:${fit};--banner-pos:${pos};" src="${srcs[0]}" data-srcs="${srcList}" data-i="0" alt="" loading="eager" decoding="async" onerror="const a=this.dataset.srcs.split('|');let i=+this.dataset.i+1;if(i<a.length){this.dataset.i=String(i);this.src=a[i];}else{this.style.display='none';}">`;
 }
 
 (function(){
   const track=document.getElementById('bannerTrack');
   const dotsEl=document.getElementById('bannerDots');
   track.innerHTML=BANNERS.map(b=>`<div class="banner-slide" style="background:${b.bg}">
-    ${bannerImage(b.id)}
+    ${bannerImage(b.id,b.fit,b.pos)}
     <div class="banner-txt">
       <div class="banner-eye">${b.eye}</div>
       <div class="banner-title">${b.title}</div>
