@@ -477,9 +477,13 @@ const SERIES_ORDER=["Little Heart, Big Feelings","Whole Brain Toddler","Transiti
 })();
 
 // ── COVER IMG helper ──────────────────────────────────────────────────────
-function covEl(book, letter) {
-  const ghUrl = `https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${book.a}.jpg`;
-  return `<img src="${ghUrl}" alt="${book.t}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`;
+function coverImg(book, showPlaceholder = false) {
+  const fallback = `https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${book.a}.jpg`;
+  const primary = book.img || fallback;
+  const onErr = showPlaceholder
+    ? `if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${fallback}';return;}this.style.display='none';this.nextElementSibling.style.display='flex'`
+    : `if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${fallback}';return;}this.style.display='none'`;
+  return `<img src="${primary}" alt="${book.t}" loading="lazy" decoding="async" onerror="${onErr}">`;
 }
 
 // ── THREE-COL TRIO ────────────────────────────────────────────────────────
@@ -487,10 +491,9 @@ function covEl(book, letter) {
   const g=document.getElementById('trioGrid');
   g.innerHTML=BESTSELLERS.slice(0,3).map(b=>{
     const url=`https://www.amazon.com/dp/${b.a}`;
-    const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
     return `<div class="trio-item" onclick="window.open('${url}','_blank')">
       <div class="trio-img">
-        <img src="https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${b.a}.jpg" alt="${b.t}" onerror="this.style.display='none'">
+        ${coverImg(b)}
       </div>
       <div class="trio-info">
         <div class="trio-series">${b.s}</div>
@@ -512,7 +515,7 @@ function buildSW(books, trackId, dotsId, arrLId, arrRId) {
     const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
     return `<div class="sw-slide" onclick="window.open('${url}','_blank')">
       <div class="sw-cover">
-        <img src="https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${b.a}.jpg" alt="${b.t}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        ${coverImg(b,true)}
         <div class="sw-ph" style="display:none">${L}</div>
       </div>
       <div class="sw-series">${b.s}</div>
@@ -561,7 +564,7 @@ function buildCat(q){
         const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
         return `<div class="mini-card" onclick="window.open('${url}','_blank')">
           <div class="mini-cov">
-            <img src="https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${b.a}.jpg" alt="${b.t}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            ${coverImg(b,true)}
             <div class="mini-cov-ph" style="display:none">${L}</div>
           </div>
           <div class="mini-t">${b.t}</div>
