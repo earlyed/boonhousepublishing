@@ -302,6 +302,7 @@ const BESTSELLERS = [
   {t:"My First Day of Preschool",a:"B0FJYL881D",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/71yCqnBGdTL._SL1000_.jpg"},
   {t:"My Body is Getting Ready",a:"B0FJ8Z7JG7",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61hHk0iijRL._SL1000_.jpg"},
 ];
+
 const RISING = [
   {t:"What is War?",a:"B0GXL8LX82",s:"Understanding The World",img:"https://m.media-amazon.com/images/I/61T85Mgw4eL._SL1000_.jpg"},
   {t:"People Who Invent: Nikola Tesla",a:"B0GN18F3DF",s:"Famous People Series",img:"https://m.media-amazon.com/images/I/618Xs0RsQPL._SL1000_.jpg"},
@@ -328,6 +329,7 @@ const RISING = [
   {t:"Camping de A à Z (French/English)",a:"B0G6FGF6Z4",s:"Alphabet ABC Series",img:"https://m.media-amazon.com/images/I/71-cXz8JxEL._SL1000_.jpg"},
   {t:"Why We Say Sorry",a:"B0G5GJ36PZ",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/611f-35uuOL._SL1000_.jpg"},
 ];
+
 const ALL_BOOKS = [
   {t:"为什么要庆祝感恩节？Why Do We Celebrate Thanksgiving?",a:"B0FLTPPSF1",s:"Little Traditions, Big Meanings"},
   {t:"The Father's Wedding Gift Every Daughter Deserves",a:"B0FLKKKJ42",s:"Inner Child Series"},
@@ -445,7 +447,9 @@ const ALL_BOOKS = [
   {t:"THANKSGIVING BRAIN BUILDERS",a:"B0G1HGSPYT",s:"Montessori Brain Builders"},
   {t:"Who is Brushing Teeth",a:"B0G14CM9J2",s:"Little Detective"},
 ];
+
 const SERIES_ORDER=["Little Heart, Big Feelings","Whole Brain Toddler","Transitions With Me","Little Detective","Real Ultimate Learning Series","Alphabet ABC Series","Little Traditions, Big Meanings","Future Minds","Colors Bilingual Series","Bilingual","Montessori Brain Builders","Everyday Is Fun","Famous People Series","Growing Minds Collection","Fiction","Inner Child Series","Understanding The World","Journals"];
+
 // ── BANNER ────────────────────────────────────────────────────────────────
 const BANNERS = [
   {id:1,eye:"BoonHouse Publishing",title:"Gentle books for little minds growing big",ctaText:"Explore Collection",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#f6efe5,#e7dac8)",newTab:false,fit:"contain",pos:"center center",split:"38%"},
@@ -453,6 +457,7 @@ const BANNERS = [
   {id:3,eye:"Little Heart, Big Feelings",title:"Helping toddlers name what they feel",ctaText:"Shop on Amazon",ctaHref:"https://www.amazon.com/stores/BoonHouse-Publishing/author/B0FB89CS8B",bg:"linear-gradient(135deg,#efe8eb,#e5d8de)",newTab:true,fit:"contain",pos:"center center",split:"37%"},
   {id:4,eye:"Bilingual & Inclusive",title:"Every child deserves to see themselves on the page",ctaText:"Browse All Series",ctaHref:"#catalogue",bg:"linear-gradient(135deg,#e9efe9,#d9e4dc)",newTab:false,fit:"contain",pos:"center center",split:"39%"}
 ];
+
 function bannerImage(id,fit="contain",pos="center center"){
   const baseRaw=`https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/banner${id}`;
   const baseCdn=`https://cdn.jsdelivr.net/gh/earlyed/boonhousepublishing@main/images/banner${id}`;
@@ -469,6 +474,7 @@ function bannerImage(id,fit="contain",pos="center center"){
   const srcList=srcs.join('|');
   return `<img class="banner-bg" style="--banner-fit:${fit};--banner-pos:${pos};" src="${srcs[0]}" data-srcs="${srcList}" data-i="0" alt="" loading="eager" decoding="async" onerror="const a=this.dataset.srcs.split('|');let i=+this.dataset.i+1;if(i<a.length){this.dataset.i=String(i);this.src=a[i];}else{this.style.display='none';}">`;
 }
+
 (function(){
   const track=document.getElementById('bannerTrack');
   const dotsEl=document.getElementById('bannerDots');
@@ -512,16 +518,11 @@ function bannerImage(id,fit="contain",pos="center center"){
   setCopy(0);
   timer=setInterval(()=>go((cur+1)%slides.length),6500);
 })();
-// ── COVER IMG helper ──────────────────────────────────────────────────────
-function coverImg(book, showPlaceholder = false) {
-  const asin = getAsin(book);
-  const fallback = `https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${asin}.jpg`;
-  const primary = book.img || fallback;
-  const onErr = showPlaceholder
-    ? `if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${fallback}';return;}this.style.display='none';this.nextElementSibling.style.display='flex'`
-    : `if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${fallback}';return;}this.style.display='none'`;
-  return `<img src="${primary}" alt="${book.t}" loading="lazy" decoding="async" onerror="${onErr}">`;
-}
+
+// ── COVER IMG helper (FIXED) ─────────────────────────────────────────────
+// Key fixes:
+// 1) getAsin(book) now prioritizes book.a (exact row) to prevent title-map collisions.
+// 2) coverImg() now prefers your ASIN-named GitHub image first, then optional book.img URL.
 function titleKey(t){
   return (t||'').toLowerCase().replace(/[^a-z0-9\u00C0-\u024F\u4E00-\u9FFF]+/g,'');
 }
@@ -534,14 +535,43 @@ const ASIN_BY_TITLE = (() => {
   return map;
 })();
 function getAsin(book){
-  return ASIN_BY_TITLE.get(titleKey(book.t)) || book.a;
+  // exact object ASIN first to avoid mismatches
+  return book.a || ASIN_BY_TITLE.get(titleKey(book.t)) || "";
 }
+
+function coverImg(book, showPlaceholder = false) {
+  const asin = getAsin(book);
+  const local = asin ? `https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${asin}.jpg` : "";
+  const secondary = book.img && book.img !== local ? book.img : "";
+  const primary = local || secondary;
+
+  const onErr = showPlaceholder
+    ? `
+      if(this.dataset.step!=='1' && ${JSON.stringify(secondary)}){
+        this.dataset.step='1';
+        this.src=${JSON.stringify(secondary)};
+        return;
+      }
+      this.style.display='none';
+      if(this.nextElementSibling)this.nextElementSibling.style.display='flex';
+    `
+    : `
+      if(this.dataset.step!=='1' && ${JSON.stringify(secondary)}){
+        this.dataset.step='1';
+        this.src=${JSON.stringify(secondary)};
+        return;
+      }
+      this.style.display='none';
+    `;
+
+  return `<img src="${primary}" alt="${book.t}" loading="lazy" decoding="async" onerror="${onErr.replace(/\s+/g,' ')}">`;
+}
+
 // ── THREE-COL TRIO ────────────────────────────────────────────────────────
 (function(){
   const g=document.getElementById('trioGrid');
   g.innerHTML=BESTSELLERS.slice(0,3).map(b=>{
     const url=`https://www.amazon.com/dp/${getAsin(b)}`;
-    const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
     return `<div class="trio-item" onclick="window.open('${url}','_blank')">
       <div class="trio-img">
         ${coverImg(b)}
@@ -554,6 +584,7 @@ function getAsin(book){
     </div>`;
   }).join('');
 })();
+
 // ── SLIDESHOW ─────────────────────────────────────────────────────────────
 function buildSW(books, trackId, dotsId, arrLId, arrRId) {
   const track=document.getElementById(trackId);
@@ -589,6 +620,7 @@ function buildSW(books, trackId, dotsId, arrLId, arrRId) {
 }
 buildSW(BESTSELLERS,'bsTrack','bsDots','bsArrL','bsArrR');
 buildSW(RISING,'riTrack','riDots','riArrL','riArrR');
+
 // ── CATALOGUE ACCORDIONS ──────────────────────────────────────────────────
 function buildCat(q){
   q=(q||'').toLowerCase().trim();
@@ -628,6 +660,7 @@ document.getElementById('catSearch').addEventListener('input',e=>{
   if(e.target.value.trim())document.querySelectorAll('.acc').forEach(a=>a.classList.add('open'));
 });
 buildCat();
+
 document.querySelectorAll('.strip .si').forEach(link=>{
   link.addEventListener('click',e=>{
     const series=link.dataset.series||'';
@@ -639,6 +672,7 @@ document.querySelectorAll('.strip .si').forEach(link=>{
     }
   });
 });
+
 document.getElementById('catReset').addEventListener('click',()=>{
   const search=document.getElementById('catSearch');
   if(search){
