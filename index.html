@@ -23,19 +23,10 @@ nav{position:sticky;top:0;z-index:300;background:rgba(249,247,244,.97);backdrop-
 .nav-cta{color:var(--white)!important;background:var(--ink);padding:9px 20px;transition:background .2s!important}
 .nav-cta:hover{background:var(--accent)!important}
 
-/* BANNER HERO (2-column, no hard split line) */
-.banner-hero{
-  position:relative;width:100%;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:2.5rem;
-  background:var(--hero-bg,linear-gradient(135deg,#f6f2ec,#ebe4d8));display:grid;grid-template-columns:var(--split-left,40%) minmax(0,1fr);min-height:52vh
-}
-.banner-copy{
-  position:relative;padding:3.2rem clamp(1.5rem,4vw,3.5rem);display:flex;flex-direction:column;justify-content:center;border-right:none;
-  background:rgba(249,247,244,.88)
-}
-.banner-copy::after{
-  content:"";position:absolute;top:0;right:-80px;width:160px;height:100%;pointer-events:none;
-  background:linear-gradient(90deg,rgba(249,247,244,.88) 0%,rgba(249,247,244,0) 100%)
-}
+/* BANNER HERO (soft transition, no hard split line) */
+.banner-hero{position:relative;width:100%;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:2.5rem;background:var(--hero-bg,linear-gradient(135deg,#f6f2ec,#ebe4d8));display:grid;grid-template-columns:var(--split-left,40%) minmax(0,1fr);min-height:52vh}
+.banner-copy{position:relative;padding:3.2rem clamp(1.5rem,4vw,3.5rem);display:flex;flex-direction:column;justify-content:center;border-right:none;background:rgba(249,247,244,.88)}
+.banner-copy::after{content:"";position:absolute;top:0;right:-80px;width:160px;height:100%;pointer-events:none;background:linear-gradient(90deg,rgba(249,247,244,.88) 0%,rgba(249,247,244,0) 100%)}
 .banner-copy-inner{max-width:460px;transition:opacity .45s ease, transform .45s ease}
 .banner-copy-inner.is-fading{opacity:0;transform:translateY(8px)}
 .banner-track{display:flex;transition:transform .8s cubic-bezier(.25,.46,.45,.94)}
@@ -153,10 +144,7 @@ footer{padding:4rem var(--pad) 2.5rem;background:var(--white);border-top:1px sol
 @media(max-width:900px){
   .banner-hero{grid-template-columns:1fr;min-height:auto}
   .banner-copy{border-right:none;border-bottom:none;padding:2.4rem var(--pad)}
-  .banner-copy::after{
-    right:0;top:auto;bottom:-64px;width:100%;height:128px;
-    background:linear-gradient(180deg,rgba(249,247,244,.88) 0%,rgba(249,247,244,0) 100%)
-  }
+  .banner-copy::after{right:0;top:auto;bottom:-64px;width:100%;height:128px;background:linear-gradient(180deg,rgba(249,247,244,.88) 0%,rgba(249,247,244,0) 100%)}
   .banner-media,.banner-slide{min-height:46vh;height:46vh}
   .sec-head{padding:6rem var(--pad) 4.5rem}
   .trio{grid-template-columns:1fr;gap:2rem}.trio-item{border-right:1px solid #ece8e2;border-bottom:1px solid #ece8e2}
@@ -320,10 +308,378 @@ footer{padding:4rem var(--pad) 2.5rem;background:var(--white);border-top:1px sol
 </footer>
 
 <script>
-// Keep your existing JS/data exactly as-is from your current file.
-// No structural JS changes required for this version.
-// Important: keep this line in setCopy():
-// hero.style.setProperty('--split-left', b.split || '40%');
+// ── BOOK DATA with real cover images ──────────────────────────────────────
+// Covers mapped in order provided
+const BESTSELLERS = [
+  {t:"Gentle Hands for Toddlers",a:"B0G26KPF2Q",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61kHFN7mLbL._SL1000_.jpg"},
+  {t:"Say Bye to Your Pacifier",a:"B0FHWCMYK7",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61GA42Inu3L._SL1000_.jpg"},
+  {t:"My First Haircut",a:"B0FJ8VZPFS",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61+7Ror32DL._SL1000_.jpg"},
+  {t:"REAL ULTIMATE BOOK OF VEHICLES FOR TODDLERS",a:"B0FHW2Z2ZS",s:"Real Ultimate Learning Series",img:"https://m.media-amazon.com/images/I/61TqmSvHz6L._SL1000_.jpg"},
+  {t:"Toddler Logic Puzzles Ages 3–5",a:"B0FDQ4GVRN",s:"Montessori Brain Builders",img:"https://m.media-amazon.com/images/I/61UBYTAo6cL._SL1000_.jpg"},
+  {t:"Sleep in My Own Bed",a:"B0G3DZDDFF",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61Vw2HjUf0L._SL1000_.jpg"},
+  {t:"My First Plane Ride",a:"B0FQJ63PLJ",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61PV0zX20WL._SL1000_.jpg"},
+  {t:"Spring Look and Find for Toddlers",a:"B0FXX2L1HV",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61V4VLOMq8L._SL1000_.jpg"},
+  {t:"My First Day of Preschool",a:"B0FJYL881D",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/71yCqnBGdTL._SL1000_.jpg"},
+  {t:"My Body is Getting Ready",a:"B0FJ8Z7JG7",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61hHk0iijRL._SL1000_.jpg"},
+];
+
+const RISING = [
+  {t:"What is War?",a:"B0GXL8LX82",s:"Understanding The World",img:"https://m.media-amazon.com/images/I/61T85Mgw4eL._SL1000_.jpg"},
+  {t:"People Who Invent: Nikola Tesla",a:"B0GN18F3DF",s:"Famous People Series",img:"https://m.media-amazon.com/images/I/618Xs0RsQPL._SL1000_.jpg"},
+  {t:"Mom and Dad, I Love You. I am still Learning to Control My Hands",a:"B0GL2JY4FJ",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61723Z6aYnL._SL1000_.jpg"},
+  {t:"Gentle Voice for Toddlers",a:"B0GWJSVH5D",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61s9IMFBP6L._SL1000_.jpg"},
+  {t:"My First Cruise",a:"B0GHYMD74Y",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/61YT4SmCCiL._SL1000_.jpg"},
+  {t:"People Who Observe Nature: Charles Darwin",a:"B0GHS28CMB",s:"Famous People Series",img:"https://m.media-amazon.com/images/I/61T6raxgcwL._SL1000_.jpg"},
+  {t:"When My Brain Feels Too Busy",a:"B0GG4SSPMR",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61+20-qngKL._SL1000_.jpg"},
+  {t:"Camping is Fun",a:"B0GGBY2LSY",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/61eXxLlIQvL._SL1000_.jpg"},
+  {t:"Rock Climbing is Fun",a:"B0GFXBVRL5",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/6128115UmOL._SL1000_.jpg"},
+  {t:"The Story of the Chinese Zodiac",a:"B0GFFWSCPF",s:"Little Traditions, Big Meanings",img:"https://m.media-amazon.com/images/I/61HLOIFdNkL._SL1000_.jpg"},
+  {t:"Lunar New Year Look and Find",a:"B0GFDJRVXB",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61awC--Bv5L._SL1000_.jpg"},
+  {t:"The Girl of Silver Seals",a:"B0GCKSB7LQ",s:"Fiction",img:"https://m.media-amazon.com/images/I/6145JI6uEvL._SL1000_.jpg"},
+  {t:"Why Someone I Love Died",a:"B0GCG8FWZC",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/612zKPV11rL._SL1000_.jpg"},
+  {t:"REAL ULTIMATE BOOK OF VEHICLES 2",a:"B0G9K6ZX9B",s:"Real Ultimate Learning Series",img:"https://m.media-amazon.com/images/I/61jHwE4QzDL._SL1000_.jpg"},
+  {t:"Why My Brain Worries",a:"B0G8K54NKZ",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61t-HTkfSXL._SL1000_.jpg"},
+  {t:"Why I was Born with a Birthmark",a:"B0G8JK58YG",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61cRDis1h7L._SL1000_.jpg"},
+  {t:"Why Some Bodies Look Different",a:"B0G7TJM2ZB",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61Bx0i6+ONL._SL1000_.jpg"},
+  {t:"I See Colors in My Own Way",a:"B0G78XP32Y",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61jCx790JjL._SL1000_.jpg"},
+  {t:"Alice in Christmasland",a:"B0G6TF6NJ3",s:"Fiction",img:"https://m.media-amazon.com/images/I/613e7Fh0SdL._SL1000_.jpg"},
+  {t:"My Body Belongs to Me",a:"B0G63PKWW6",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61QqxT0dGaL._SL1000_.jpg"},
+  {t:"I Can Feel Brave in the Dark",a:"B0G63T5N1C",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61ogd96hvzL._SL1000_.jpg"},
+  {t:"Opposites for Toddlers",a:"B0G6DRJ3FK",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61rzIzLBuuL._SL1000_.jpg"},
+  {t:"Camping de A à Z (French/English)",a:"B0G6FGF6Z4",s:"Alphabet ABC Series",img:"https://m.media-amazon.com/images/I/71-cXz8JxEL._SL1000_.jpg"},
+  {t:"Why We Say Sorry",a:"B0G5GJ36PZ",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/611f-35uuOL._SL1000_.jpg"},
+];
+
+const ALL_BOOKS = [
+  {t:"为什么要庆祝感恩节？Why Do We Celebrate Thanksgiving?",a:"B0FLTPPSF1",s:"Little Traditions, Big Meanings"},
+  {t:"The Father's Wedding Gift Every Daughter Deserves",a:"B0FLKKKJ42",s:"Inner Child Series"},
+  {t:"Camping ABC: A Montessori Nature Adventure",a:"B0FLJCXLJG",s:"Alphabet ABC Series"},
+  {t:"Why Do We Celebrate Thanksgiving?",a:"B0FLF3XCLF",s:"Little Traditions, Big Meanings"},
+  {t:"开窍的那一天 - 我的「还没」正在长大 (Bilingual)",a:"B0FL35XJH5",s:"Little Heart, Big Feelings"},
+  {t:"我第一天上幼儿园 My First Day of Preschool (Bilingual)",a:"B0FL2Z627Z",s:"Bilingual"},
+  {t:"为什么要戴上帽子？Why Should I Wear My Hat? (Bilingual)",a:"B0FKHL61TJ",s:"Bilingual"},
+  {t:"我可以试一小口 I Can Try One Little Bite (Bilingual)",a:"B0FJRLXQLW",s:"Little Heart, Big Feelings"},
+  {t:"Oops Is Part of Learning: Mistakes Help Me Grow",a:"B0FJGBRG6K",s:"Whole Brain Toddler"},
+  {t:"I Can Try One Little Bite",a:"B0FJ1QBQ2G",s:"Little Heart, Big Feelings"},
+  {t:"Fingers can do SO MUCH",a:"B0FHW7VG2R",s:"Little Heart, Big Feelings"},
+  {t:"Allah and My Heart: Gentle Feelings Affirmations for Muslim Toddlers",a:"B0FHKHKFSF",s:"Little Heart, Big Feelings"},
+  {t:"Who is My Auntie at My Home?",a:"B0FHFKFP44",s:"Everyday Is Fun"},
+  {t:"Cut and Paste Thinking Skills for Toddlers Ages 3 to 5",a:"B0FHBQVN94",s:"Montessori Brain Builders"},
+  {t:"Teeth can do SO MUCH",a:"B0FHQ7MLK1",s:"Little Heart, Big Feelings"},
+  {t:"REAL ULTIMATE BOOK OF VEHICLES FOR TODDLERS",a:"B0FHW2Z2ZS",s:"Real Ultimate Learning Series",img:"https://m.media-amazon.com/images/I/61TqmSvHz6L._SL1000_.jpg"},
+  {t:"Say Bye to Your Pacifier",a:"B0FHWCMYK7",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61GA42Inu3L._SL1000_.jpg"},
+  {t:"My First Haircut",a:"B0FJ8VZPFS",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61+7Ror32DL._SL1000_.jpg"},
+  {t:"My Body is Getting Ready",a:"B0FJ8Z7JG7",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61hHk0iijRL._SL1000_.jpg"},
+  {t:"My First Day of Preschool",a:"B0FJYL881D",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/71yCqnBGdTL._SL1000_.jpg"},
+  {t:"我的身体准备好了 My Body is Getting Ready (Bilingual)",a:"B0FJYNPDZQ",s:"Bilingual"},
+  {t:"Bilingual Baby Colors / 宝宝的第一本颜色书",a:"B0FJWX8M16",s:"Colors Bilingual Series"},
+  {t:"Colores bilingües para bebés (Español e Inglés)",a:"B0FJYMTW2G",s:"Colors Bilingual Series"},
+  {t:"Can I Watch One More? [Reduce Screentime]",a:"B0FJWNHFSF",s:"Whole Brain Toddler"},
+  {t:"The Day It Clicks - The Power of Yet",a:"B0FKYVPCN8",s:"Little Heart, Big Feelings"},
+  {t:"Why Should I Wear My Hat?",a:"B0FKB78CXN",s:"Whole Brain Toddler"},
+  {t:"Toddler Logic Puzzles Ages 3–5 (Brain Builders Volume 1)",a:"B0FDQ4GVRN",s:"Montessori Brain Builders",img:"https://m.media-amazon.com/images/I/61UBYTAo6cL._SL1000_.jpg"},
+  {t:"Bilingual Baby Colors / Couleurs (French Edition)",a:"B0D6W6ZPCG",s:"Colors Bilingual Series"},
+  {t:"Bilingual Baby Colors / 顏色 (Traditional Chinese Edition)",a:"B0D6RJM58P",s:"Colors Bilingual Series"},
+  {t:"Simplified Meeting Notebook for Work",a:"B0D6YNX1C2",s:"Journals"},
+  {t:"Diwali ABC",a:"B0FMK19TDR",s:"Alphabet ABC Series"},
+  {t:"Start of a New School Year: Lined Journal",a:"B0FM394G86",s:"Journals"},
+  {t:"My First Halloween ABC",a:"B0FM4DTZKZ",s:"Alphabet ABC Series"},
+  {t:"Mid Autumn Festival ABC",a:"B0FMHVRDQX",s:"Alphabet ABC Series"},
+  {t:"Future Minds: Baby AI",a:"B0FNXTHJNM",s:"Future Minds"},
+  {t:"Future Minds: Baby Economics",a:"B0FNS6X7SB",s:"Future Minds"},
+  {t:"My First Plane Ride",a:"B0FQJ63PLJ",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61PV0zX20WL._SL1000_.jpg"},
+  {t:"All My Feelings: A Montessori Book of Emotions for Toddlers",a:"B0FQJCHSZZ",s:"Whole Brain Toddler"},
+  {t:"My First Dentist Appointment",a:"B0FQ3TF8V2",s:"Transitions With Me"},
+  {t:"Future Minds: Baby Leadership",a:"B0FP91SSRZ",s:"Future Minds"},
+  {t:"Future Minds: Baby Law",a:"B0FPF8NN8Q",s:"Future Minds"},
+  {t:"My First Vaccine",a:"B0FPQ97YYH",s:"Transitions With Me"},
+  {t:"Little Detective: Who is Eating? (Vol. 1)",a:"B0FRXQS994",s:"Little Detective"},
+  {t:"Christmas ABC",a:"B0FRSXLYSM",s:"Alphabet ABC Series"},
+  {t:"Future Minds: Baby Philosophy",a:"B0FSZKBGLQ",s:"Future Minds"},
+  {t:"Little Detective: Who is Eating? (Vol. 2)",a:"B0FSCX535M",s:"Little Detective"},
+  {t:"What is Christmas?",a:"B0FSD98DJQ",s:"Little Traditions, Big Meanings"},
+  {t:"Who is Pooing?",a:"B0FSKFGW1C",s:"Little Detective"},
+  {t:"What is Halloween?",a:"B0FSLVP4K3",s:"Little Traditions, Big Meanings"},
+  {t:"Who is Sleeping?",a:"B0FSSZKSBB",s:"Little Detective"},
+  {t:"Who is Crying?",a:"B0FSX974Q1",s:"Little Detective"},
+  {t:"Deepavali ABC",a:"B0FT2YZZW4",s:"Alphabet ABC Series"},
+  {t:"Swimming is Fun!",a:"B0FTS69JLN",s:"Everyday Is Fun"},
+  {t:"Real Colors, Real Things (Traditional Chinese & English)",a:"B0FWR79RV3",s:"Colors Bilingual Series"},
+  {t:"Real Colors, Real Things (English)",a:"B0FWR7DV3B",s:"Colors Bilingual Series"},
+  {t:"Lunar New Year ABC",a:"B0FWK5RX97",s:"Little Traditions, Big Meanings"},
+  {t:"Leave No Trace for Kids",a:"B0FWY8SRZ6",s:"Growing Minds Collection"},
+  {t:"Real Music Instruments for Early Learning",a:"B0FWYMF29S",s:"Real Ultimate Learning Series"},
+  {t:"Bilingual Baby Colors / いろ (Japanese Edition)",a:"B0FWC2XT2R",s:"Colors Bilingual Series"},
+  {t:"Halloween Look and Find for Toddlers",a:"B0FXLSCFSP",s:"Little Detective"},
+  {t:"Winter Look and Find for Toddlers",a:"B0FXLR42W2",s:"Little Detective"},
+  {t:"Spring Look and Find for Toddlers",a:"B0FXX2L1HV",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61V4VLOMq8L._SL1000_.jpg"},
+  {t:"Who is Saying Bye to the Pacifier",a:"B0FY3LMLHW",s:"Little Detective"},
+  {t:"Real Ultimate Book of Trucks",a:"B0G3XDV714",s:"Real Ultimate Learning Series"},
+  {t:"What is Homeschooling?",a:"B0G3VNLXRW",s:"Everyday Is Fun"},
+  {t:"My Turn, Your Turn",a:"B0G3XRVV3M",s:"Transitions With Me"},
+  {t:"Sleep in My Own Bed",a:"B0G3DZDDFF",s:"Transitions With Me",img:"https://m.media-amazon.com/images/I/61Vw2HjUf0L._SL1000_.jpg"},
+  {t:"Who is Getting Ready for Christmas",a:"B0G37JXQH4",s:"Little Detective"},
+  {t:"Who is Santa Claus?",a:"B0G37FKS9B",s:"Little Traditions, Big Meanings"},
+  {t:"A New Baby in Our Home",a:"B0G47DK64S",s:"Little Heart, Big Feelings"},
+  {t:"I Love You to the Stars and Beyond",a:"B0G492VGX2",s:"Little Heart, Big Feelings"},
+  {t:"What are Twins?",a:"B0G4G5784Z",s:"Little Heart, Big Feelings"},
+  {t:"When My Feelings Feel Big",a:"B0G4HBMNYW",s:"Little Heart, Big Feelings"},
+  {t:"REAL ULTIMATE BOOK OF WORLD CAPITALS",a:"B0G4QG4RW4",s:"Real Ultimate Learning Series"},
+  {t:"I Can Be Kind",a:"B0G4S831R4",s:"Little Heart, Big Feelings"},
+  {t:"Before I Hit",a:"B0G4TLR6DF",s:"Little Heart, Big Feelings"},
+  {t:"Why Do Parents Go To Work",a:"B0G51JPHYZ",s:"Transitions With Me"},
+  {t:"I Want a Pet",a:"B0G58NJNZT",s:"Transitions With Me"},
+  {t:"The Real Ultimate Book of Weather",a:"B0G574PT6Y",s:"Real Ultimate Learning Series"},
+  {t:"Why We Say Sorry",a:"B0G5GJ36PZ",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/611f-35uuOL._SL1000_.jpg"},
+  {t:"Camping de A à Z (French/English)",a:"B0G6FGF6Z4",s:"Alphabet ABC Series",img:"https://m.media-amazon.com/images/I/71-cXz8JxEL._SL1000_.jpg"},
+  {t:"Opposites for Toddlers",a:"B0G6DRJ3FK",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61rzIzLBuuL._SL1000_.jpg"},
+  {t:"I Can Feel Brave in the Dark",a:"B0G63T5N1C",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61ogd96hvzL._SL1000_.jpg"},
+  {t:"My Body Belongs to Me",a:"B0G63PKWW6",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61QqxT0dGaL._SL1000_.jpg"},
+  {t:"Alice in Christmasland",a:"B0G6TF6NJ3",s:"Fiction",img:"https://m.media-amazon.com/images/I/613e7Fh0SdL._SL1000_.jpg"},
+  {t:"I See Colors in My Own Way",a:"B0G78XP32Y",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61jCx790JjL._SL1000_.jpg"},
+  {t:"Why Some Bodies Look Different",a:"B0G7TJM2ZB",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61Bx0i6+ONL._SL1000_.jpg"},
+  {t:"Why I was Born with a Birthmark",a:"B0G8JK58YG",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61cRDis1h7L._SL1000_.jpg"},
+  {t:"Why My Brain Worries",a:"B0G8K54NKZ",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/61t-HTkfSXL._SL1000_.jpg"},
+  {t:"REAL ULTIMATE BOOK OF VEHICLES 2",a:"B0G9K6ZX9B",s:"Real Ultimate Learning Series",img:"https://m.media-amazon.com/images/I/61jHwE4QzDL._SL1000_.jpg"},
+  {t:"Why Someone I Love Died",a:"B0GCG8FWZC",s:"Whole Brain Toddler",img:"https://m.media-amazon.com/images/I/612zKPV11rL._SL1000_.jpg"},
+  {t:"The Girl of Silver Seals",a:"B0GCKSB7LQ",s:"Fiction",img:"https://m.media-amazon.com/images/I/6145JI6uEvL._SL1000_.jpg"},
+  {t:"Lunar New Year Look and Find",a:"B0GFDJRVXB",s:"Little Detective",img:"https://m.media-amazon.com/images/I/61awC--Bv5L._SL1000_.jpg"},
+  {t:"Hello, 2026!",a:"B0GFFF7YR1",s:"Montessori Brain Builders"},
+  {t:"The Story of the Chinese Zodiac",a:"B0GFFWSCPF",s:"Little Traditions, Big Meanings",img:"https://m.media-amazon.com/images/I/61HLOIFdNkL._SL1000_.jpg"},
+  {t:"Happy Birthday to You!",a:"B0GFS7JTMK",s:"Everyday Is Fun"},
+  {t:"Rock Climbing is Fun",a:"B0GFXBVRL5",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/6128115UmOL._SL1000_.jpg"},
+  {t:"Camping is Fun",a:"B0GGBY2LSY",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/61eXxLlIQvL._SL1000_.jpg"},
+  {t:"When My Brain Feels Too Busy",a:"B0GG4SSPMR",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61+20-qngKL._SL1000_.jpg"},
+  {t:"My First Cruise",a:"B0GHYMD74Y",s:"Everyday Is Fun",img:"https://m.media-amazon.com/images/I/61YT4SmCCiL._SL1000_.jpg"},
+  {t:"People Who Observe Nature: Charles Darwin",a:"B0GHS28CMB",s:"Famous People Series",img:"https://m.media-amazon.com/images/I/61T6raxgcwL._SL1000_.jpg"},
+  {t:"Mom and Dad, I Love You. I am still Learning to Control My Hands",a:"B0GL2JY4FJ",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61723Z6aYnL._SL1000_.jpg"},
+  {t:"People Who Invent: Alfred Nobel",a:"B0GMPTGHK4",s:"Famous People Series"},
+  {t:"People Who Invent: Nikola Tesla",a:"B0GN18F3DF",s:"Famous People Series",img:"https://m.media-amazon.com/images/I/618Xs0RsQPL._SL1000_.jpg"},
+  {t:"People who Notice and Draw: Leonardo da Vinci",a:"B0GSZFKSPF",s:"Famous People Series"},
+  {t:"Gentle Voice for Toddlers",a:"B0GWJSVH5D",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61s9IMFBP6L._SL1000_.jpg"},
+  {t:"What is War?",a:"B0GXL8LX82",s:"Understanding The World",img:"https://m.media-amazon.com/images/I/61T85Mgw4eL._SL1000_.jpg"},
+  {t:"How to Say Thank You Around the World",a:"B0G2R6G7GW",s:"Little Traditions, Big Meanings"},
+  {t:"Gentle Hands for Toddlers",a:"B0G26KPF2Q",s:"Little Heart, Big Feelings",img:"https://m.media-amazon.com/images/I/61kHFN7mLbL._SL1000_.jpg"},
+  {t:"Real Ultimate Book of Dinosaurs",a:"B0G2S1LX6N",s:"Real Ultimate Learning Series"},
+  {t:"Gentle Christmas Manners",a:"B0G2Y6Q1JT",s:"Everyday Is Fun"},
+  {t:"When I Feel Sad",a:"B0G2Y7JXFS",s:"Little Heart, Big Feelings"},
+  {t:"Who is Using the Potty?",a:"B0G1N8R1HL",s:"Little Detective"},
+  {t:"THANKSGIVING BRAIN BUILDERS",a:"B0G1HGSPYT",s:"Montessori Brain Builders"},
+  {t:"Who is Brushing Teeth",a:"B0G14CM9J2",s:"Little Detective"},
+];
+
+const SERIES_ORDER=["Little Heart, Big Feelings","Whole Brain Toddler","Transitions With Me","Little Detective","Real Ultimate Learning Series","Alphabet ABC Series","Little Traditions, Big Meanings","Future Minds","Colors Bilingual Series","Bilingual","Montessori Brain Builders","Everyday Is Fun","Famous People Series","Growing Minds Collection","Fiction","Inner Child Series","Understanding The World","Journals"];
+
+// ── BANNER ────────────────────────────────────────────────────────────────
+const BANNERS = [
+  {id:1,eye:"BoonHouse Publishing",title:"Gentle books for little minds growing big",ctaText:"Explore Collection",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#f6efe5,#e7dac8)",newTab:false,fit:"contain",pos:"center center",split:"38%"},
+  {id:2,eye:"Montessori Aligned",title:"Real photos, calm language, growing confidence",ctaText:"View Bestsellers",ctaHref:"#bestsellers",bg:"linear-gradient(135deg,#edf2e8,#dce7d8)",newTab:false,fit:"contain",pos:"center center",split:"40%"},
+  {id:3,eye:"Little Heart, Big Feelings",title:"Helping toddlers name what they feel",ctaText:"Shop on Amazon",ctaHref:"https://www.amazon.com/stores/BoonHouse-Publishing/author/B0FB89CS8B",bg:"linear-gradient(135deg,#efe8eb,#e5d8de)",newTab:true,fit:"contain",pos:"center center",split:"37%"},
+  {id:4,eye:"Bilingual & Inclusive",title:"Every child deserves to see themselves on the page",ctaText:"Browse All Series",ctaHref:"#catalogue",bg:"linear-gradient(135deg,#e9efe9,#d9e4dc)",newTab:false,fit:"contain",pos:"center center",split:"39%"}
+];
+
+function bannerImage(id,fit="contain",pos="center center"){
+  const baseRaw=`https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/banner${id}`;
+  const baseCdn=`https://cdn.jsdelivr.net/gh/earlyed/boonhousepublishing@main/images/banner${id}`;
+  const srcs=[
+    `${baseRaw}.jpg`,
+    `${baseCdn}.jpg`,
+    `${baseRaw}.jpeg`,
+    `${baseCdn}.jpeg`,
+    `${baseRaw}.png`,
+    `${baseCdn}.png`,
+    `${baseRaw}.webp`,
+    `${baseCdn}.webp`
+  ];
+  const srcList=srcs.join('|');
+  return `<img class="banner-bg" style="--banner-fit:${fit};--banner-pos:${pos};" src="${srcs[0]}" data-srcs="${srcList}" data-i="0" alt="" loading="eager" decoding="async" onerror="const a=this.dataset.srcs.split('|');let i=+this.dataset.i+1;if(i<a.length){this.dataset.i=String(i);this.src=a[i];}else{this.style.display='none';}">`;
+}
+
+(function(){
+  const track=document.getElementById('bannerTrack');
+  const dotsEl=document.getElementById('bannerDots');
+  const hero=document.querySelector('.banner-hero');
+  const copy=document.getElementById('bannerCopy');
+  const eyeEl=document.getElementById('bannerEye');
+  const titleEl=document.getElementById('bannerTitle');
+  const ctaEl=document.getElementById('bannerCta');
+  track.innerHTML=BANNERS.map(b=>`<div class="banner-slide" style="background:${b.bg}">
+    ${bannerImage(b.id,b.fit,b.pos)}
+  </div>`).join('');
+  const slides=track.querySelectorAll('.banner-slide');
+  if(!slides.length)return;
+  let cur=0;
+  let timer=null;
+  function setCopy(i){
+    const b=BANNERS[i];
+    copy.classList.add('is-fading');
+    setTimeout(()=>{
+      hero.style.setProperty('--hero-bg',b.bg||'linear-gradient(135deg,#f6f2ec,#ebe4d8)');
+      hero.style.setProperty('--split-left',b.split||'40%');
+      eyeEl.textContent=b.eye;
+      titleEl.textContent=b.title;
+      ctaEl.textContent=b.ctaText;
+      ctaEl.href=b.ctaHref;
+      if(b.newTab){ctaEl.setAttribute('target','_blank');}
+      else{ctaEl.removeAttribute('target');}
+      copy.classList.remove('is-fading');
+    },180);
+  }
+  dotsEl.innerHTML=[...slides].map((_,i)=>`<div class="banner-dot${i===0?' on':''}" data-i="${i}"></div>`).join('');
+  dotsEl.querySelectorAll('.banner-dot').forEach(d=>d.addEventListener('click',()=>go(+d.dataset.i)));
+  function go(n){
+    cur=n;
+    track.style.transform=`translateX(-${cur*100}%)`;
+    dotsEl.querySelectorAll('.banner-dot').forEach((d,i)=>d.classList.toggle('on',i===cur));
+    setCopy(cur);
+  }
+  document.getElementById('bArrL').addEventListener('click',()=>go((cur-1+slides.length)%slides.length));
+  document.getElementById('bArrR').addEventListener('click',()=>go((cur+1)%slides.length));
+  setCopy(0);
+  timer=setInterval(()=>go((cur+1)%slides.length),6500);
+})();
+
+// ── COVER IMG helper ──────────────────────────────────────────────────────
+function coverImg(book, showPlaceholder = false) {
+  const asin = getAsin(book);
+  const fallback = `https://raw.githubusercontent.com/earlyed/boonhousepublishing/main/images/${asin}.jpg`;
+  const primary = book.img || fallback;
+  const onErr = showPlaceholder
+    ? `if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${fallback}';return;}this.style.display='none';this.nextElementSibling.style.display='flex'`
+    : `if(this.dataset.try!=='1'){this.dataset.try='1';this.src='${fallback}';return;}this.style.display='none'`;
+  return `<img src="${primary}" alt="${book.t}" loading="lazy" decoding="async" onerror="${onErr}">`;
+}
+
+function titleKey(t){
+  return (t||'').toLowerCase().replace(/[^a-z0-9\u00C0-\u024F\u4E00-\u9FFF]+/g,'');
+}
+const ASIN_BY_TITLE = (() => {
+  const map = new Map();
+  [...ALL_BOOKS, ...BESTSELLERS, ...RISING].forEach(b => {
+    const k = titleKey(b.t);
+    if (k && b.a && !map.has(k)) map.set(k, b.a);
+  });
+  return map;
+})();
+function getAsin(book){
+  return ASIN_BY_TITLE.get(titleKey(book.t)) || book.a;
+}
+
+// ── THREE-COL TRIO ────────────────────────────────────────────────────────
+(function(){
+  const g=document.getElementById('trioGrid');
+  g.innerHTML=BESTSELLERS.slice(0,3).map(b=>{
+    const url=`https://www.amazon.com/dp/${getAsin(b)}`;
+    const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
+    return `<div class="trio-item" onclick="window.open('${url}','_blank')">
+      <div class="trio-img">
+        ${coverImg(b)}
+      </div>
+      <div class="trio-info">
+        <div class="trio-series">${b.s}</div>
+        <div class="trio-title">${b.t}</div>
+        <a href="${url}" target="_blank" class="trio-buy" onclick="event.stopPropagation()">Buy on Amazon</a>
+      </div>
+    </div>`;
+  }).join('');
+})();
+
+// ── SLIDESHOW ─────────────────────────────────────────────────────────────
+function buildSW(books, trackId, dotsId, arrLId, arrRId) {
+  const track=document.getElementById(trackId);
+  const dotsEl=document.getElementById(dotsId);
+  let idx=0;
+  function vc(){return window.innerWidth<600?1:window.innerWidth<900?2:3}
+  track.innerHTML=books.map(b=>{
+    const url=`https://www.amazon.com/dp/${getAsin(b)}`;
+    const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
+    return `<div class="sw-slide" onclick="window.open('${url}','_blank')">
+      <div class="sw-cover">
+        ${coverImg(b,true)}
+        <div class="sw-ph" style="display:none">${L}</div>
+      </div>
+      <div class="sw-series">${b.s}</div>
+      <div class="sw-title">${b.t}</div>
+      <a href="${url}" target="_blank" class="sw-buy" onclick="event.stopPropagation()">Buy on Amazon →</a>
+    </div>`;
+  }).join('');
+  function pages(){return Math.ceil(books.length/vc())}
+  function mkDots(){dotsEl.innerHTML=Array.from({length:pages()},(_,i)=>`<div class="dot${i===0?' on':''}" data-i="${i}"></div>`).join('');dotsEl.querySelectorAll('.dot').forEach(d=>d.addEventListener('click',()=>go(+d.dataset.i)));}
+  function go(n){
+    const v=vc(),max=books.length-v;
+    idx=Math.max(0,Math.min(n*v,max));
+    const w=track.querySelector('.sw-slide').offsetWidth+24;
+    track.style.transform=`translateX(-${idx*w}px)`;
+    dotsEl.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===n));
+  }
+  document.getElementById(arrLId).addEventListener('click',()=>go(Math.max(0,Math.floor(idx/vc())-1)));
+  document.getElementById(arrRId).addEventListener('click',()=>go(Math.min(pages()-1,Math.floor(idx/vc())+1)));
+  mkDots();
+  window.addEventListener('resize',()=>{idx=0;track.style.transform='';mkDots();});
+}
+buildSW(BESTSELLERS,'bsTrack','bsDots','bsArrL','bsArrR');
+buildSW(RISING,'riTrack','riDots','riArrL','riArrR');
+
+// ── CATALOGUE ACCORDIONS ──────────────────────────────────────────────────
+function buildCat(q){
+  q=(q||'').toLowerCase().trim();
+  const container=document.getElementById('accContainer');
+  const grouped={};
+  ALL_BOOKS.forEach((b,i)=>{
+    if(q&&!b.t.toLowerCase().includes(q)&&!b.s.toLowerCase().includes(q))return;
+    if(!grouped[b.s])grouped[b.s]=[];
+    grouped[b.s].push({b,i});
+  });
+  const ordered=[...SERIES_ORDER.filter(s=>grouped[s]),...Object.keys(grouped).filter(s=>!SERIES_ORDER.includes(s))];
+  if(!ordered.length){container.innerHTML='<p style="color:var(--soft);font-size:.85rem;padding:2rem 0">No titles found.</p>';return;}
+  container.innerHTML=ordered.map(series=>{
+    const items=grouped[series];
+    return `<div class="acc">
+      <div class="acc-hd" onclick="this.parentElement.classList.toggle('open')">
+        <span class="acc-sname">${series}</span>
+        <span class="acc-meta"><span class="acc-cnt">${items.length} title${items.length!==1?'s':''}</span><span class="acc-chev">▾</span></span>
+      </div>
+      <div class="acc-body"><div class="mini-grid">${items.map(({b})=>{
+        const url=`https://www.amazon.com/dp/${getAsin(b)}`;
+        const L=(b.t.replace(/[^a-zA-Z]/g,'')||'B').charAt(0).toUpperCase();
+        return `<div class="mini-card" onclick="window.open('${url}','_blank')">
+          <div class="mini-cov">
+            ${coverImg(b,true)}
+            <div class="mini-cov-ph" style="display:none">${L}</div>
+          </div>
+          <div class="mini-t">${b.t}</div>
+          <a href="${url}" target="_blank" class="mini-buy" onclick="event.stopPropagation()">Buy →</a>
+        </div>`;
+      }).join('')}</div></div>
+    </div>`;
+  }).join('');
+}
+document.getElementById('catSearch').addEventListener('input',e=>{
+  buildCat(e.target.value);
+  if(e.target.value.trim())document.querySelectorAll('.acc').forEach(a=>a.classList.add('open'));
+});
+buildCat();
+
+document.querySelectorAll('.strip .si').forEach(link=>{
+  link.addEventListener('click',e=>{
+    const series=link.dataset.series||'';
+    const search=document.getElementById('catSearch');
+    if(search){
+      search.value=series;
+      buildCat(series);
+      document.querySelectorAll('.acc').forEach(a=>a.classList.add('open'));
+    }
+  });
+});
+
+document.getElementById('catReset').addEventListener('click',()=>{
+  const search=document.getElementById('catSearch');
+  if(search){
+    search.value='';
+    buildCat('');
+  }
+  document.querySelectorAll('.acc').forEach(a=>a.classList.remove('open'));
+});
 </script>
 </body>
 </html>
