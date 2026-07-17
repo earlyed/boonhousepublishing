@@ -8,9 +8,6 @@
 - [Homepage](https://earlyed.github.io/boonhousepublishing/index.html): full catalog, series, and bestsellers.
 - [Blog](https://earlyed.github.io/boonhousepublishing/blog/index.html): long-form articles answering real parent search queries.
 
-## Blog Posts
-- [Toddler Bites When Angry: What To Do](https://earlyed.github.io/boonhousepublishing/blog/test-pipeline-check.html): A calm, specific plan for what to do when your toddler bites when angry, with real scripts and no shame for either of you today.
-
 ## Catalog Summary
 - 147 titles across two streams: Montessori-aligned children's picture books, and evidence-based parenting/self-help nonfiction.
 - 120 titles currently have a live Amazon listing.
