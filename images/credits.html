@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Credits - BoonHouse Publishing</title>
+<meta name="robots" content="noindex,follow">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<nav class="site-nav"><div class="wrap">
+  <a href="../index.html" class="brand">BoonHouse <em>Publishing</em></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#childrens">Children's Books</a>
+    <a href="../index.html#parenting">Parenting Books</a>
+    <a href="../blog/index.html">Blog</a>
+    <a href="https://www.amazon.com/stores/BoonHouse-Publishing/author/B0FB89CS8B" target="_blank" rel="noopener" class="nav-buy">Shop Amazon</a>
+  </div>
+</div></nav>
+<div class="back-row"><a class="back-link" href="../capable-child.html">Back to The Capable Child</a></div>
+<div class="wrap" style="padding-top:.5rem;padding-bottom:3rem">
+  <span class="eyebrow">Attribution</span>
+  <h1 style="font-size:2rem;margin:.4rem 0 .8rem">Image Credits</h1>
+  <p style="color:var(--mid);max-width:70ch;line-height:1.6;margin-bottom:1.5rem">Every photograph used on this site that was not produced by BoonHouse Publishing (book covers, banners) is sourced from Wikimedia Commons and is listed below with its source page, photographer, and license. Only images explicitly marked public domain, CC0, or Creative Commons licensed on Commons are used.</p>
+  <hr class="hr-thick">
+  <div id="creditsList"></div>
+</div>
+<footer class="site-footer"><div class="wrap">
+  <a href="../index.html" class="ft-logo">BoonHouse Publishing</a>
+  <div class="ft-bottom"><span>&copy; 2026 BoonHouse Publishing.</span><a href="../index.html">Home</a></div>
+</div></footer>
+<script>
+fetch('credits_data.json').then(r=>r.json()).then(items=>{
+  const el = document.getElementById('creditsList');
+  el.innerHTML = items.map(it => `
+    <div style="padding:1.2rem 0;border-bottom:1px solid var(--rule)">
+      <div style="display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap">
+        <img src="${it.file.replace('images/','')}" alt="" style="width:140px;height:auto;border:1px solid var(--rule);flex-shrink:0">
+        <div>
+          <div style="font-size:.82rem;color:var(--mid);margin-bottom:.3rem">${it.caption || ''}</div>
+          <div style="font-size:.75rem;color:var(--soft)">Used on: <strong>The Capable Child</strong></div>
+          <div style="font-size:.75rem;color:var(--soft)">Photographer / uploader: ${it.artist}</div>
+          <div style="font-size:.75rem;color:var(--soft)">License: <a href="${it.license_url}" target="_blank" rel="noopener" style="color:var(--accent)">${it.license}</a></div>
+          <div style="font-size:.75rem;color:var(--soft)">Source: <a href="${it.page_url}" target="_blank" rel="noopener" style="color:var(--accent)">Wikimedia Commons file page</a></div>
+        </div>
+      </div>
+    </div>`).join('');
+}).catch(()=>{document.getElementById('creditsList').innerHTML = '<p style="color:var(--soft)">Credit data unavailable.</p>';});
+</script>
+</body>
+</html>
