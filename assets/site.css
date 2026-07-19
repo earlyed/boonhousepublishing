@@ -92,7 +92,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.15;color:var(
 /* ---------- DENSE CARD GRID ---------- */
 .grid-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem 1rem}
 .card{text-decoration:none;color:inherit;display:flex;flex-direction:column}
-.card-cover{width:100%;aspect-ratio:2/3;background:var(--panel);border:1px solid var(--rule);overflow:hidden;position:relative}
+.card-cover{width:100%;aspect-ratio:1/1;background:var(--panel);border:1px solid var(--rule);overflow:hidden;position:relative}
 .card-cover img{width:100%;height:100%;object-fit:cover}
 .card-cover-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:.6rem;font-family:var(--serif);font-weight:700;font-size:.85rem;color:var(--soft);background:var(--panel)}
 .card-title{font-family:var(--serif);font-weight:700;font-size:.86rem;line-height:1.25;margin-top:.55rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
