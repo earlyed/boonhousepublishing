@@ -6,7 +6,7 @@
 <title>BoonHouse Publishing - Gentle Books for Growing Minds</title>
 <meta name="description" content="BoonHouse Publishing creates calm, Montessori-aligned children's books for toddlers, and evidence-based parenting books including The Capable Child and The Calm Parent.">
 <link rel="canonical" href="https://earlyed.github.io/boonhousepublishing/index.html">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"BoonHouse Publishing","url":"https://boonhousepublishing.com","sameAs":["https://www.amazon.com/dp/B0H6PFVMLB"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"BoonHouse Publishing","url":"https://boonhousepublishing.com","sameAs":["https://www.amazon.com/dp/B0H6QZMLSQ"]}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,6 +56,12 @@
 
   <!-- LEAD -->
   <div class="lead-grid" id="leadGrid"></div>
+
+  <!-- FROM THE JOURNAL -->
+  <div class="shelf" id="journalShelf">
+    <div class="section-head" style="margin-top:0"><h2 style="font-size:1.1rem">From the Journal</h2><span class="section-sub"><a href="blog/index.html" style="color:inherit;text-decoration:underline">Read the blog &rarr;</a></span></div>
+    <div class="journal-grid" id="journalGrid"></div>
+  </div>
 
   <!-- CHILDREN'S CATALOG -->
   <div id="childrens">
@@ -210,11 +216,31 @@ function buyUrl(book){
   return book.asin ? `https://www.amazon.com/dp/${book.asin}` : AUTHOR_STORE;
 }
 
+// Owner directive (2026-07-26): marketing effort should focus mainly on the core
+// Montessori narrative story-book series. These stay fully listed in the catalogue grid
+// and category tabs below (never removed), but are excluded from algorithmic homepage
+// promotion (seasonal shelf, lead/featured pick) - blank/planner journal products, and
+// the standalone bilingual/dual-language word-learning series (Bilingual Baby Colors in
+// every language edition, Camping de A a Z bilingual, Real Colors bilingual, ABCs for
+// Foodies bilingual). Mirrors modules/catalog_reader.py's is_deprioritized_children_book.
+// Narrative story books that merely ship a bilingual re-release (e.g. the Chinese
+// editions of "Why Do We Celebrate Thanksgiving?" or "My First Day of Preschool") are
+// real story books and are NOT matched here.
+function isDeprioritized(book){
+  const t = (book.title||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");
+  const s = (book.series||"").toLowerCase();
+  if (t.includes("lined journal") || t.includes("daily dose")) return true;
+  if (s.includes("bilingual montessori series")) return true;
+  if (t.includes("abcs for foodies") && t.includes("bilingual")) return true;
+  if (t.includes("camping de a a z")) return true;
+  return false;
+}
+
 let CATALOG = [];
 let activeTab = "All";
 
 function renderShelf(){
-  const seasonal = CATALOG.filter(b=>categoriesFor(b).includes("Seasonal")).slice(0,14);
+  const seasonal = CATALOG.filter(b=>!isDeprioritized(b) && categoriesFor(b).includes("Seasonal")).slice(0,14);
   document.getElementById("shelfTrack").innerHTML = seasonal.map(b=>`
     <a class="shelf-card" href="${buyUrl(b)}" target="_blank" rel="noopener">
       <div class="shelf-cover">${coverTag(b)}</div>
@@ -223,7 +249,7 @@ function renderShelf(){
 }
 
 function renderLead(){
-  const withCover = CATALOG.filter(b=>b.asin);
+  const withCover = CATALOG.filter(b=>b.asin && !isDeprioritized(b));
   const lead = withCover[0];
   const rest = withCover.slice(1,6);
   if (!lead) return;
@@ -282,6 +308,45 @@ fetch("assets/catalog.json").then(r=>r.json()).then(data=>{
   renderGrid();
 }).catch(()=>{
   document.getElementById("catalogGrid").innerHTML = '<p class="cat-empty">Catalogue temporarily unavailable. Visit our <a href="'+AUTHOR_STORE+'" target="_blank" rel="noopener">Amazon store</a> to browse all titles.</p>';
+});
+
+// FROM THE JOURNAL - reuses blog/index.html's own post markup (title, date, one-line
+// deck, link) as the single source of truth, rather than hand-maintaining a duplicate
+// list here. blog/index.html always renders newest-first: the single ".blog-lead" is
+// the latest post, followed by all older posts as ".blog-row" - so lead + first two
+// rows are exactly the 3 most recent.
+fetch("blog/index.html").then(r=>r.text()).then(html=>{
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  const items = [];
+  const lead = doc.querySelector(".blog-lead");
+  if (lead){
+    const eyebrow = lead.querySelector(".eyebrow");
+    const dateText = eyebrow ? eyebrow.textContent.split("·").pop().trim() : "";
+    items.push({
+      href: "blog/" + lead.getAttribute("href"),
+      date: dateText,
+      title: (lead.querySelector("h2")||{}).textContent || "",
+      deck: (lead.querySelector("p")||{}).textContent || "",
+    });
+  }
+  doc.querySelectorAll(".blog-row").forEach(row=>{
+    if (items.length >= 3) return;
+    items.push({
+      href: "blog/" + row.getAttribute("href"),
+      date: (row.querySelector(".blog-date")||{}).textContent || "",
+      title: (row.querySelector(".blog-row-title")||{}).textContent || "",
+      deck: (row.querySelector(".blog-row-deck")||{}).textContent || "",
+    });
+  });
+  if (!items.length){ document.getElementById("journalShelf").style.display = "none"; return; }
+  document.getElementById("journalGrid").innerHTML = items.map(p=>`
+    <a class="journal-card" href="${p.href}">
+      <span class="journal-date">${p.date}</span>
+      <div class="journal-title">${p.title}</div>
+      <p class="journal-deck">${p.deck}</p>
+    </a>`).join("");
+}).catch(()=>{
+  document.getElementById("journalShelf").style.display = "none";
 });
 </script>
 </body>
