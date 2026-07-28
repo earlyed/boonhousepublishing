@@ -239,9 +239,82 @@ function isDeprioritized(book){
 let CATALOG = [];
 let activeTab = "All";
 
+// Owner directive (2026-07-28): the seasonal shelf was showing whatever "Seasonal"-tagged
+// book happened to sit first in the catalog array (e.g. Christmas ABC / Deepavali ABC in
+// mid-summer) with no awareness of the real calendar date. MONTH_SEASON_TOPICS maps each
+// real-world month (new Date().getMonth(), 0=Jan...11=Dec) to the topic tags that are
+// actually "in season" that month. Windows are deliberately generous (a few weeks either
+// side of the real holiday) since exact dates (Lunar New Year, Diwali) move year to year -
+// see modules/catalog_reader.py's TOPIC_KEYWORDS for the underlying topic tags.
+const MONTH_SEASON_TOPICS = [
+  ["christmas","lunar_new_year","winter"],        // Jan
+  ["lunar_new_year","winter"],                     // Feb
+  ["spring"],                                      // Mar
+  ["spring"],                                      // Apr
+  ["spring"],                                      // May
+  ["summer"],                                      // Jun
+  ["summer"],                                      // Jul
+  ["summer"],                                       // Aug
+  ["mid_autumn","autumn"],                          // Sep
+  ["halloween","thanksgiving","diwali","autumn"],  // Oct
+  ["thanksgiving","diwali","autumn"],               // Nov
+  ["christmas","lunar_new_year","winter"]           // Dec
+];
+// Broader "evergreen seasonal" fallback set - any seasonal-flavoured topic, regardless of
+// the current month. Only used to top up the shelf when the current month's real matches
+// are too few to fill it (owner directive: never show a near-empty shelf).
+const EVERGREEN_SEASONAL_TOPICS = ["christmas","halloween","lunar_new_year","diwali","thanksgiving","mid_autumn","summer","spring","winter","autumn"];
+const SEASONAL_SHELF_SIZE = 14;
+const MIN_REAL_SEASONAL_MATCHES = 6;
+// Owner directive (2026-07-28): this shelf must always be a MIX of season fit and real
+// best-sellers, never all-seasonal (that's what let Christmas ABC/Deepavali ABC dominate
+// in July with no bestsellers in sight) and never all-bestsellers. Season-matched books
+// (real month, or the broader evergreen set if the real month is thin) get first claim on
+// up to this many slots; whatever's left is filled by top overall sellers.
+const SEASON_SLOT_CAP = 8;
+
+function shelfKey(b){ return b.asin || b.title; }
+
 function renderShelf(){
-  const seasonal = CATALOG.filter(b=>!isDeprioritized(b) && categoriesFor(b).includes("Seasonal")).slice(0,14);
-  document.getElementById("shelfTrack").innerHTML = seasonal.map(b=>`
+  const eligible = CATALOG.filter(b=>!isDeprioritized(b));
+
+  const currentTopics = MONTH_SEASON_TOPICS[new Date().getMonth()];
+  const inSeasonNow = eligible.filter(b=>(b.topics||[]).some(t=>currentTopics.includes(t)));
+
+  // If the current month's real matches are thin, top up with the broader evergreen
+  // seasonal set (still seasonal-flavoured, just not necessarily this month) rather than
+  // showing only 1-2 seasonal cards - current-month matches always come first either way.
+  // This pool is still capped at SEASON_SLOT_CAP below, so a thin/off month can't crowd
+  // out the best-seller slots the way the old uncapped fallback did.
+  let seasonalPool = inSeasonNow;
+  if (inSeasonNow.length < MIN_REAL_SEASONAL_MATCHES) {
+    const already = new Set(inSeasonNow.map(shelfKey));
+    const evergreen = eligible.filter(b=>!already.has(shelfKey(b)) && (b.topics||[]).some(t=>EVERGREEN_SEASONAL_TOPICS.includes(t)));
+    seasonalPool = inSeasonNow.concat(evergreen);
+  }
+
+  // Owner directive (2026-07-28): mix real best-sellers into the shelf too, not just
+  // seasonal fit. units_sold/sales_rank are joined into assets/catalog.json from
+  // royalty_intelligence.json (modules/site_catalog.py: build_sales_rank_map). Season
+  // matches fill up to SEASON_SLOT_CAP slots, top overall sellers fill the rest.
+  const bySales = eligible.slice().sort((a,b)=>(b.units_sold||0)-(a.units_sold||0));
+
+  const chosen = [];
+  const chosenKeys = new Set();
+  for (const b of seasonalPool) {
+    if (chosen.length >= SEASON_SLOT_CAP) break;
+    const k = shelfKey(b);
+    if (chosenKeys.has(k)) continue;
+    chosenKeys.add(k); chosen.push(b);
+  }
+  for (const b of bySales) {
+    if (chosen.length >= SEASONAL_SHELF_SIZE) break;
+    const k = shelfKey(b);
+    if (chosenKeys.has(k)) continue;
+    chosenKeys.add(k); chosen.push(b);
+  }
+
+  document.getElementById("shelfTrack").innerHTML = chosen.map(b=>`
     <a class="shelf-card" href="${buyUrl(b)}" target="_blank" rel="noopener">
       <div class="shelf-cover">${coverTag(b)}</div>
       <div class="shelf-name">${b.title}</div>
