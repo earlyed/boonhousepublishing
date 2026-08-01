@@ -22,9 +22,14 @@
 <div class="wrap" style="padding-top:.5rem;padding-bottom:3rem">
   <span class="eyebrow">Attribution</span>
   <h1 style="font-size:2rem;margin:.4rem 0 .8rem">Image Credits</h1>
-  <p style="color:var(--mid);max-width:70ch;line-height:1.6;margin-bottom:1.5rem">Every photograph used on this site that was not produced by BoonHouse Publishing (book covers, banners) is sourced from Wikimedia Commons and is listed below with its source page, photographer, and license. Only images explicitly marked public domain, CC0, or Creative Commons licensed on Commons are used.</p>
+  <p style="color:var(--mid);max-width:70ch;line-height:1.6;margin-bottom:1.5rem">Every photograph used on this site or in BoonHouse Publishing's social carousels that was not produced by BoonHouse Publishing (book covers, banners) is sourced from Wikimedia Commons or Pexels and is listed below with its source page, photographer, and license. Only images explicitly marked public domain, CC0, Creative Commons licensed on Commons, or covered by the Pexels License are used.</p>
   <hr class="hr-thick">
   <div id="creditsList"></div>
+  <div id="pexelsSection" style="display:none">
+    <h2 style="font-size:1.3rem;margin:2rem 0 .6rem">Photography (Pexels)</h2>
+    <p style="color:var(--mid);max-width:70ch;line-height:1.6;margin-bottom:1rem">Candid real photographs used as cover-image accents on Pinterest/Instagram carousels, sourced fresh from Pexels (free for commercial use under the Pexels License, no attribution required - credited here anyway as good practice).</p>
+    <div id="pexelsList"></div>
+  </div>
 </div>
 <footer class="site-footer"><div class="wrap">
   <a href="../index.html" class="ft-logo">BoonHouse Publishing</a>
@@ -32,20 +37,30 @@
 </div></footer>
 <script>
 fetch('credits_data.json').then(r=>r.json()).then(items=>{
-  const el = document.getElementById('creditsList');
-  el.innerHTML = items.map(it => `
+  const wikimedia = items.filter(it => it.source !== 'Pexels');
+  const pexels = items.filter(it => it.source === 'Pexels');
+
+  const renderItem = it => `
     <div style="padding:1.2rem 0;border-bottom:1px solid var(--rule)">
       <div style="display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap">
-        <img src="${it.file.replace('images/','')}" alt="" style="width:140px;height:auto;border:1px solid var(--rule);flex-shrink:0">
+        <img src="${it.image_url || it.file.replace('images/','')}" alt="" style="width:140px;height:auto;border:1px solid var(--rule);flex-shrink:0">
         <div>
           <div style="font-size:.82rem;color:var(--mid);margin-bottom:.3rem">${it.caption || ''}</div>
-          <div style="font-size:.75rem;color:var(--soft)">Used on: <strong>The Capable Child</strong></div>
-          <div style="font-size:.75rem;color:var(--soft)">Photographer / uploader: ${it.artist}</div>
+          <div style="font-size:.75rem;color:var(--soft)">Used on: <strong>${it.used_on || 'The Capable Child'}</strong></div>
+          <div style="font-size:.75rem;color:var(--soft)">Photographer${it.photographer_url ? ` (<a href="${it.photographer_url}" target="_blank" rel="noopener" style="color:var(--accent)">profile</a>)` : ''}: ${it.artist}</div>
           <div style="font-size:.75rem;color:var(--soft)">License: <a href="${it.license_url}" target="_blank" rel="noopener" style="color:var(--accent)">${it.license}</a></div>
-          <div style="font-size:.75rem;color:var(--soft)">Source: <a href="${it.page_url}" target="_blank" rel="noopener" style="color:var(--accent)">Wikimedia Commons file page</a></div>
+          <div style="font-size:.75rem;color:var(--soft)">Source: <a href="${it.page_url}" target="_blank" rel="noopener" style="color:var(--accent)">${it.source === 'Pexels' ? 'Pexels photo page' : 'Wikimedia Commons file page'}</a></div>
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+
+  document.getElementById('creditsList').innerHTML = wikimedia.map(renderItem).join('') ||
+    '<p style="color:var(--soft)">No Wikimedia credits yet.</p>';
+
+  if (pexels.length) {
+    document.getElementById('pexelsSection').style.display = '';
+    document.getElementById('pexelsList').innerHTML = pexels.map(renderItem).join('');
+  }
 }).catch(()=>{document.getElementById('creditsList').innerHTML = '<p style="color:var(--soft)">Credit data unavailable.</p>';});
 </script>
 </body>

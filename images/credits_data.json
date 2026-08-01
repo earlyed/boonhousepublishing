@@ -25,5 +25,27 @@
     "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
     "artist": "Michael Fiegle",
     "caption": "A forest kindergarten: outdoor time as a daily baseline, not an occasional outing."
+  },
+  {
+    "source": "Pexels",
+    "image_url": "https://images.pexels.com/photos/9455857/pexels-photo-9455857.jpeg?auto=compress&cs=tinysrgb&h=350",
+    "page_url": "https://www.pexels.com/photo/grayscale-photo-of-a-boy-9455857/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "artist": "Анастасия Триббиани",
+    "photographer_url": "https://www.pexels.com/@phototribbiani",
+    "used_on": "Pinterest/Instagram carousel cover: Gentle Hands for Toddlers",
+    "caption": "Candid photo used (duotone-treated) as the cover background for the \"Gentle Hands for Toddlers\" carousel, sourced via Pexels search query 'mother comforting upset toddler emotional moment'."
+  },
+  {
+    "source": "Pexels",
+    "image_url": "https://images.pexels.com/photos/7697351/pexels-photo-7697351.jpeg?auto=compress&cs=tinysrgb&h=350",
+    "page_url": "https://www.pexels.com/photo/boy-in-cape-sitting-in-barbers-chair-7697351/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "artist": "RDNE Stock project",
+    "photographer_url": "https://www.pexels.com/@rdne",
+    "used_on": "Pinterest/Instagram carousel cover: My First Haircut",
+    "caption": "Candid photo used (duotone-treated) as the cover background for the \"My First Haircut\" carousel, sourced via Pexels search query 'parent child haircut salon candid'."
   }
 ]
