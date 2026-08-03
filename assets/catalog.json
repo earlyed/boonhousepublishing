@@ -361,6 +361,16 @@
     "sales_rank": null
   },
   {
+    "title": "How Do I Calm My Body?",
+    "series": "Other",
+    "asin": "B0H4L583W4",
+    "topics": [],
+    "cover": false,
+    "slug": "how-do-i-calm-my-body",
+    "units_sold": 0,
+    "sales_rank": null
+  },
+  {
     "title": "How to Say Thank You Around the World: A calm Montessori photo guide to gratitude from every culture | Special Thanksgiving Edition",
     "series": "little traditions, big meanings",
     "asin": "B0G2R6G7GW",
@@ -851,6 +861,19 @@
     "sales_rank": 12
   },
   {
+    "title": "Summer Look and Find",
+    "series": "Other",
+    "asin": "B0H3JJGCHR",
+    "topics": [
+      "summer",
+      "look_and_find"
+    ],
+    "cover": false,
+    "slug": "summer-look-and-find",
+    "units_sold": 0,
+    "sales_rank": null
+  },
+  {
     "title": "Swimming is Fun!: A Montessori gentle guide for first swim lessons, pool rules, and gentle water safety",
     "series": "everyday is fun",
     "asin": "B0FTS69JLN",
@@ -1190,6 +1213,38 @@
     "sales_rank": 59
   },
   {
+    "title": "Why Can't I Have It NOW?",
+    "series": "Other",
+    "asin": "B0H32F8ZF2",
+    "topics": [],
+    "cover": false,
+    "slug": "why-can-t-i-have-it-now",
+    "units_sold": 0,
+    "sales_rank": null
+  },
+  {
+    "title": "Why Do I Keep Saying NO?",
+    "series": "Other",
+    "asin": "B0H6ZC8YHS",
+    "topics": [],
+    "cover": false,
+    "slug": "why-do-i-keep-saying-no",
+    "units_sold": 0,
+    "sales_rank": null
+  },
+  {
+    "title": "Why Do I Whine?",
+    "series": "Other",
+    "asin": "B0H7SR2CBZ",
+    "topics": [
+      "whining"
+    ],
+    "cover": false,
+    "slug": "why-do-i-whine",
+    "units_sold": 0,
+    "sales_rank": null
+  },
+  {
     "title": "Why Do Parents Go To Work: A calm Montessori story about goodbyes, big feelings and coming back",
     "series": "transitions with me",
     "asin": "B0G51JPHYZ",
@@ -1222,6 +1277,36 @@
     "slug": "why-do-we-celebrate-thanksgiving",
     "units_sold": 4.0,
     "sales_rank": 38
+  },
+  {
+    "title": "Why Does My Body Need Food?",
+    "series": "Other",
+    "asin": "B0H6MXF9D4",
+    "topics": [],
+    "cover": false,
+    "slug": "why-does-my-body-need-food",
+    "units_sold": 0,
+    "sales_rank": null
+  },
+  {
+    "title": "Why Does My Body Need Water?",
+    "series": "Other",
+    "asin": "B0H4C4CJ88",
+    "topics": [],
+    "cover": false,
+    "slug": "why-does-my-body-need-water",
+    "units_sold": 0,
+    "sales_rank": null
+  },
+  {
+    "title": "Why Does My Brain Need Sleep?",
+    "series": "Other",
+    "asin": "B0H86K3H88",
+    "topics": [],
+    "cover": false,
+    "slug": "why-does-my-brain-need-sleep",
+    "units_sold": 0,
+    "sales_rank": null
   },
   {
     "title": "Why I was Born with a Birthmark: A calm Montessori story about birthmarks, confidence, and belonging",
@@ -1375,6 +1460,18 @@
     ],
     "cover": true,
     "slug": "my-first-day-of-preschool",
+    "units_sold": 0,
+    "sales_rank": null
+  },
+  {
+    "title": "Why Won't I Brush My Teeth?: A Montessori Book About Toothbrushing Refusal, Big Feelings, and Learning to Care for My Body",
+    "series": "Other",
+    "asin": "B0HB4GVH61",
+    "topics": [
+      "tantrums"
+    ],
+    "cover": false,
+    "slug": "why-won-t-i-brush-my-teeth",
     "units_sold": 0,
     "sales_rank": null
   }
