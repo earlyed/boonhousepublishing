@@ -50,7 +50,7 @@
 
   <!-- SEASONAL SHELF -->
   <div class="shelf" id="seasonalShelf">
-    <div class="section-head" style="margin-top:0"><h2 style="font-size:1.1rem">This Season's Shelf</h2><span class="section-sub">Rotates with the calendar</span></div>
+    <div class="section-head" style="margin-top:0"><h2 style="font-size:1.1rem">This Season's Shelf</h2><span class="section-sub">Reader favourites</span></div>
     <div class="shelf-track" id="shelfTrack"></div>
   </div>
 
@@ -115,6 +115,54 @@
           <p class="parenting-desc">The evidence-based newborn and first year survival guide: sleep, breastfeeding, feeding, and postpartum sanity without the guilt.</p>
         </div>
       </a>
+      <a class="parenting-card" href="books/not-built-for-you.html">
+        <div class="parenting-cover"><div class="book-cover-ph" style="padding:.5rem"><div class="book-cover-ph-inner"><div class="book-cover-ph-title" style="font-size:.65rem">Not Built for You</div><div class="book-cover-ph-sub" style="font-size:.45rem">BoonHouse Publishing</div></div></div></div>
+        <div class="parenting-copy">
+          <span class="eyebrow">BoonHouse Publishing</span>
+          <div class="parenting-name">Not Built for You</div>
+          <p class="parenting-desc">Standard money advice was built for a life that was never yours: this book recalculates your actual numbers and closes the gap it created.</p>
+        </div>
+      </a>
+      <a class="parenting-card" href="books/the-alarm-that-works-too-well.html">
+        <div class="parenting-cover"><div class="book-cover-ph" style="padding:.5rem"><div class="book-cover-ph-inner"><div class="book-cover-ph-title" style="font-size:.65rem">The Alarm That Works Too Well</div><div class="book-cover-ph-sub" style="font-size:.45rem">BoonHouse Publishing</div></div></div></div>
+        <div class="parenting-copy">
+          <span class="eyebrow">BoonHouse Publishing</span>
+          <div class="parenting-name">The Alarm That Works Too Well</div>
+          <p class="parenting-desc">Every symptom you have been fighting is a functioning biological mechanism doing precisely what it evolved to do, under a load it was never calibrated for.</p>
+        </div>
+      </a>
+      <a class="parenting-card" href="books/the-convenience-trap.html">
+        <div class="parenting-cover"><div class="book-cover-ph" style="padding:.5rem"><div class="book-cover-ph-inner"><div class="book-cover-ph-title" style="font-size:.65rem">The Convenience Trap</div><div class="book-cover-ph-sub" style="font-size:.45rem">BoonHouse Publishing</div></div></div></div>
+        <div class="parenting-copy">
+          <span class="eyebrow">BoonHouse Publishing</span>
+          <div class="parenting-name">The Convenience Trap</div>
+          <p class="parenting-desc">Convenient means you fit into a life that already exists. Chosen means someone reorganizes their life to make room for you.</p>
+        </div>
+      </a>
+      <a class="parenting-card" href="books/the-other-side-of-the-bed.html">
+        <div class="parenting-cover"><div class="book-cover-ph" style="padding:.5rem"><div class="book-cover-ph-inner"><div class="book-cover-ph-title" style="font-size:.65rem">The Other Side of the Bed</div><div class="book-cover-ph-sub" style="font-size:.45rem">BoonHouse Publishing</div></div></div></div>
+        <div class="parenting-copy">
+          <span class="eyebrow">BoonHouse Publishing</span>
+          <div class="parenting-name">The Other Side of the Bed</div>
+          <p class="parenting-desc">How to support the woman you love through depression and anxiety, without fixing, failing, or losing yourself.</p>
+        </div>
+      </a>
+      <a class="parenting-card" href="books/the-field-manual.html">
+        <div class="parenting-cover"><div class="book-cover-ph" style="padding:.5rem"><div class="book-cover-ph-inner"><div class="book-cover-ph-title" style="font-size:.65rem">The Field Manual</div><div class="book-cover-ph-sub" style="font-size:.45rem">BoonHouse Publishing</div></div></div></div>
+        <div class="parenting-copy">
+          <span class="eyebrow">BoonHouse Publishing <span class="new-tag">Coming Soon</span></span>
+          <div class="parenting-name">The Field Manual</div>
+          <p class="parenting-desc">A working system for money built for the man who keeps it in the truck: direct, no lecture, treating the reader as a competent operator.</p>
+        </div>
+      </a>
+      <a class="parenting-card" href="books/the-wiring.html">
+        <div class="parenting-cover"><div class="book-cover-ph" style="padding:.5rem"><div class="book-cover-ph-inner"><div class="book-cover-ph-title" style="font-size:.65rem">The Lie, the Wiring, the Protocol</div><div class="book-cover-ph-sub" style="font-size:.45rem">BoonHouse Publishing</div></div></div></div>
+        <div class="parenting-copy">
+          <span class="eyebrow">BoonHouse Publishing <span class="new-tag">Coming Soon</span></span>
+          <div class="parenting-name">The Lie, the Wiring, the Protocol</div>
+          <p class="parenting-desc">Dismantling the sentences men say instead of the truth, with named research and zero therapy language.</p>
+        </div>
+      </a>
     </div>
   </div>
 
@@ -154,6 +202,12 @@
         <li><a href="calm-parent.html">The Calm Parent</a></li>
         <li><a href="books/the-sentence-before-the-silence.html">The Sentence Before the Silence</a></li>
         <li><a href="books/the-book-they-should-have-given-you-at-the-hospital.html">The Book They Should Have Given You at the Hospital</a></li>
+        <li><a href="books/not-built-for-you.html">Not Built for You</a></li>
+        <li><a href="books/the-alarm-that-works-too-well.html">The Alarm That Works Too Well</a></li>
+        <li><a href="books/the-convenience-trap.html">The Convenience Trap</a></li>
+        <li><a href="books/the-other-side-of-the-bed.html">The Other Side of the Bed</a></li>
+        <li><a href="books/the-field-manual.html">The Field Manual</a></li>
+        <li><a href="books/the-wiring.html">The Lie, the Wiring, the Protocol</a></li>
       </ul>
     </div>
   </div>
@@ -239,82 +293,13 @@ function isDeprioritized(book){
 let CATALOG = [];
 let activeTab = "All";
 
-// Owner directive (2026-07-28): the seasonal shelf was showing whatever "Seasonal"-tagged
-// book happened to sit first in the catalog array (e.g. Christmas ABC / Deepavali ABC in
-// mid-summer) with no awareness of the real calendar date. MONTH_SEASON_TOPICS maps each
-// real-world month (new Date().getMonth(), 0=Jan...11=Dec) to the topic tags that are
-// actually "in season" that month. Windows are deliberately generous (a few weeks either
-// side of the real holiday) since exact dates (Lunar New Year, Diwali) move year to year -
-// see modules/catalog_reader.py's TOPIC_KEYWORDS for the underlying topic tags.
-const MONTH_SEASON_TOPICS = [
-  ["christmas","lunar_new_year","winter"],        // Jan
-  ["lunar_new_year","winter"],                     // Feb
-  ["spring"],                                      // Mar
-  ["spring"],                                      // Apr
-  ["spring"],                                      // May
-  ["summer"],                                      // Jun
-  ["summer"],                                      // Jul
-  ["summer"],                                       // Aug
-  ["mid_autumn","autumn"],                          // Sep
-  ["halloween","thanksgiving","diwali","autumn"],  // Oct
-  ["thanksgiving","diwali","autumn"],               // Nov
-  ["christmas","lunar_new_year","winter"]           // Dec
-];
-// Broader "evergreen seasonal" fallback set - any seasonal-flavoured topic, regardless of
-// the current month. Only used to top up the shelf when the current month's real matches
-// are too few to fill it (owner directive: never show a near-empty shelf).
-const EVERGREEN_SEASONAL_TOPICS = ["christmas","halloween","lunar_new_year","diwali","thanksgiving","mid_autumn","summer","spring","winter","autumn"];
 const SEASONAL_SHELF_SIZE = 14;
-const MIN_REAL_SEASONAL_MATCHES = 6;
-// Owner directive (2026-07-28): this shelf must always be a MIX of season fit and real
-// best-sellers, never all-seasonal (that's what let Christmas ABC/Deepavali ABC dominate
-// in July with no bestsellers in sight) and never all-bestsellers. Season-matched books
-// (real month, or the broader evergreen set if the real month is thin) get first claim on
-// up to this many slots; whatever's left is filled by top overall sellers.
-const SEASON_SLOT_CAP = 8;
-
-function shelfKey(b){ return b.asin || b.title; }
 
 function renderShelf(){
-  const eligible = CATALOG.filter(b=>!isDeprioritized(b));
-
-  const currentTopics = MONTH_SEASON_TOPICS[new Date().getMonth()];
-  const inSeasonNow = eligible.filter(b=>(b.topics||[]).some(t=>currentTopics.includes(t)));
-
-  // If the current month's real matches are thin, top up with the broader evergreen
-  // seasonal set (still seasonal-flavoured, just not necessarily this month) rather than
-  // showing only 1-2 seasonal cards - current-month matches always come first either way.
-  // This pool is still capped at SEASON_SLOT_CAP below, so a thin/off month can't crowd
-  // out the best-seller slots the way the old uncapped fallback did.
-  let seasonalPool = inSeasonNow;
-  if (inSeasonNow.length < MIN_REAL_SEASONAL_MATCHES) {
-    const already = new Set(inSeasonNow.map(shelfKey));
-    const evergreen = eligible.filter(b=>!already.has(shelfKey(b)) && (b.topics||[]).some(t=>EVERGREEN_SEASONAL_TOPICS.includes(t)));
-    seasonalPool = inSeasonNow.concat(evergreen);
-  }
-
-  // Owner directive (2026-07-28): mix real best-sellers into the shelf too, not just
-  // seasonal fit. units_sold/sales_rank are joined into assets/catalog.json from
-  // royalty_intelligence.json (modules/site_catalog.py: build_sales_rank_map). Season
-  // matches fill up to SEASON_SLOT_CAP slots, top overall sellers fill the rest.
-  const bySales = eligible.slice().sort((a,b)=>(b.units_sold||0)-(a.units_sold||0));
-
-  const chosen = [];
-  const chosenKeys = new Set();
-  for (const b of seasonalPool) {
-    if (chosen.length >= SEASON_SLOT_CAP) break;
-    const k = shelfKey(b);
-    if (chosenKeys.has(k)) continue;
-    chosenKeys.add(k); chosen.push(b);
-  }
-  for (const b of bySales) {
-    if (chosen.length >= SEASONAL_SHELF_SIZE) break;
-    const k = shelfKey(b);
-    if (chosenKeys.has(k)) continue;
-    chosenKeys.add(k); chosen.push(b);
-  }
-
-  document.getElementById("shelfTrack").innerHTML = chosen.map(b=>`
+  const bySales = CATALOG.filter(b=>!isDeprioritized(b))
+    .sort((a,b)=>(b.units_sold||0)-(a.units_sold||0))
+    .slice(0, SEASONAL_SHELF_SIZE);
+  document.getElementById("shelfTrack").innerHTML = bySales.map(b=>`
     <a class="shelf-card" href="${buyUrl(b)}" target="_blank" rel="noopener">
       <div class="shelf-cover">${coverTag(b)}</div>
       <div class="shelf-name">${b.title}</div>
