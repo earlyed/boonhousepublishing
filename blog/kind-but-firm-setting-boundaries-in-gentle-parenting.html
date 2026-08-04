@@ -18,6 +18,7 @@
 <body>
 <nav class="site-nav"><div class="wrap">
   <a href="../index.html" class="brand">BoonHouse <em>Publishing</em></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-links">
     <a href="../index.html">Home</a>
     <a href="../index.html#childrens">Children's Books</a>
@@ -70,5 +71,17 @@
   </div>
 </div></footer>
 <!-- GoatCounter not configured yet (config.json: goatcounter_site) -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+<script>
+(function(){
+  var t=document.getElementById('navToggle'), nav=document.querySelector('.site-nav');
+  if(t&&nav){t.addEventListener('click',function(){nav.classList.toggle('nav-open');});}
+  var b=document.getElementById('backToTop');
+  if(b){
+    window.addEventListener('scroll',function(){ b.classList.toggle('show', window.scrollY>400); });
+    b.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  }
+})();
+</script>
 </body>
 </html>
