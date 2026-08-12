@@ -11,6 +11,7 @@
 <body>
 <nav class="site-nav"><div class="wrap">
   <a href="../index.html" class="brand">BoonHouse <em>Publishing</em></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-links">
     <a href="../index.html">Home</a>
     <a href="../index.html#childrens">Children's Books</a>
@@ -25,12 +26,19 @@
     <h1>The Blog</h1>
     <p>Real answers to real parent questions, and the books that go deeper when you want more.</p>
   </div>
-  <a class="blog-lead" href="how-to-talk-to-a-toddler-about-death-and-loss.html">
-  <span class="eyebrow">Latest &middot; 2026-08-06</span>
-  <h2>How to Talk to a Toddler About Death and Loss</h2>
-  <p>Learn how to talk to a toddler about death and loss with honest language and practical scripts that keep your child feeling safe and able to ask.</p>
+  <a class="blog-lead" href="how-to-help-a-toddler-cope-with-moving-house.html">
+  <span class="eyebrow">Latest &middot; 2026-08-11</span>
+  <h2>How to Help a Toddler Cope with Moving House</h2>
+  <p>Learn how to help a toddler cope with moving house: the developmental reason for distress, what to say, and how to rebuild safety room by room.</p>
 </a>
   <div>
+<a class="blog-row" href="how-to-talk-to-a-toddler-about-death-and-loss.html">
+  <span class="blog-date">2026-08-06</span>
+  <span>
+    <span class="blog-row-title">How to Talk to a Toddler About Death and Loss</span>
+    <p class="blog-row-deck">Learn how to talk to a toddler about death and loss with honest language and practical scripts that keep your child feeling safe and able to ask.</p>
+  </span>
+</a>
 <a class="blog-row" href="how-to-reduce-toddler-screen-time-without-a-meltdown.html">
   <span class="blog-date">2026-08-05</span>
   <span>
@@ -250,6 +258,18 @@
     <span><a href="../blog/index.html">Blog</a> &middot; <a href="../capable-child.html">The Capable Child</a> &middot; <a href="../calm-parent.html">The Calm Parent</a> &middot; <a href="../index.html#childrens">All Books</a> &middot; <a href="../images/credits.html">Image credits</a></span>
   </div>
 </div></footer>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+<script>
+(function(){
+  var t=document.getElementById('navToggle'), nav=document.querySelector('.site-nav');
+  if(t&&nav){t.addEventListener('click',function(){nav.classList.toggle('nav-open');});}
+  var b=document.getElementById('backToTop');
+  if(b){
+    window.addEventListener('scroll',function(){ b.classList.toggle('show', window.scrollY>400); });
+    b.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  }
+})();
+</script>
 <!-- GoatCounter not configured yet (config.json: goatcounter_site) -->
 </body>
 </html>
