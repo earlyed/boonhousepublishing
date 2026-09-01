@@ -41,7 +41,12 @@
   <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="index.html#childrens">Children's Books</a>
+    <div class="nav-dropdown">
+      <a href="index.html#childrens">Children's Books</a>
+      <div class="nav-dropdown-menu">
+        <a href="index.html#bestsellers">Our Best Sellers</a>
+      </div>
+    </div>
     <a href="index.html#parenting">Parenting Books</a>
     <a href="blog/index.html">Blog</a>
     <a href="https://www.amazon.com/stores/BoonHouse-Publishing/author/B0FB89CS8B" target="_blank" rel="noopener" class="nav-buy">Shop Amazon</a>
@@ -267,11 +272,33 @@ function hookLine(book){
   const s = book.series || "Picture book";
   return s + " series";
 }
-function coverTag(book, cls){
+// Owner-side test (2026-09-01, Playwright): the OLD onerror handler embedded
+// JSON.stringify(book.title) - a DOUBLE-quoted JS string - directly inside an
+// onerror="..." attribute that is ITSELF double-quoted. For any multi-word title,
+// the JSON string's own quote character closed the attribute early, and every
+// following word got parsed as a bogus bare HTML attribute (visible in a real
+// browser render: title="" was="" for="" toddler="" logic="" puzzles=""...). This
+// was a real, LIVE bug already, just dormant until an image actually 404s and the
+// onerror handler fires. Fixed by never putting the title inside the onerror JS
+// string at all - it goes in a properly-escaped data attribute instead, and the
+// (now-shared, single) handler function reads it from there.
+function escapeHtmlAttr(s){
+  return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+}
+function coverImgHtml(book, extraStyle){
+  const safeTitle = escapeHtmlAttr(book.title);
+  const style = extraStyle ? ` style="${extraStyle}"` : "";
   if (book.asin) {
-    return `<img src="images/${book.asin}.jpg" alt="${book.title.replace(/"/g,'&quot;')} cover" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-cover-ph\\'>'+${JSON.stringify(book.title)}.slice(0,40)+'</div>'">`;
+    return `<img src="images/${book.asin}.jpg" alt="${safeTitle} cover" loading="lazy"${style} data-fallback-title="${safeTitle}" onerror="window.onCoverImgError(this)">`;
   }
-  return `<div class="card-cover-ph">${book.title.slice(0,40)}</div>`;
+  return `<div class="card-cover-ph"${style}>${book.title.slice(0,40)}</div>`;
+}
+window.onCoverImgError = function(img){
+  const title = (img.dataset.fallbackTitle || "").slice(0,40);
+  img.parentElement.innerHTML = `<div class="card-cover-ph">${title}</div>`;
+};
+function coverTag(book, cls){
+  return coverImgHtml(book);
 }
 // Owner found 2026-09-01: shelf-cover/side-thumb are fixed-HEIGHT, dynamic-WIDTH boxes
 // (see site.css) so a book's real shape (from cover_ratio, computed at build time by
@@ -283,10 +310,7 @@ function dynamicCoverWidth(book, heightPx){
   return Math.round(heightPx * (book.cover_ratio || 1.0));
 }
 function dynamicCoverImg(book){
-  if (book.asin) {
-    return `<img src="images/${book.asin}.jpg" alt="${book.title.replace(/"/g,'&quot;')} cover" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-cover-ph\\'>'+${JSON.stringify(book.title)}.slice(0,40)+'</div>'">`;
-  }
-  return `<div class="card-cover-ph">${book.title.slice(0,40)}</div>`;
+  return coverImgHtml(book);
 }
 function buyUrl(book){
   return book.asin ? `https://www.amazon.com/dp/${book.asin}` : AUTHOR_STORE;
@@ -358,8 +382,14 @@ function renderLead(){
     </div>`;
 }
 
+// Owner directive 2026-09-01: "shuffle those best selling on top" + a dedicated
+// "Our Best Sellers" entry point. BEST_SELLERS_TAB is a special activeTab value (not
+// a real category) that filters to books with real recorded sales, ranked highest
+// first - everything else keeps working exactly as before.
+const BEST_SELLERS_TAB = "Best Sellers";
+
 function renderTabs(){
-  const tabs = ["All", ...CATEGORIES];
+  const tabs = ["All", BEST_SELLERS_TAB, ...CATEGORIES];
   document.getElementById("tabRow").innerHTML = tabs.map(t=>
     `<button class="tab${t===activeTab?' active':''}" data-tab="${t}">${t}</button>`).join("");
   document.querySelectorAll(".tab").forEach(btn=>{
@@ -370,8 +400,12 @@ function renderTabs(){
 function renderGrid(){
   const q = (document.getElementById("catSearch").value || "").toLowerCase().trim();
   let items = CATALOG;
-  if (activeTab !== "All") items = items.filter(b=>categoriesFor(b).includes(activeTab));
+  if (activeTab === BEST_SELLERS_TAB) items = items.filter(b=>(b.units_sold||0) > 0);
+  else if (activeTab !== "All") items = items.filter(b=>categoriesFor(b).includes(activeTab));
   if (q) items = items.filter(b=>b.title.toLowerCase().includes(q) || (b.series||"").toLowerCase().includes(q));
+  // Best sellers first by default everywhere, not just the dedicated tab - a buyer
+  // browsing any category should see what's actually proven to sell before the rest.
+  items = items.slice().sort((a,b)=>(b.units_sold||0)-(a.units_sold||0));
   document.getElementById("catalogCount").textContent = items.length + " titles";
   const grid = document.getElementById("catalogGrid");
   if (!items.length){ grid.innerHTML = '<p class="cat-empty">No titles found.</p>'; return; }
@@ -386,22 +420,48 @@ function renderGrid(){
 
 document.getElementById("catSearch").addEventListener("input", renderGrid);
 
-fetch("assets/catalog.json").then(r=>r.json()).then(data=>{
+// Owner directive 2026-09-01: "Our Best Sellers" nav entry - #bestsellers is a distinct
+// hash (separate from #childrens, which only scrolls) that pre-selects the Best
+// Sellers tab, so the nav link genuinely lands the visitor on filtered results, not
+// just the top of the catalogue section. Playwright test caught a real bug: clicking
+// the nav link while ALREADY on the homepage doesn't reload the page, so a check that
+// only runs once at initial script execution never re-fires - needs an explicit
+// hashchange listener too, not just a one-time check at load.
+function applyBestSellersHashIfPresent(){
+  if (location.hash === "#bestsellers" && CATALOG.length){
+    activeTab = BEST_SELLERS_TAB;
+    renderTabs();
+    renderGrid();
+    document.getElementById("childrens").scrollIntoView({behavior:"smooth", block:"start"});
+  }
+}
+if (location.hash === "#bestsellers") activeTab = BEST_SELLERS_TAB;
+window.addEventListener("hashchange", applyBestSellersHashIfPresent);
+
+const catalogReady = fetch("assets/catalog.json").then(r=>r.json()).then(data=>{
   CATALOG = data;
   renderShelf();
   renderLead();
   renderTabs();
   renderGrid();
+  if (location.hash === "#bestsellers") {
+    document.getElementById("childrens").scrollIntoView({behavior:"smooth", block:"start"});
+  }
 }).catch(()=>{
   document.getElementById("catalogGrid").innerHTML = '<p class="cat-empty">Catalogue temporarily unavailable. Visit our <a href="'+AUTHOR_STORE+'" target="_blank" rel="noopener">Amazon store</a> to browse all titles.</p>';
 });
 
 // FROM THE JOURNAL - reuses blog/index.html's own post markup (title, date, one-line
-// deck, link) as the single source of truth, rather than hand-maintaining a duplicate
-// list here. blog/index.html always renders newest-first: the single ".blog-lead" is
-// the latest post, followed by all older posts as ".blog-row" - so lead + first two
-// rows are exactly the 3 most recent.
-fetch("blog/index.html").then(r=>r.text()).then(html=>{
+// deck, link, and since 2026-09-01 a data-asin attribute) as the single source of
+// truth, rather than hand-maintaining a duplicate list here. blog/index.html always
+// renders newest-first: the single ".blog-lead" is the latest post, followed by all
+// older posts as ".blog-row" - so lead + first two rows are exactly the 3 most recent.
+// Owner directive 2026-09-01: "more visibility, more sales" - each card now shows the
+// related book's own cover and a direct Buy on Amazon link (same always-accessible
+// buy pattern Penguin uses), not just a text summary of the article. Waits on
+// catalogReady (Promise.all below) so CATALOG is populated before any ASIN lookup -
+// these are two independent fetches with no guaranteed resolve order otherwise.
+const journalReady = fetch("blog/index.html").then(r=>r.text()).then(html=>{
   const doc = new DOMParser().parseFromString(html, "text/html");
   const items = [];
   const lead = doc.querySelector(".blog-lead");
@@ -410,6 +470,7 @@ fetch("blog/index.html").then(r=>r.text()).then(html=>{
     const dateText = eyebrow ? eyebrow.textContent.split("·").pop().trim() : "";
     items.push({
       href: "blog/" + lead.getAttribute("href"),
+      asin: lead.getAttribute("data-asin") || "",
       date: dateText,
       title: (lead.querySelector("h2")||{}).textContent || "",
       deck: (lead.querySelector("p")||{}).textContent || "",
@@ -419,20 +480,48 @@ fetch("blog/index.html").then(r=>r.text()).then(html=>{
     if (items.length >= 3) return;
     items.push({
       href: "blog/" + row.getAttribute("href"),
+      asin: row.getAttribute("data-asin") || "",
       date: (row.querySelector(".blog-date")||{}).textContent || "",
       title: (row.querySelector(".blog-row-title")||{}).textContent || "",
       deck: (row.querySelector(".blog-row-deck")||{}).textContent || "",
     });
   });
+  return items;
+}).catch(()=>[]);
+
+// Owner-side test (2026-09-01, Playwright): the first version wrapped the WHOLE card,
+// including the Buy on Amazon link, in one outer <a> - invalid HTML (an <a> cannot
+// contain another <a>), so the browser auto-closed the outer link right before the
+// buy button, leaving it rendered as a disconnected sibling instead of inside the
+// card. Fixed: the card is a <div>, the article-link portion is its own inner <a>,
+// and the buy button is a separate sibling <a> - two independent click targets,
+// no nesting, matching how Penguin's site keeps "buy this book" always its own
+// clickable element rather than nested inside a bigger link.
+Promise.all([catalogReady, journalReady]).then(([, items])=>{
   if (!items.length){ document.getElementById("journalShelf").style.display = "none"; return; }
-  document.getElementById("journalGrid").innerHTML = items.map(p=>`
-    <a class="journal-card" href="${p.href}">
-      <span class="journal-date">${p.date}</span>
-      <div class="journal-title">${p.title}</div>
-      <p class="journal-deck">${p.deck}</p>
-    </a>`).join("");
-}).catch(()=>{
-  document.getElementById("journalShelf").style.display = "none";
+  document.getElementById("journalGrid").innerHTML = items.map(p=>{
+    const book = p.asin ? CATALOG.find(b=>b.asin===p.asin) : null;
+    const coverHtml = book ? dynamicCoverImg(book)
+      : '<div class="card-cover-ph" style="width:64px">&#128214;</div>';
+    const coverW = book ? dynamicCoverWidth(book, 84) : 64;
+    const buyHtml = book
+      ? `<a href="${buyUrl(book)}" target="_blank" rel="noopener" class="btn btn-sm journal-buy">Buy on Amazon</a>`
+      : "";
+    return `
+    <div class="journal-card">
+      <a class="journal-card-link" href="${p.href}">
+        <div class="journal-card-top">
+          <div class="journal-cover" style="width:${coverW}px">${coverHtml}</div>
+          <div>
+            <span class="journal-date">${p.date}</span>
+            <div class="journal-title">${p.title}</div>
+          </div>
+        </div>
+        <p class="journal-deck">${p.deck}</p>
+      </a>
+      ${buyHtml}
+    </div>`;
+  }).join("");
 });
 </script>
 <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
