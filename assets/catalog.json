@@ -5,9 +5,10 @@
     "asin": "B0D9BZWVFK",
     "topics": [],
     "cover": true,
+    "cover_ratio": 0.812,
     "slug": "start-of-a-new-school-year-lined-journal",
     "units_sold": 1.0,
-    "sales_rank": 76
+    "sales_rank": 93
   },
   {
     "title": "A New Baby in Our Home: A Calm Montessori Book for Becoming a Big Sibling: Real life photos and gentle guidance to help toddlers welcome a new baby with confidence",
@@ -17,9 +18,10 @@
       "new_sibling"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "a-new-baby-in-our-home",
-    "units_sold": 16.0,
-    "sales_rank": 8
+    "units_sold": 17.0,
+    "sales_rank": 11
   },
   {
     "title": "ABCs for Foodies - Chinese Food: A Bilingual Alphabet Adventure for Food-Loving Families - Early Learning in Chinese and English",
@@ -30,9 +32,10 @@
       "abc_alphabet"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "abcs-for-foodies",
     "units_sold": 8.0,
-    "sales_rank": 15
+    "sales_rank": 20
   },
   {
     "title": "Alice in Christmasland: A stunning reimagining of the beloved Alice tradition from 1865, brought to life for the children of today",
@@ -42,6 +45,7 @@
       "christmas"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "alice-in-christmasland",
     "units_sold": 0,
     "sales_rank": null
@@ -52,9 +56,10 @@
     "asin": "B0FQJCHSZZ",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "all-my-feelings",
-    "units_sold": 6.0,
-    "sales_rank": 21
+    "units_sold": 9.0,
+    "sales_rank": 17
   },
   {
     "title": "Allah and My Heart: Gentle Feelings Affirmations for Muslim Toddlers and Preschoolers A Montessori-Inspired Book of Calm, Confidence, and Faith",
@@ -62,6 +67,7 @@
     "asin": "B0FHKHKFSF",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "allah-and-my-heart",
     "units_sold": 0,
     "sales_rank": null
@@ -75,6 +81,7 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "autumn-look-and-find-for-toddlers",
     "units_sold": 0,
     "sales_rank": null
@@ -88,9 +95,10 @@
       "tantrums"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "before-i-hit",
-    "units_sold": 3.0,
-    "sales_rank": 43
+    "units_sold": 4.0,
+    "sales_rank": 48
   },
   {
     "title": "Bilingual Baby Colors/Couleurs (French Edition) with Many Beautiful Images: BRIGHT & FUN BABY BOOK First Words in Colors for Babies and Toddlers - Early Learning for Senses - English and French Edition",
@@ -100,9 +108,10 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "bilingual-baby-colors-couleurs-french-edition-with-many",
     "units_sold": 3.0,
-    "sales_rank": 47
+    "sales_rank": 59
   },
   {
     "title": "Bilingual Baby Colors/いろ (Japanese Edition) with Many Beautiful Images: BRIGHT & FUN BABY BOOK First Words in Colors for Babies「からだの脳」を育てる- Early Learning for Senses - English and Japanese Edition",
@@ -112,6 +121,7 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "bilingual-baby-colors-japanese-edition-with-many-beautiful",
     "units_sold": 0,
     "sales_rank": null
@@ -124,6 +134,7 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "bilingual-baby-colors-simplified-chinese-edition-with-many",
     "units_sold": 0,
     "sales_rank": null
@@ -136,9 +147,10 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "bilingual-baby-colors-traditional-chinese-edition-with-many",
     "units_sold": 1.0,
-    "sales_rank": 86
+    "sales_rank": 104
   },
   {
     "title": "Campfire Safety for Children: A calm Montessori story about outdoor fires, cooking, and learning fire safety",
@@ -146,9 +158,10 @@
     "asin": "B0GY9297DR",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "campfire-safety-for-children",
     "units_sold": 6.0,
-    "sales_rank": 20
+    "sales_rank": 28
   },
   {
     "title": "Camping ABC (The REAL photobook for toddlers): A Montessori Nature Adventure",
@@ -158,6 +171,7 @@
       "abc_alphabet"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "camping-abc-the-real-photobook-for-toddlers",
     "units_sold": 0,
     "sales_rank": null
@@ -171,6 +185,7 @@
       "abc_alphabet"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "camping-de-a-z",
     "units_sold": 0,
     "sales_rank": null
@@ -183,6 +198,7 @@
       "dark_fear"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "camping-is-fun",
     "units_sold": 0,
     "sales_rank": null
@@ -195,9 +211,10 @@
       "screen_time"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "can-i-watch-one-more-reduce-screentime",
-    "units_sold": 0,
-    "sales_rank": null
+    "units_sold": 2.0,
+    "sales_rank": 63
   },
   {
     "title": "Christmas ABC: Real Photos to Celebrate the Festival: A Montessori book of holiday traditions, kindness, and wonder",
@@ -208,6 +225,7 @@
       "abc_alphabet"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "christmas-abc",
     "units_sold": 0,
     "sales_rank": null
@@ -220,6 +238,7 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "colores-biling-es-para-beb-s-baby-colors-book-edici-n",
     "units_sold": 0,
     "sales_rank": null
@@ -230,9 +249,10 @@
     "asin": "B0FHBQVN94",
     "topics": [],
     "cover": true,
+    "cover_ratio": 0.812,
     "slug": "cut-and-paste-thinking-skills-for-toddlers-ages-3-to-5",
     "units_sold": 1.0,
-    "sales_rank": 80
+    "sales_rank": 98
   },
   {
     "title": "Deepavali ABC (version Diwali ABC also available): A Montessori ABC book introducing toddlers to the Festival of Lights and Deepavali traditions",
@@ -243,9 +263,10 @@
       "abc_alphabet"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "deepavali-abc-version-diwali-abc-also-available",
     "units_sold": 4.0,
-    "sales_rank": 40
+    "sales_rank": 51
   },
   {
     "title": "Diwali ABC: A joyful A to Z celebration of lights, kindness, and togetherness for young children",
@@ -256,9 +277,10 @@
       "abc_alphabet"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "diwali-abc",
     "units_sold": 3.0,
-    "sales_rank": 45
+    "sales_rank": 56
   },
   {
     "title": "Fingers can do SO MUCH: A calm Montessori photo book about what toddlers can do with their growing hands",
@@ -266,9 +288,10 @@
     "asin": "B0FHW7VG2R",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "fingers-can-do-so-much",
     "units_sold": 2.0,
-    "sales_rank": 54
+    "sales_rank": 70
   },
   {
     "title": "Future Minds: Baby Economics - My First Money Book: A witty and Montessori-inspired first look at money, value, and choice",
@@ -276,9 +299,10 @@
     "asin": "B0FNS6X7SB",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "future-minds",
-    "units_sold": 2.0,
-    "sales_rank": 55
+    "units_sold": 3.0,
+    "sales_rank": 58
   },
   {
     "title": "Gentle Christmas Manners: Real photo moments that teach toddlers sharing, kindness and calm behaviour during the holidays",
@@ -289,6 +313,7 @@
       "christmas"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "gentle-christmas-manners",
     "units_sold": 0,
     "sales_rank": null
@@ -301,8 +326,9 @@
       "hitting"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "gentle-hands-for-toddlers",
-    "units_sold": 88.0,
+    "units_sold": 148.0,
     "sales_rank": 1
   },
   {
@@ -311,9 +337,10 @@
     "asin": "B0GWJSVH5D",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "gentle-voice-for-toddlers",
-    "units_sold": 7.0,
-    "sales_rank": 17
+    "units_sold": 8.0,
+    "sales_rank": 18
   },
   {
     "title": "Goodbye Me: A Moving House Journal for Toddlers: A gentle emotional support book to help young children say goodbye and feel safe during change",
@@ -323,9 +350,10 @@
       "moving_house"
     ],
     "cover": true,
+    "cover_ratio": 0.812,
     "slug": "goodbye-me",
     "units_sold": 1.0,
-    "sales_rank": 65
+    "sales_rank": 84
   },
   {
     "title": "Halloween Look and Find for Toddlers: A Montessori Little Detective Picture Book with Real Photos, Hidden Objects, and Seek-and-Find Halloween Fun",
@@ -336,6 +364,7 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "halloween-look-and-find-for-toddlers",
     "units_sold": 0,
     "sales_rank": null
@@ -346,6 +375,7 @@
     "asin": "B0GFS7JTMK",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "happy-birthday-to-you",
     "units_sold": 0,
     "sales_rank": null
@@ -356,6 +386,7 @@
     "asin": "B0GFFF7YR1",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "hello-2026",
     "units_sold": 0,
     "sales_rank": null
@@ -365,7 +396,8 @@
     "series": "Other",
     "asin": "B0H4L583W4",
     "topics": [],
-    "cover": false,
+    "cover": true,
+    "cover_ratio": 1.0,
     "slug": "how-do-i-calm-my-body",
     "units_sold": 0,
     "sales_rank": null
@@ -378,9 +410,10 @@
       "thanksgiving"
     ],
     "cover": true,
+    "cover_ratio": 0.9896,
     "slug": "how-to-say-thank-you-around-the-world",
     "units_sold": 1.0,
-    "sales_rank": 69
+    "sales_rank": 87
   },
   {
     "title": "I Can Be Kind: A Montessori Story about Gentle Voices and Growing Friendships",
@@ -388,9 +421,10 @@
     "asin": "B0G4S831R4",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "i-can-be-kind",
-    "units_sold": 2.0,
-    "sales_rank": 52
+    "units_sold": 3.0,
+    "sales_rank": 54
   },
   {
     "title": "I Can Feel Brave in the Dark: A calm Montessori story for toddlers who are scared of the dark and full of night time worries",
@@ -400,9 +434,10 @@
       "dark_fear"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "i-can-feel-brave-in-the-dark",
-    "units_sold": 4.0,
-    "sales_rank": 35
+    "units_sold": 6.0,
+    "sales_rank": 29
   },
   {
     "title": "I can Try One Little Bite: The Number 1 gentle and calm Montessori book for picky eaters and curious mouths",
@@ -412,9 +447,10 @@
       "picky_eating"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "i-can-try-one-little-bite",
-    "units_sold": 1.0,
-    "sales_rank": 82
+    "units_sold": 5.0,
+    "sales_rank": 43
   },
   {
     "title": "I Don’t Need Everyone to Like Me: A calm Montessori picture book for toddlers about friendship, self confidence, and what to do when someone is not kind",
@@ -424,9 +460,10 @@
       "bullying"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "i-don-t-need-everyone-to-like-me",
-    "units_sold": 2.0,
-    "sales_rank": 50
+    "units_sold": 6.0,
+    "sales_rank": 27
   },
   {
     "title": "I Love You to the Stars and Beyond: A calm and poetic Montessori story of daily routines, baby bonding and growing love",
@@ -434,6 +471,7 @@
     "asin": "B0G492VGX2",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "i-love-you-to-the-stars-and-beyond",
     "units_sold": 0,
     "sales_rank": null
@@ -444,6 +482,7 @@
     "asin": "B0G78XP32Y",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "i-see-colors-in-my-own-way",
     "units_sold": 0,
     "sales_rank": null
@@ -454,9 +493,10 @@
     "asin": "B0G58NJNZT",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "i-want-a-pet",
-    "units_sold": 1.0,
-    "sales_rank": 70
+    "units_sold": 2.0,
+    "sales_rank": 68
   },
   {
     "title": "It’s Okay to Not Agree: A calm Montessori book for toddlers about peer pressure, standing up for yourself, and choosing what feels right",
@@ -466,9 +506,10 @@
       "bullying"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "it-s-okay-to-not-agree",
-    "units_sold": 1.0,
-    "sales_rank": 66
+    "units_sold": 5.0,
+    "sales_rank": 39
   },
   {
     "title": "Leave No Trace for Kids: A Nature Adventure Story with Real Science and 7 Outdoor Rules: A Montessori-inspired picture book that teaches children how to care for trails, wildlife, and our planet",
@@ -476,9 +517,10 @@
     "asin": "B0FWY8SRZ6",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "leave-no-trace-for-kids",
     "units_sold": 5.0,
-    "sales_rank": 26
+    "sales_rank": 37
   },
   {
     "title": "Little Detective: Who is Eating? (Volume 1): A Montessori Toddler Book about Food, Animals, and Guessing Fun",
@@ -488,9 +530,10 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "little-detective",
     "units_sold": 1.0,
-    "sales_rank": 73
+    "sales_rank": 90
   },
   {
     "title": "Lunar New Year ABC: A Montessori alphabet adventure of traditions, family, food, and celebration",
@@ -501,9 +544,10 @@
       "abc_alphabet"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "lunar-new-year-abc",
     "units_sold": 6.0,
-    "sales_rank": 24
+    "sales_rank": 36
   },
   {
     "title": "Lunar New Year Look and Find: A Calm Montessori Search and Discover Book for Toddlers and Preschoolers",
@@ -514,6 +558,7 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "lunar-new-year-look-and-find",
     "units_sold": 0,
     "sales_rank": null
@@ -528,9 +573,10 @@
       "abc_alphabet"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "mid-autumn-festival-abc",
     "units_sold": 1.0,
-    "sales_rank": 58
+    "sales_rank": 74
   },
   {
     "title": "Mom and Dad, I Love You. I am still Learning to Control My Hands: A calm Montessori story about big feelings, self control, repair, and learning gentle hands",
@@ -542,9 +588,10 @@
       "body_safety"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "mom-and-dad-i-love-you-i-am-still-learning-to-control-my",
     "units_sold": 1.0,
-    "sales_rank": 61
+    "sales_rank": 78
   },
   {
     "title": "My Body Belongs to Me, and I Can Say Yes or No: A calm Montessori guide to private parts, body safety and early consent",
@@ -554,9 +601,10 @@
       "body_safety"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-body-belongs-to-me-and-i-can-say-yes-or-no",
-    "units_sold": 13.0,
-    "sales_rank": 10
+    "units_sold": 24.0,
+    "sales_rank": 8
   },
   {
     "title": "My Body is Getting Ready: Gentle steps into potty readiness for toddlers growing with confidence",
@@ -566,9 +614,10 @@
       "potty"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-body-is-getting-ready",
-    "units_sold": 11.0,
-    "sales_rank": 13
+    "units_sold": 12.0,
+    "sales_rank": 15
   },
   {
     "title": "My First Cruise: A calm Montessori story about cruise ships, sea days, routines, and feeling safe on a family cruise",
@@ -576,9 +625,10 @@
     "asin": "B0GHYMD74Y",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-first-cruise",
-    "units_sold": 13.0,
-    "sales_rank": 11
+    "units_sold": 16.0,
+    "sales_rank": 13
   },
   {
     "title": "My First Day of Preschool (the Montessori style): A gentle story about goodbyes, growing trust, and scientific way of how the brain learns to feel safe",
@@ -588,9 +638,10 @@
       "first_preschool"
     ],
     "cover": true,
+    "cover_ratio": 0.9882,
     "slug": "my-first-day-of-preschool-the-montessori-style",
-    "units_sold": 15.0,
-    "sales_rank": 9
+    "units_sold": 25.0,
+    "sales_rank": 7
   },
   {
     "title": "My First Dentist Appointment: A real and calm Montessori book to guide toddlers to their first dentist appointment",
@@ -600,9 +651,10 @@
       "first_dentist"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-first-dentist-appointment",
     "units_sold": 6.0,
-    "sales_rank": 23
+    "sales_rank": 34
   },
   {
     "title": "My First Haircut: A real and calm Montessori book to guide toddlers to their first haircut",
@@ -612,8 +664,9 @@
       "first_haircut"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-first-haircut",
-    "units_sold": 43.0,
+    "units_sold": 50.0,
     "sales_rank": 3
   },
   {
@@ -625,9 +678,10 @@
       "abc_alphabet"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-first-halloween-abc",
     "units_sold": 1.0,
-    "sales_rank": 83
+    "sales_rank": 100
   },
   {
     "title": "My First Plane Ride (the Montessori style): A gentle guide about airports, waiting, and the wonder of flying",
@@ -637,9 +691,10 @@
       "first_plane"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-first-plane-ride-the-montessori-style",
-    "units_sold": 21.0,
-    "sales_rank": 7
+    "units_sold": 22.0,
+    "sales_rank": 10
   },
   {
     "title": "My First Vaccine: A real and calm Montessori book to guide toddlers to their first doctor appointment",
@@ -647,9 +702,10 @@
     "asin": "B0FPQ97YYH",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-first-vaccine",
     "units_sold": 1.0,
-    "sales_rank": 77
+    "sales_rank": 95
   },
   {
     "title": "My Turn, Your Turn: A Story about Sharing: A gentle Montessori story about waiting, wanting and playing together",
@@ -659,9 +715,10 @@
       "sharing"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-turn-your-turn",
-    "units_sold": 8.0,
-    "sales_rank": 14
+    "units_sold": 11.0,
+    "sales_rank": 16
   },
   {
     "title": "Oops Is Part of Learning: Mistakes Help Me Grow - Gentle Montessori book for Emotional Growth and Real-world Learning",
@@ -669,9 +726,10 @@
     "asin": "B0FJGBRG6K",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "oops-is-part-of-learning",
     "units_sold": 3.0,
-    "sales_rank": 46
+    "sales_rank": 57
   },
   {
     "title": "Opposites for Toddlers: A Little Detective Montessori look and find with real photos and fun facts",
@@ -681,6 +739,7 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "opposites-for-toddlers",
     "units_sold": 0,
     "sales_rank": null
@@ -691,9 +750,10 @@
     "asin": "B0GMPTGHK4",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "people-who-invent",
     "units_sold": 1.0,
-    "sales_rank": 68
+    "sales_rank": 86
   },
   {
     "title": "People who Notice and Draw: Leonardo da Vinci: A calm Montessori book about Leonardo da Vinci, notebooks, drawing, and learning to observe",
@@ -701,6 +761,7 @@
     "asin": "B0GSZFKSPF",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "people-who-notice-and-draw",
     "units_sold": 0,
     "sales_rank": null
@@ -711,9 +772,10 @@
     "asin": "B0GHS28CMB",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "people-who-observe-nature",
     "units_sold": 1.0,
-    "sales_rank": 64
+    "sales_rank": 83
   },
   {
     "title": "Real Colors, Real Things (ENGLISH): A Montessori real-photo book with high contrast to support color learning, awareness, and early detection of color differences",
@@ -721,9 +783,10 @@
     "asin": "B0FWR7DV3B",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "real-colors-real-things-english",
     "units_sold": 2.0,
-    "sales_rank": 48
+    "sales_rank": 60
   },
   {
     "title": "Real Colors, Real Things (Traditional Chinese & English): A Montessori real-photo book with high contrast to support color learning, awareness, and early detection of color differences",
@@ -731,6 +794,7 @@
     "asin": "B0FWR79RV3",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "real-colors-real-things-traditional-chinese-english",
     "units_sold": 0,
     "sales_rank": null
@@ -741,9 +805,10 @@
     "asin": "B0FWYMF29S",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "real-music-instruments-for-early-learning-for-kids",
-    "units_sold": 4.0,
-    "sales_rank": 39
+    "units_sold": 6.0,
+    "sales_rank": 35
   },
   {
     "title": "Real Ultimate Book of Dinosaurs: A calm Montessori photo guide to real fossils, skeletons and prehistoric giants",
@@ -751,9 +816,10 @@
     "asin": "B0G2S1LX6N",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "real-ultimate-book-of-dinosaurs",
     "units_sold": 5.0,
-    "sales_rank": 32
+    "sales_rank": 44
   },
   {
     "title": "Real Ultimate Book of Trucks: Real life Photo Exploration of Trucks Big and Small in Montessori Style",
@@ -761,9 +827,10 @@
     "asin": "B0G3XDV714",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "real-ultimate-book-of-trucks",
     "units_sold": 7.0,
-    "sales_rank": 18
+    "sales_rank": 24
   },
   {
     "title": "REAL ULTIMATE BOOK OF VEHICLES FOR TODDLERS 2: More real life vehicles children spot on trips, holidays, and everyday adventures (Montessori aligned, ages 2 to 6)",
@@ -771,9 +838,10 @@
     "asin": "B0G9K6ZX9B",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "real-ultimate-book-of-vehicles-for-toddlers-2",
     "units_sold": 3.0,
-    "sales_rank": 41
+    "sales_rank": 53
   },
   {
     "title": "REAL ULTIMATE BOOK OF VEHICLES FOR TODDLERS: Real‑life Photo Exploration of Cars, Trucks, Trains & More (Montessori‑Style, 2-6 Years)",
@@ -781,8 +849,9 @@
     "asin": "B0FHW2Z2ZS",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "real-ultimate-book-of-vehicles-for-toddlers",
-    "units_sold": 29.0,
+    "units_sold": 35.0,
     "sales_rank": 5
   },
   {
@@ -791,9 +860,10 @@
     "asin": "B0G4QG4RW4",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "real-ultimate-book-of-world-capitals",
-    "units_sold": 0,
-    "sales_rank": null
+    "units_sold": 1.0,
+    "sales_rank": 105
   },
   {
     "title": "Road Safety for Children: A Montessori picture book for toddlers about crossing the road, traffic rules, and staying safe outside",
@@ -801,9 +871,10 @@
     "asin": "B0GZJXWRHB",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "road-safety-for-children",
-    "units_sold": 7.0,
-    "sales_rank": 16
+    "units_sold": 22.0,
+    "sales_rank": 9
   },
   {
     "title": "Rock Climbing is Fun: A calm Montessori story about climbing safely, trying again, and trusting my body",
@@ -811,6 +882,7 @@
     "asin": "B0GFXBVRL5",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "rock-climbing-is-fun",
     "units_sold": 0,
     "sales_rank": null
@@ -821,9 +893,10 @@
     "asin": "B0GYPWJR7R",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "safe-with-people",
-    "units_sold": 0,
-    "sales_rank": null
+    "units_sold": 4.0,
+    "sales_rank": 45
   },
   {
     "title": "Say Bye to Your Pacifier: A Calm, Montessori-aligned Empowering Book for Toddlers Weaning Off the Pacifier",
@@ -833,8 +906,9 @@
       "pacifier"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "say-bye-to-your-pacifier",
-    "units_sold": 55.0,
+    "units_sold": 58.0,
     "sales_rank": 2
   },
   {
@@ -843,8 +917,9 @@
     "asin": "B0G3DZDDFF",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "sleep-in-my-own-bed",
-    "units_sold": 24.0,
+    "units_sold": 30.0,
     "sales_rank": 6
   },
   {
@@ -856,9 +931,10 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "spring-look-and-find-for-toddlers",
     "units_sold": 13.0,
-    "sales_rank": 12
+    "sales_rank": 14
   },
   {
     "title": "Summer Look and Find",
@@ -868,7 +944,8 @@
       "summer",
       "look_and_find"
     ],
-    "cover": false,
+    "cover": true,
+    "cover_ratio": 1.0,
     "slug": "summer-look-and-find",
     "units_sold": 0,
     "sales_rank": null
@@ -879,9 +956,10 @@
     "asin": "B0FTS69JLN",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "swimming-is-fun",
-    "units_sold": 4.0,
-    "sales_rank": 33
+    "units_sold": 7.0,
+    "sales_rank": 22
   },
   {
     "title": "Teeth can do SO MUCH: A calm Montessori photo book about what toddlers can do with their growing strength",
@@ -889,9 +967,10 @@
     "asin": "B0FHQ7MLK1",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "teeth-can-do-so-much",
     "units_sold": 4.0,
-    "sales_rank": 37
+    "sales_rank": 49
   },
   {
     "title": "THANKSGIVING BRAIN BUILDERS: Quiet Table Games and Holiday Logic Fun for Ages 3-5",
@@ -901,6 +980,7 @@
       "thanksgiving"
     ],
     "cover": true,
+    "cover_ratio": 0.812,
     "slug": "thanksgiving-brain-builders",
     "units_sold": 0,
     "sales_rank": null
@@ -911,9 +991,10 @@
     "asin": "B0FKYVPCN8",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "the-day-it-clicks",
-    "units_sold": 2.0,
-    "sales_rank": 56
+    "units_sold": 6.0,
+    "sales_rank": 33
   },
   {
     "title": "The Girl of Silver Seals: A Fantasy Novel About Confidence and Belonging for Kids Ages 8 to 12",
@@ -921,8 +1002,9 @@
     "asin": "B0GCKSB7LQ",
     "topics": [],
     "cover": true,
+    "cover_ratio": 0.668,
     "slug": "the-girl-of-silver-seals",
-    "units_sold": 6.0,
+    "units_sold": 7.0,
     "sales_rank": 25
   },
   {
@@ -931,9 +1013,10 @@
     "asin": "B0G574PT6Y",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "the-real-ultimate-book-of-weather",
     "units_sold": 1.0,
-    "sales_rank": 75
+    "sales_rank": 92
   },
   {
     "title": "The Story of the Chinese Zodiac: A calm Montessori story of the Lunar New Year, the Chinese zodiac animals, and belonging",
@@ -943,9 +1026,10 @@
       "lunar_new_year"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "the-story-of-the-chinese-zodiac",
     "units_sold": 7.0,
-    "sales_rank": 19
+    "sales_rank": 26
   },
   {
     "title": "The Very Special Member at My Home - Montessori-based, inclusive, and diverse, featuring characters from various ethnic backgrounds: A Simple Story to Illustrate the Role of a Domestic Helper",
@@ -953,6 +1037,7 @@
     "asin": "B0D8CTXNWM",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "the-very-special-member-at-my-home",
     "units_sold": 0,
     "sales_rank": null
@@ -963,8 +1048,9 @@
     "asin": "B0FDQ4GVRN",
     "topics": [],
     "cover": true,
+    "cover_ratio": 0.811,
     "slug": "toddler-logic-puzzles-ages-3-5-fun-montessori-thinking",
-    "units_sold": 32.0,
+    "units_sold": 37.0,
     "sales_rank": 4
   },
   {
@@ -973,9 +1059,10 @@
     "asin": "B0G4G5784Z",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "what-are-twins",
-    "units_sold": 1.0,
-    "sales_rank": 87
+    "units_sold": 2.0,
+    "sales_rank": 72
   },
   {
     "title": "What If No One Plays With Me?: A calm Montessori book for toddlers about feeling left out, making friends, and finding connection",
@@ -983,9 +1070,10 @@
     "asin": "B0H4186G5F",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "what-if-no-one-plays-with-me",
-    "units_sold": 1.0,
-    "sales_rank": 60
+    "units_sold": 7.0,
+    "sales_rank": 21
   },
   {
     "title": "What is Christmas?: The gentle Montessori book that helps toddlers enjoy the season without overwhelm",
@@ -995,6 +1083,7 @@
       "christmas"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "what-is-christmas",
     "units_sold": 0,
     "sales_rank": null
@@ -1007,9 +1096,10 @@
       "halloween"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "what-is-halloween",
     "units_sold": 2.0,
-    "sales_rank": 53
+    "sales_rank": 69
   },
   {
     "title": "What is Homeschooling?: A gentle Montessori photo book that helps toddlers understand learning at home",
@@ -1017,6 +1107,7 @@
     "asin": "B0G3VNLXRW",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "what-is-homeschooling",
     "units_sold": 0,
     "sales_rank": null
@@ -1029,9 +1120,10 @@
       "bullying"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "what-is-religion",
-    "units_sold": 2.0,
-    "sales_rank": 49
+    "units_sold": 4.0,
+    "sales_rank": 46
   },
   {
     "title": "What is War?: A calm Montessori book about conflict, safety, and how people try to live peacefully",
@@ -1039,6 +1131,7 @@
     "asin": "B0GXL8LX82",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "what-is-war",
     "units_sold": 0,
     "sales_rank": null
@@ -1049,9 +1142,10 @@
     "asin": "B0H15YTBN3",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "what-to-do-if-you-get-lost",
-    "units_sold": 0,
-    "sales_rank": null
+    "units_sold": 2.0,
+    "sales_rank": 65
   },
   {
     "title": "What to Do when Someone is Mean: A calm Montessori book for toddlers about bullying, saying no, standing up, and asking for help",
@@ -1061,9 +1155,10 @@
       "bullying"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "what-to-do-when-someone-is-mean",
-    "units_sold": 4.0,
-    "sales_rank": 34
+    "units_sold": 16.0,
+    "sales_rank": 12
   },
   {
     "title": "When I Feel Sad: A calm Montessori photo guide to help children understand sadness and feel safe to cry",
@@ -1071,9 +1166,10 @@
     "asin": "B0G2Y7JXFS",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "when-i-feel-sad",
     "units_sold": 3.0,
-    "sales_rank": 44
+    "sales_rank": 55
   },
   {
     "title": "When My Brain Feels Too Busy: A calm Montessori story for toddlers with ADHD, autism, and sensory overload",
@@ -1081,6 +1177,7 @@
     "asin": "B0GG4SSPMR",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "when-my-brain-feels-too-busy",
     "units_sold": 0,
     "sales_rank": null
@@ -1093,9 +1190,10 @@
       "tantrums"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "when-my-feelings-feel-big",
     "units_sold": 5.0,
-    "sales_rank": 27
+    "sales_rank": 41
   },
   {
     "title": "Who is Brushing Teeth: A gentle Montessori look and find detective game to help toddlers feel ready",
@@ -1105,9 +1203,10 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "who-is-brushing-teeth",
-    "units_sold": 5.0,
-    "sales_rank": 31
+    "units_sold": 6.0,
+    "sales_rank": 32
   },
   {
     "title": "Who is Crying?: A gentle Montessori detective game to help toddlers notice feelings and learn comfort",
@@ -1115,9 +1214,10 @@
     "asin": "B0FSX974Q1",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "who-is-crying",
     "units_sold": 1.0,
-    "sales_rank": 74
+    "sales_rank": 91
   },
   {
     "title": "Who is Getting Ready for Christmas: A Montessori Look and Find Game for Toddlers",
@@ -1128,9 +1228,10 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "who-is-getting-ready-for-christmas",
     "units_sold": 1.0,
-    "sales_rank": 63
+    "sales_rank": 82
   },
   {
     "title": "Who is My Auntie at My Home? | A Simple, Montessori-Inspired Story thatHelps Children Understand the Role of a Domestic Helper: A gentle, inclusive picture book for toddlers and preschoolers to appreciate kindness, teamwork, and daily helpers at home",
@@ -1138,6 +1239,7 @@
     "asin": "B0FHFKFP44",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "who-is-my-auntie-at-my-home",
     "units_sold": 0,
     "sales_rank": null
@@ -1150,9 +1252,10 @@
       "potty"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "who-is-pooing",
     "units_sold": 1.0,
-    "sales_rank": 79
+    "sales_rank": 97
   },
   {
     "title": "Who is Santa Claus?: A Montessori Guide to Kindness, Gratitude and Christmas Traditions",
@@ -1162,9 +1265,10 @@
       "christmas"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "who-is-santa-claus",
     "units_sold": 1.0,
-    "sales_rank": 62
+    "sales_rank": 81
   },
   {
     "title": "Who is Saying Bye to the Pacifier: A gentle Montessori \"look and find\" detective game to help toddlers feel ready",
@@ -1175,9 +1279,10 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "who-is-saying-bye-to-the-pacifier",
     "units_sold": 2.0,
-    "sales_rank": 51
+    "sales_rank": 67
   },
   {
     "title": "Who is Sleeping?: A gentle Montessori detective game that helps toddlers feel safe and ready for bed",
@@ -1185,9 +1290,10 @@
     "asin": "B0FSSZKSBB",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "who-is-sleeping",
-    "units_sold": 5.0,
-    "sales_rank": 29
+    "units_sold": 7.0,
+    "sales_rank": 23
   },
   {
     "title": "Who is Using the Potty?: A gentle Montessori “look and find” game to help toddlers feel ready for toilet learning",
@@ -1198,6 +1304,7 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "who-is-using-the-potty",
     "units_sold": 0,
     "sales_rank": null
@@ -1208,16 +1315,18 @@
     "asin": "B0H4M4GK5K",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-can-t-i-always-win",
-    "units_sold": 1.0,
-    "sales_rank": 59
+    "units_sold": 5.0,
+    "sales_rank": 38
   },
   {
     "title": "Why Can't I Have It NOW?",
     "series": "Other",
     "asin": "B0H32F8ZF2",
     "topics": [],
-    "cover": false,
+    "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-can-t-i-have-it-now",
     "units_sold": 0,
     "sales_rank": null
@@ -1227,7 +1336,8 @@
     "series": "Other",
     "asin": "B0H6ZC8YHS",
     "topics": [],
-    "cover": false,
+    "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-do-i-keep-saying-no",
     "units_sold": 0,
     "sales_rank": null
@@ -1239,7 +1349,8 @@
     "topics": [
       "whining"
     ],
-    "cover": false,
+    "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-do-i-whine",
     "units_sold": 0,
     "sales_rank": null
@@ -1252,9 +1363,10 @@
       "tantrums"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-do-parents-go-to-work",
-    "units_sold": 0,
-    "sales_rank": null
+    "units_sold": 1.0,
+    "sales_rank": 77
   },
   {
     "title": "Why Do People Look Different?: A calm Montessori book about skin color, features, and understanding diversity with respect",
@@ -1262,9 +1374,10 @@
     "asin": "B0GZ6PHYTD",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-do-people-look-different",
     "units_sold": 1.0,
-    "sales_rank": 67
+    "sales_rank": 85
   },
   {
     "title": "Why Do We Celebrate Thanksgiving?: A Montessori-Inspired Story of Gratitude, Family, and Calm Thanksgiving Traditions",
@@ -1274,16 +1387,18 @@
       "thanksgiving"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-do-we-celebrate-thanksgiving",
     "units_sold": 4.0,
-    "sales_rank": 38
+    "sales_rank": 50
   },
   {
     "title": "Why Does My Body Need Food?",
     "series": "Other",
     "asin": "B0H6MXF9D4",
     "topics": [],
-    "cover": false,
+    "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-does-my-body-need-food",
     "units_sold": 0,
     "sales_rank": null
@@ -1293,7 +1408,8 @@
     "series": "Other",
     "asin": "B0H4C4CJ88",
     "topics": [],
-    "cover": false,
+    "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-does-my-body-need-water",
     "units_sold": 0,
     "sales_rank": null
@@ -1303,7 +1419,8 @@
     "series": "Other",
     "asin": "B0H86K3H88",
     "topics": [],
-    "cover": false,
+    "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-does-my-brain-need-sleep",
     "units_sold": 0,
     "sales_rank": null
@@ -1314,9 +1431,10 @@
     "asin": "B0G8JK58YG",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-i-was-born-with-a-birthmark",
-    "units_sold": 6.0,
-    "sales_rank": 22
+    "units_sold": 8.0,
+    "sales_rank": 19
   },
   {
     "title": "Why My Brain Worries: A calm Montessori story about worry, reassurance, and feeling safe",
@@ -1326,9 +1444,10 @@
       "dark_fear"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-my-brain-worries",
-    "units_sold": 0,
-    "sales_rank": null
+    "units_sold": 2.0,
+    "sales_rank": 66
   },
   {
     "title": "Why Should I Wear My Hat?: A MUST HAVE for Toddlers' Parents in this Summer | A sunny story about sunshine, brain safety, and feeling good outside",
@@ -1338,9 +1457,10 @@
       "summer"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-should-i-wear-my-hat",
     "units_sold": 2.0,
-    "sales_rank": 57
+    "sales_rank": 71
   },
   {
     "title": "Why Some Bodies Look Different: A calm Montessori story about visible differences, mobility aids, and belonging",
@@ -1348,9 +1468,10 @@
     "asin": "B0G7TJM2ZB",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-some-bodies-look-different",
     "units_sold": 1.0,
-    "sales_rank": 71
+    "sales_rank": 88
   },
   {
     "title": "Why Someone I Love Died: A calm Montessori story about death, loss, and feeling safe",
@@ -1360,6 +1481,7 @@
       "death_loss"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-someone-i-love-died",
     "units_sold": 0,
     "sales_rank": null
@@ -1370,9 +1492,10 @@
     "asin": "B0G5GJ36PZ",
     "topics": [],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-we-say-sorry",
-    "units_sold": 3.0,
-    "sales_rank": 42
+    "units_sold": 4.0,
+    "sales_rank": 47
   },
   {
     "title": "Winter Look and Find for Toddlers: A Montessori Little Detective Book with Real Photos, Hidden Objects, and Fun Winter Facts",
@@ -1383,9 +1506,10 @@
       "look_and_find"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "winter-look-and-find-for-toddlers",
     "units_sold": 5.0,
-    "sales_rank": 28
+    "sales_rank": 42
   },
   {
     "title": "为什么要庆祝感恩节？Why Do We Celebrate Thanksgiving?: 受欢迎的蒙特梭利风格绘本 | 节日文化启蒙故事｜简体中文版·中英双语 Bilingual Version Chinese and English",
@@ -1396,6 +1520,7 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-do-we-celebrate-thanksgiving",
     "units_sold": 0,
     "sales_rank": null
@@ -1408,6 +1533,7 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-should-i-wear-my-hat",
     "units_sold": 0,
     "sales_rank": null
@@ -1420,9 +1546,10 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "untitled",
     "units_sold": 1.0,
-    "sales_rank": 72
+    "sales_rank": 89
   },
   {
     "title": "我可以试一小口 I Can Try One Little Bite: 受欢迎的蒙特梭利风格绘本 - 专为挑食期的小嘴巴和勇敢的尝试而写 | 中英双语版 Bilingual Version| Simplified Chinese & English",
@@ -1433,6 +1560,7 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "i-can-try-one-little-bite",
     "units_sold": 0,
     "sales_rank": null
@@ -1446,9 +1574,10 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-body-is-getting-ready-potty-training",
-    "units_sold": 5.0,
-    "sales_rank": 30
+    "units_sold": 6.0,
+    "sales_rank": 31
   },
   {
     "title": "我第一天上幼儿园 My First Day of Preschool: 关于「再见」、信任，以及大脑如何学会安心的温柔故事 | 中英双语版 Bilingual Version| Simplified Chinese & English",
@@ -1459,6 +1588,7 @@
       "bilingual"
     ],
     "cover": true,
+    "cover_ratio": 1.0,
     "slug": "my-first-day-of-preschool",
     "units_sold": 0,
     "sales_rank": null
@@ -1470,9 +1600,10 @@
     "topics": [
       "tantrums"
     ],
-    "cover": false,
+    "cover": true,
+    "cover_ratio": 1.0,
     "slug": "why-won-t-i-brush-my-teeth",
-    "units_sold": 0,
-    "sales_rank": null
+    "units_sold": 1.0,
+    "sales_rank": 76
   }
 ]

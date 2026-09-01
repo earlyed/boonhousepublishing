@@ -273,6 +273,21 @@ function coverTag(book, cls){
   }
   return `<div class="card-cover-ph">${book.title.slice(0,40)}</div>`;
 }
+// Owner found 2026-09-01: shelf-cover/side-thumb are fixed-HEIGHT, dynamic-WIDTH boxes
+// (see site.css) so a book's real shape (from cover_ratio, computed at build time by
+// site_catalog.py) determines its own width - square books get a square slot, portrait
+// books keep their portrait shape, no forced crop or white margin either way. Returns
+// the pixel width so the caller can apply it to the wrapping container div too (the
+// container must actually be sized, not just the <img> inside it).
+function dynamicCoverWidth(book, heightPx){
+  return Math.round(heightPx * (book.cover_ratio || 1.0));
+}
+function dynamicCoverImg(book){
+  if (book.asin) {
+    return `<img src="images/${book.asin}.jpg" alt="${book.title.replace(/"/g,'&quot;')} cover" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-cover-ph\\'>'+${JSON.stringify(book.title)}.slice(0,40)+'</div>'">`;
+  }
+  return `<div class="card-cover-ph">${book.title.slice(0,40)}</div>`;
+}
 function buyUrl(book){
   return book.asin ? `https://www.amazon.com/dp/${book.asin}` : AUTHOR_STORE;
 }
@@ -306,11 +321,14 @@ function renderShelf(){
   const bySales = CATALOG.filter(b=>!isDeprioritized(b))
     .sort((a,b)=>(b.units_sold||0)-(a.units_sold||0))
     .slice(0, SEASONAL_SHELF_SIZE);
-  document.getElementById("shelfTrack").innerHTML = bySales.map(b=>`
+  document.getElementById("shelfTrack").innerHTML = bySales.map(b=>{
+    const w = dynamicCoverWidth(b, 158);
+    return `
     <a class="shelf-card" href="${buyUrl(b)}" target="_blank" rel="noopener">
-      <div class="shelf-cover">${coverTag(b)}</div>
-      <div class="shelf-name">${b.title}</div>
-    </a>`).join("");
+      <div class="shelf-cover" style="width:${w}px">${dynamicCoverImg(b)}</div>
+      <div class="shelf-name" style="max-width:${w}px">${b.title}</div>
+    </a>`;
+  }).join("");
 }
 
 function renderLead(){
@@ -326,14 +344,17 @@ function renderLead(){
       <span class="btn" style="margin-top:.8rem">Buy on Amazon</span>
     </a>
     <div class="side-list">
-      ${rest.map(b=>`
+      ${rest.map(b=>{
+        const w = dynamicCoverWidth(b, 74);
+        return `
         <a class="side-item" href="${buyUrl(b)}" target="_blank" rel="noopener">
-          <div class="side-thumb">${coverTag(b)}</div>
+          <div class="side-thumb" style="width:${w}px">${dynamicCoverImg(b)}</div>
           <div class="side-copy">
             <span class="eyebrow">${b.series || "BoonHouse"}</span>
             <div class="side-title">${b.title}</div>
           </div>
-        </a>`).join("")}
+        </a>`;
+      }).join("")}
     </div>`;
 }
 

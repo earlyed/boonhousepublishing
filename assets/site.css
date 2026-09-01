@@ -77,7 +77,13 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.18;color:var(
 .side-list{display:flex;flex-direction:column}
 .side-item{display:flex;gap:.9rem;padding:.9rem 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit}
 .side-item:first-child{padding-top:0}
-.side-thumb{width:56px;height:74px;flex-shrink:0;background:var(--panel);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden}
+/* Owner found 2026-09-01: fixed width+height here forced every cover into a portrait
+   box - 123 of 135 real covers are actually SQUARE, so they got cropped top/bottom
+   (object-fit:cover) to fill a shape that didn't match them. Height stays fixed for
+   clean row alignment; width is now set per-book inline (height * real cover_ratio -
+   see coverTag() in index.html), so a square cover renders as a real square and a
+   portrait cover keeps its real portrait shape. No more cropping either way. */
+.side-thumb{height:74px;flex-shrink:0;background:var(--panel);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden}
 .side-thumb img{width:100%;height:100%;object-fit:cover}
 .side-copy .eyebrow{font-size:.6rem;margin-bottom:.18rem}
 .side-title{font-family:var(--serif);font-size:.95rem;line-height:1.35;font-weight:700}
@@ -85,10 +91,17 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.18;color:var(
 /* ---------- SEASONAL SHELF ---------- */
 .shelf{padding:1.6rem 0;border-bottom:1px solid var(--rule)}
 .shelf-track{display:flex;gap:.9rem;overflow-x:auto;padding-bottom:.4rem;scrollbar-width:thin}
-.shelf-card{flex:0 0 118px;text-decoration:none;color:inherit}
-.shelf-cover{width:118px;height:158px;background:var(--panel);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow-sm)}
-.shelf-cover img{width:100%;height:100%;object-fit:contain}
-.shelf-name{font-size:.74rem;line-height:1.3;margin-top:.45rem;font-weight:600}
+/* Owner found 2026-09-01: fixed 118x158 (portrait) box + object-fit:contain left a
+   visible white margin under every SQUARE cover (123 of 135 real covers) since a square
+   image only fills the 118-wide dimension of a taller box. Height stays fixed at 158px
+   for a clean horizontal shelf row; width is now set per-book inline via cover_ratio
+   (see coverTag() in index.html) so a square book gets a real 158x158 slot and a
+   portrait book keeps its real ~118x158 shape - object-fit:cover now works cleanly on
+   both since the box shape actually matches the image, no more letterboxing. */
+.shelf-card{flex:0 0 auto;text-decoration:none;color:inherit}
+.shelf-cover{height:158px;background:var(--panel);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow-sm)}
+.shelf-cover img{width:100%;height:100%;object-fit:cover}
+.shelf-name{font-size:.74rem;line-height:1.3;margin-top:.45rem;font-weight:600;max-width:158px}
 
 /* ---------- HOMEPAGE: FROM THE JOURNAL ---------- */
 .journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
