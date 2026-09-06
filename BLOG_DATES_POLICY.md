@@ -6,8 +6,8 @@ permission from the site owner (Jennie / earlyed).
 
 ## Why
 
-Historical posts were intentionally backdated across **2022–2025** so the journal reads
-as a natural archive. New posts may use the real publish date when they go live.
+Historical posts were intentionally backdated across **2022–2025** (last full reshuffle: 2026-09-06).
+New posts may use the real publish date when they go live.
 
 ## Allowed without asking
 
