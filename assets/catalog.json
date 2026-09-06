@@ -1610,7 +1610,9 @@
     "title": "I'm Bored",
     "series": "Other",
     "asin": "B0HCD21PJ4",
-    "topics": [],
+    "topics": [
+      "boredom"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "i-m-bored",
@@ -1621,7 +1623,9 @@
     "title": "Why Do I Cry at Bath Time?",
     "series": "Other",
     "asin": "B0HF4BS293",
-    "topics": [],
+    "topics": [
+      "bath_time_crying"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-do-i-cry-at-bath-time",
@@ -1632,7 +1636,9 @@
     "title": "Clean Up, Clean Up, Everybody Cleans Up!",
     "series": "Other",
     "asin": "B0HDSK78RT",
-    "topics": [],
+    "topics": [
+      "cleanup_routine"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "clean-up-clean-up-everybody-cleans-up",
@@ -1643,7 +1649,9 @@
     "title": "Why Do I Fight My Car Seat?",
     "series": "Other",
     "asin": "B0HF5G5RX1",
-    "topics": [],
+    "topics": [
+      "car_seat_fight"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-do-i-fight-my-car-seat",
@@ -1654,7 +1662,9 @@
     "title": "Helmet On, Wheels Go",
     "series": "Other",
     "asin": "B0HFSNNXCR",
-    "topics": [],
+    "topics": [
+      "helmet_safety"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "helmet-on-wheels-go",
@@ -1665,7 +1675,9 @@
     "title": "Why Do I Throw Things?",
     "series": "Other",
     "asin": "B0HFJTYNLP",
-    "topics": [],
+    "topics": [
+      "throwing"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-do-i-throw-things",
