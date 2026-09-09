@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://earlyed.github.io/boonhousepublishing/sitemap.xml
+Sitemap: https://boonhousepublishing.com/sitemap.xml
