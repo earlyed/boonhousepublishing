@@ -84,7 +84,16 @@
   }
 })();
 </script>
-<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+<script>
+window.addEventListener("load", function(){
+  setTimeout(function(){
+    var s=document.createElement("script");
+    s.src="//assets.pinterest.com/js/pinit.js";
+    s.async=true;
+    document.body.appendChild(s);
+  }, 1200);
+});
+</script>
 <script data-goatcounter="https://boonhouse.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </body>
