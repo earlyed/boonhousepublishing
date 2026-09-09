@@ -212,15 +212,22 @@ const TOPIC_CATEGORY = {
   tantrums:"Feelings and Behavior", whining:"Feelings and Behavior",
   look_and_find:"Look and Find", bilingual:"Bilingual", abc_alphabet:"Activity Books"
 };
-const CATEGORIES = ["Feelings and Behavior","First Experiences","Seasonal","Look and Find","Bilingual","Activity Books"];
+const CATEGORIES = ["Feelings and Behavior","First Experiences","Seasonal","Look and Find","Bilingual","Activity Books","Story Books"];
 
 function categoriesFor(book){
   const set = new Set();
   const s = (book.series||"").toLowerCase();
   if (SERIES_CATEGORY[s]) set.add(SERIES_CATEGORY[s]);
   (book.topics||[]).forEach(t=>{ if (TOPIC_CATEGORY[t]) set.add(TOPIC_CATEGORY[t]); });
-  if (/[^\x00-\x7F]/.test(book.title||"")) set.add("Bilingual");
-  if (set.size===0) set.add("Activity Books");
+  // Bug found 2026-09-10 (owner): matched ANY non-ASCII char (curly quotes, en-dashes,
+  // accents), not just real bilingual scripts - tagged plain English titles as
+  // "Bilingual" just for using a smart quote. Now only matches actual CJK ranges,
+  // which is what this catalog's real bilingual editions use.
+  if (/[一-鿿぀-ヿ]/.test(book.title||"")) set.add("Bilingual");
+  // Bug found 2026-09-10 (owner): anything matching no series/topic silently defaulted
+  // to "Activity Books" specifically, mislabeling ~20 narrative story books. "Story
+  // Books" is an honest catch-all instead of a wrong specific claim.
+  if (set.size===0) set.add("Story Books");
   return [...set];
 }
 function hookLine(book){
