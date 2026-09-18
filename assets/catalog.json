@@ -59,7 +59,9 @@
     "series": "the whole brain toddler",
     "asin": "B0FQJCHSZZ",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "feelings"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "all-my-feelings",
@@ -71,7 +73,9 @@
     "series": "little heart, big feelings",
     "asin": "B0FHKHKFSF",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "faith"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "allah-and-my-heart",
@@ -169,7 +173,9 @@
     "series": "growing minds collection: outdoor skills",
     "asin": "B0GY9297DR",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "campfire"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "campfire-safety-for-children",
@@ -267,7 +273,9 @@
     "series": "montessori brain builders",
     "asin": "B0FHBQVN94",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "thinking_skills"
+    ],
     "cover": true,
     "cover_ratio": 0.812,
     "slug": "cut-and-paste-thinking-skills-for-toddlers-ages-3-to-5",
@@ -309,7 +317,9 @@
     "series": "little heart, big feelings",
     "asin": "B0FHW7VG2R",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "body_awareness"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "fingers-can-do-so-much",
@@ -362,7 +372,9 @@
     "series": "little heart, big feelings",
     "asin": "B0GWJSVH5D",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "loud_voice"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "gentle-voice-for-toddlers",
@@ -403,7 +415,9 @@
     "series": "everyday is fun",
     "asin": "B0GFS7JTMK",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "birthday"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "happy-birthday-to-you",
@@ -415,7 +429,9 @@
     "series": "montessori brain builders",
     "asin": "B0GFFF7YR1",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "new_year"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "hello-2026",
@@ -427,7 +443,9 @@
     "series": "Other",
     "asin": "B0H4L583W4",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "self_regulation"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "how-do-i-calm-my-body",
@@ -453,7 +471,9 @@
     "series": "little heart, big feelings",
     "asin": "B0G4S831R4",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "kindness"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "i-can-be-kind",
@@ -507,7 +527,9 @@
     "series": "little heart, big feelings",
     "asin": "B0G492VGX2",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "unconditional_love"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "i-love-you-to-the-stars-and-beyond",
@@ -519,7 +541,9 @@
     "series": "the whole brain toddler",
     "asin": "B0G78XP32Y",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "colors_learning"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "i-see-colors-in-my-own-way",
@@ -531,7 +555,9 @@
     "series": "transitions with me",
     "asin": "B0G58NJNZT",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "pets"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "i-want-a-pet",
@@ -557,7 +583,9 @@
     "series": "growing minds collection: outdoor skills",
     "asin": "B0FWY8SRZ6",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "nature"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "leave-no-trace-for-kids",
@@ -673,7 +701,9 @@
     "series": "everyday is fun",
     "asin": "B0GHYMD74Y",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "travel"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "my-first-cruise",
@@ -743,7 +773,8 @@
     "asin": "B0FQJ63PLJ",
     "stream": "children",
     "topics": [
-      "first_plane"
+      "first_plane",
+      "travel"
     ],
     "cover": true,
     "cover_ratio": 1.0,
@@ -756,7 +787,9 @@
     "series": "transitions with me",
     "asin": "B0FPQ97YYH",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "vaccine"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "my-first-vaccine",
@@ -782,7 +815,9 @@
     "series": "the whole brain toddler",
     "asin": "B0FJGBRG6K",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "growth_mindset"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "oops-is-part-of-learning",
@@ -808,7 +843,9 @@
     "series": "the famous people series",
     "asin": "B0GMPTGHK4",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "careers"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "people-who-invent",
@@ -820,7 +857,9 @@
     "series": "the famous people series",
     "asin": "B0GSZFKSPF",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "careers"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "people-who-notice-and-draw",
@@ -832,7 +871,9 @@
     "series": "the famous people series",
     "asin": "B0GHS28CMB",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "nature"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "people-who-observe-nature",
@@ -844,7 +885,9 @@
     "series": "colors: a bilingual montessori series for growing minds",
     "asin": "B0FWR7DV3B",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "colors_learning"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "real-colors-real-things-english",
@@ -856,7 +899,9 @@
     "series": "colors: a bilingual montessori series for growing minds",
     "asin": "B0FWR79RV3",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "colors_learning"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "real-colors-real-things-traditional-chinese-english",
@@ -868,7 +913,9 @@
     "series": "real ultimate learning series",
     "asin": "B0FWYMF29S",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "music_instruments"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "real-music-instruments-for-early-learning-for-kids",
@@ -880,7 +927,9 @@
     "series": "real ultimate learning series",
     "asin": "B0G2S1LX6N",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "dinosaurs"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "real-ultimate-book-of-dinosaurs",
@@ -892,7 +941,9 @@
     "series": "real ultimate learning series",
     "asin": "B0G3XDV714",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "vehicles"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "real-ultimate-book-of-trucks",
@@ -904,7 +955,9 @@
     "series": "real ultimate learning series",
     "asin": "B0G9K6ZX9B",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "vehicles"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "real-ultimate-book-of-vehicles-for-toddlers-2",
@@ -916,7 +969,9 @@
     "series": "real ultimate learning series",
     "asin": "B0FHW2Z2ZS",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "vehicles"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "real-ultimate-book-of-vehicles-for-toddlers",
@@ -928,7 +983,9 @@
     "series": "real ultimate learning series",
     "asin": "B0G4QG4RW4",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "world_geography"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "real-ultimate-book-of-world-capitals",
@@ -940,7 +997,9 @@
     "series": "growing minds collection: outdoor skills",
     "asin": "B0GZJXWRHB",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "road_safety"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "road-safety-for-children",
@@ -952,7 +1011,9 @@
     "series": "everyday is fun",
     "asin": "B0GFXBVRL5",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "climbing"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "rock-climbing-is-fun",
@@ -964,7 +1025,9 @@
     "series": "understanding the world series",
     "asin": "B0GYPWJR7R",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "safe_with_people"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "safe-with-people",
@@ -990,7 +1053,9 @@
     "series": "Other",
     "asin": "B0G3DZDDFF",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "sleep_routine"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "sleep-in-my-own-bed",
@@ -1032,7 +1097,9 @@
     "series": "everyday is fun",
     "asin": "B0FTS69JLN",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "water_safety"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "swimming-is-fun",
@@ -1044,7 +1111,9 @@
     "series": "Other",
     "asin": "B0FHQ7MLK1",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "body_awareness"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "teeth-can-do-so-much",
@@ -1057,7 +1126,8 @@
     "asin": "B0G1HGSPYT",
     "stream": "children",
     "topics": [
-      "thanksgiving"
+      "thanksgiving",
+      "thinking_skills"
     ],
     "cover": true,
     "cover_ratio": 0.812,
@@ -1070,7 +1140,9 @@
     "series": "little heart, big feelings",
     "asin": "B0FKYVPCN8",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "growth_mindset"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "the-day-it-clicks",
@@ -1094,7 +1166,9 @@
     "series": "real ultimate learning series",
     "asin": "B0G574PT6Y",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "weather"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "the-real-ultimate-book-of-weather",
@@ -1120,7 +1194,9 @@
     "series": "Other",
     "asin": "B0D8CTXNWM",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "family_structure"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "the-very-special-member-at-my-home",
@@ -1132,7 +1208,9 @@
     "series": "montessori brain builders",
     "asin": "B0FDQ4GVRN",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "thinking_skills"
+    ],
     "cover": true,
     "cover_ratio": 0.811,
     "slug": "toddler-logic-puzzles-ages-3-5-fun-montessori-thinking",
@@ -1144,7 +1222,9 @@
     "series": "little heart, big feelings",
     "asin": "B0G4G5784Z",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "family_structure"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "what-are-twins",
@@ -1156,7 +1236,9 @@
     "series": "Other",
     "asin": "B0H4186G5F",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "making_friends"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "what-if-no-one-plays-with-me",
@@ -1196,7 +1278,9 @@
     "series": "everyday is fun",
     "asin": "B0G3VNLXRW",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "homeschooling"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "what-is-homeschooling",
@@ -1222,7 +1306,9 @@
     "series": "understanding the world series",
     "asin": "B0GXL8LX82",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "scary_news"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "what-is-war",
@@ -1234,7 +1320,9 @@
     "series": "understanding the world series",
     "asin": "B0H15YTBN3",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "getting_lost"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "what-to-do-if-you-get-lost",
@@ -1260,7 +1348,9 @@
     "series": "little heart, big feelings",
     "asin": "B0G2Y7JXFS",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "feelings"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "when-i-feel-sad",
@@ -1272,7 +1362,9 @@
     "series": "little heart, big feelings",
     "asin": "B0GG4SSPMR",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "feelings"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "when-my-brain-feels-too-busy",
@@ -1312,7 +1404,9 @@
     "series": "little detective",
     "asin": "B0FSX974Q1",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "feelings"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "who-is-crying",
@@ -1339,7 +1433,9 @@
     "series": "Other",
     "asin": "B0FHFKFP44",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "family_structure"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "who-is-my-auntie-at-my-home",
@@ -1394,7 +1490,9 @@
     "series": "little detective",
     "asin": "B0FSSZKSBB",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "sleep_routine"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "who-is-sleeping",
@@ -1421,7 +1519,9 @@
     "series": "Other",
     "asin": "B0H4M4GK5K",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "winning_losing"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-can-t-i-always-win",
@@ -1433,7 +1533,9 @@
     "series": "Other",
     "asin": "B0H32F8ZF2",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "patience"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-can-t-i-have-it-now",
@@ -1445,7 +1547,9 @@
     "series": "Other",
     "asin": "B0H6ZC8YHS",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "defiance"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-do-i-keep-saying-no",
@@ -1485,7 +1589,9 @@
     "series": "understanding the world series",
     "asin": "B0GZ6PHYTD",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "diversity"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-do-people-look-different",
@@ -1511,7 +1617,9 @@
     "series": "Other",
     "asin": "B0H6MXF9D4",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "body_needs"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-does-my-body-need-food",
@@ -1523,7 +1631,9 @@
     "series": "Other",
     "asin": "B0H4C4CJ88",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "body_needs"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-does-my-body-need-water",
@@ -1535,7 +1645,9 @@
     "series": "Other",
     "asin": "B0H86K3H88",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "body_needs"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-does-my-brain-need-sleep",
@@ -1547,7 +1659,9 @@
     "series": "the whole brain toddler",
     "asin": "B0G8JK58YG",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "diversity"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-i-was-born-with-a-birthmark",
@@ -1587,7 +1701,9 @@
     "series": "the whole brain toddler",
     "asin": "B0G7TJM2ZB",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "diversity"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-some-bodies-look-different",
@@ -1613,7 +1729,9 @@
     "series": "little heart, big feelings",
     "asin": "B0G5GJ36PZ",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "apology"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "why-we-say-sorry",
