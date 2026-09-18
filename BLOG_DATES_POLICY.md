@@ -6,7 +6,7 @@ permission from the site owner (Jennie / earlyed).
 
 ## Why
 
-Historical posts were intentionally backdated across **2022–2025** (last full reshuffle: 2026-09-06).
+Historical posts were intentionally backdated across **2022–2026** (last full reshuffle: 2026-09-18).
 New posts may use the real publish date when they go live.
 
 ## Allowed without asking
