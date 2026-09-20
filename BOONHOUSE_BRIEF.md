@@ -59,7 +59,7 @@ Every technical and content decision serves one of these two goals. If it serves
 
 ## THE WEBSITE
 
-**Live URL:** `https://earlyed.github.io/boonhousepublishing/`
+**Live URL:** `https://boonhousepublishing.com/`
 **Repo:** `https://github.com/earlyed/boonhousepublishing`
 **Stack:** Pure static HTML/CSS/JS. GitHub Pages. No build tools. No npm. No backend. No frameworks.
 **Constraint:** Zero cost. Free services only. No paid APIs.
@@ -172,7 +172,7 @@ Generate at repo root. Include every HTML page. Use today's date as `<lastmod>`.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://earlyed.github.io/boonhousepublishing/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://boonhousepublishing.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <!-- one entry per HTML file -->
 </urlset>
 ```
@@ -181,7 +181,7 @@ Generate at repo root. Include every HTML page. Use today's date as `<lastmod>`.
 ```
 User-agent: *
 Allow: /
-Sitemap: https://earlyed.github.io/boonhousepublishing/sitemap.xml
+Sitemap: https://boonhousepublishing.com/sitemap.xml
 ```
 
 ### Schema validation
