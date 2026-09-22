@@ -6,8 +6,9 @@ permission from the site owner (Jennie / earlyed).
 
 ## Why
 
-Historical posts were intentionally backdated across **2022–2026** (last full reshuffle: 2026-09-18).
-New posts may use the real publish date when they go live.
+Historical posts were intentionally backdated across **2022–today** (never a future date).
+New posts use the real publish date when they go live (same day only).
+`reshuffle_blog_dates.py` caps the latest slot at **today** (local date).
 
 ## Allowed without asking
 
