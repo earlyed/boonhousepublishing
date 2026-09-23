@@ -37,6 +37,8 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.18;color:var(
 .site-nav{position:sticky;top:0;z-index:500;background:rgba(245,240,230,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule-strong)}
 .site-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;gap:1rem}
 .brand{font-family:var(--serif);font-weight:700;font-size:1.2rem;letter-spacing:.005em;text-decoration:none;color:var(--ink);white-space:nowrap;flex-shrink:0}
+.brand-with-logo{display:inline-flex;align-items:center;gap:.5rem}
+.brand-mark{width:36px;height:36px;object-fit:contain;flex-shrink:0;display:block}
 .brand em{font-style:italic;font-weight:400;color:var(--accent)}
 .nav-links{display:flex;align-items:center;gap:1.3rem}
 .nav-links a{font-size:.78rem;font-weight:600;letter-spacing:.02em;text-decoration:none;color:var(--mid);white-space:nowrap;transition:color .15s ease}
