@@ -208,6 +208,14 @@ details.faq-item[open] summary:before{content:"\2212 "}
 details.faq-item p{font-size:.85rem;color:var(--mid);line-height:1.75;margin-top:.65rem}
 
 /* ---------- BOOK LANDING PAGES ---------- */
+.series-books{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin:1.6rem 0 2rem}
+.series-book{display:grid;grid-template-columns:110px 1fr;gap:1rem;padding:1rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--panel);align-items:start}
+.series-book-cover img{width:110px;border-radius:3px;border:1px solid var(--rule);box-shadow:var(--shadow-sm);display:block}
+.series-book-cover .book-cover-ph{width:110px;min-height:165px;padding:.75rem}
+.series-book h3{font-family:var(--serif);font-size:1.05rem;line-height:1.25;margin-bottom:.35rem}
+.series-book p{font-size:.82rem;color:var(--mid);line-height:1.55;margin-bottom:.65rem}
+.series-book .btn-sm{padding:7px 12px;font-size:.68rem}
+.series-book-num{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.25rem}
 .book-hero{display:grid;grid-template-columns:1fr 1.4fr;gap:2.2rem;padding:2.2rem 0;border-bottom:1px solid var(--rule);align-items:start}
 .book-cover-wrap img{width:100%;border-radius:3px;box-shadow:var(--shadow-md);border:1px solid var(--rule)}
 .book-cover-ph{aspect-ratio:2/3;background:var(--panel);border:1.5px solid var(--rule-strong);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;text-align:center;padding:1.6rem}
@@ -276,6 +284,7 @@ details.faq-item p{font-size:.85rem;color:var(--mid);line-height:1.75;margin-top
   .article-layout{grid-template-columns:1fr}
   .sidebar-box{position:static}
   .book-hero{grid-template-columns:1fr}
+  .series-books{grid-template-columns:1fr}
   .evidence-grid,.soc-grid{grid-template-columns:1fr 1fr}
   .soc-item:nth-child(2n){border-right:none}
   .soc-item:nth-child(3n){border-right:1px solid var(--rule)}
