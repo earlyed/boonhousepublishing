@@ -783,6 +783,18 @@
     "sales_rank": 10
   },
   {
+    "title": "My First Train Ride: A Calm Montessori Picture Book for Toddlers About First Train Rides, New Experiences, and Learning to Feel at Home in Unfamiliar Places",
+    "series": "transitions with me",
+    "asin": "B0HHX8W3NX",
+    "stream": "children",
+    "topics": [],
+    "cover": false,
+    "cover_ratio": 1.0,
+    "slug": "my-first-train-ride",
+    "units_sold": 0,
+    "sales_rank": null
+  },
+  {
     "title": "My First Vaccine: A real and calm Montessori book to guide toddlers to their first doctor appointment",
     "series": "transitions with me",
     "asin": "B0FPQ97YYH",
@@ -1148,6 +1160,33 @@
     "slug": "the-day-it-clicks",
     "units_sold": 6.0,
     "sales_rank": 33
+  },
+  {
+    "title": "The Day My Tooth Was Ready: A Montessori Book About Loose Teeth, First Tooth Loss, and Feeling Brave",
+    "series": "transitions with me",
+    "asin": "B0HJX3YTSB",
+    "stream": "children",
+    "topics": [
+      "dark_fear",
+      "death_loss"
+    ],
+    "cover": false,
+    "cover_ratio": 1.0,
+    "slug": "the-day-my-tooth-was-ready",
+    "units_sold": 0,
+    "sales_rank": null
+  },
+  {
+    "title": "The Night I Left My Crib: A Montessori Book About Moving from the Crib, Bedtime Feelings, and Settling into a Big-Kid Bed",
+    "series": "transitions with me",
+    "asin": "B0HJ9CW4WS",
+    "stream": "children",
+    "topics": [],
+    "cover": false,
+    "cover_ratio": 1.0,
+    "slug": "the-night-i-left-my-crib",
+    "units_sold": 0,
+    "sales_rank": null
   },
   {
     "title": "The Girl of Silver Seals: A Fantasy Novel About Confidence and Belonging for Kids Ages 8 to 12",
