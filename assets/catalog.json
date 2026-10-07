@@ -216,9 +216,7 @@
     "series": "everyday is fun",
     "asin": "B0GGBY2LSY",
     "stream": "children",
-    "topics": [
-      "dark_fear"
-    ],
+    "topics": [],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "camping-is-fun",
@@ -1167,7 +1165,6 @@
     "asin": "B0HJX3YTSB",
     "stream": "children",
     "topics": [
-      "dark_fear",
       "death_loss"
     ],
     "cover": true,
@@ -1402,6 +1399,7 @@
     "asin": "B0GG4SSPMR",
     "stream": "children",
     "topics": [
+      "child_worry",
       "feelings"
     ],
     "cover": true,
@@ -1615,6 +1613,7 @@
     "asin": "B0G51JPHYZ",
     "stream": "children",
     "topics": [
+      "work_separation",
       "tantrums"
     ],
     "cover": true,
@@ -1713,7 +1712,7 @@
     "asin": "B0G8K54NKZ",
     "stream": "children",
     "topics": [
-      "dark_fear"
+      "child_worry"
     ],
     "cover": true,
     "cover_ratio": 1.0,
