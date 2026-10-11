@@ -216,7 +216,9 @@
     "series": "everyday is fun",
     "asin": "B0GGBY2LSY",
     "stream": "children",
-    "topics": [],
+    "topics": [
+      "camping"
+    ],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "camping-is-fun",
