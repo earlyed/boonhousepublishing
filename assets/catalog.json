@@ -373,7 +373,8 @@
     "asin": "B0GWJSVH5D",
     "stream": "children",
     "topics": [
-      "loud_voice"
+      "loud_voice",
+      "gentle_voice"
     ],
     "cover": true,
     "cover_ratio": 1.0,
@@ -472,7 +473,8 @@
     "asin": "B0G4S831R4",
     "stream": "children",
     "topics": [
-      "kindness"
+      "kindness",
+      "gentle_voice"
     ],
     "cover": true,
     "cover_ratio": 1.0,
@@ -800,6 +802,7 @@
     "asin": "B0FPQ97YYH",
     "stream": "children",
     "topics": [
+      "doctor_visit",
       "vaccine"
     ],
     "cover": true,
@@ -2002,6 +2005,20 @@
     "slug": "the-book-they-should-have-given-you-at-the-hospital",
     "units_sold": 1.0,
     "sales_rank": 86
+  },
+  {
+    "title": "The Smart Ones Are the Most Tired: Why High-Functioning Women Are Exhausted, Anxious, and Never Told Why: The Hidden Science of Mental Load",
+    "series": "Other",
+    "asin": "B0HLKK34Z6",
+    "stream": "selfhelp",
+    "topics": [
+      "book6"
+    ],
+    "cover": true,
+    "cover_ratio": 0.6671,
+    "slug": "the-smart-ones-are-the-most-tired",
+    "units_sold": 0,
+    "sales_rank": null
   },
   {
     "title": "The Calm Parent - How Small Moments Make or Break a Child: An 8-Week System to Stop Yelling, End Screen Battles, and Raise Confident, Independent Kids",
