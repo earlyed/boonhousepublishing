@@ -445,12 +445,21 @@ const journalReady = fetch("blog/index.html").then(r=>r.text()).then(html=>{
   const doc = new DOMParser().parseFromString(html, "text/html");
   const items = [];
   const lead = doc.querySelector(".blog-lead");
+  function journalCoverSrc(el){
+    const listing = el.getAttribute("data-listing-image");
+    if (listing) return "images/" + listing;
+    const img = el.querySelector(".blog-lead-cover img, .blog-row-cover img");
+    if (!img) return "";
+    const src = img.getAttribute("src") || "";
+    return src.replace(/^\.\.\/images\//, "images/");
+  }
   if (lead){
     const eyebrow = lead.querySelector(".eyebrow");
     const dateText = eyebrow ? eyebrow.textContent.split("·").pop().trim() : "";
     items.push({
       href: "blog/" + lead.getAttribute("href"),
       asin: lead.getAttribute("data-asin") || "",
+      coverSrc: journalCoverSrc(lead),
       date: dateText,
       title: (lead.querySelector("h2")||{}).textContent || "",
       deck: (lead.querySelector("p")||{}).textContent || "",
@@ -461,6 +470,7 @@ const journalReady = fetch("blog/index.html").then(r=>r.text()).then(html=>{
     items.push({
       href: "blog/" + row.getAttribute("href"),
       asin: row.getAttribute("data-asin") || "",
+      coverSrc: journalCoverSrc(row),
       date: (row.querySelector(".blog-date")||{}).textContent || "",
       title: (row.querySelector(".blog-row-title")||{}).textContent || "",
       deck: (row.querySelector(".blog-row-deck")||{}).textContent || "",
@@ -482,8 +492,10 @@ Promise.all([catalogReady, journalReady]).then(([, items])=>{
   document.getElementById("journalGrid").innerHTML = items.map(p=>{
     const book = p.asin ? CATALOG.find(b=>b.asin===p.asin) : null;
     const coverHtml = book ? dynamicCoverImg(book)
-      : '<div class="card-cover-ph" style="width:64px">&#128214;</div>';
-    const coverW = book ? dynamicCoverWidth(book, 84) : 64;
+      : (p.coverSrc
+        ? `<img src="${p.coverSrc}" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px">`
+        : '<div class="card-cover-ph" style="width:64px">&#128214;</div>');
+    const coverW = book ? dynamicCoverWidth(book, 84) : (p.coverSrc ? 84 : 64);
     const buyHtml = book
       ? `<a href="${buyUrl(book)}" target="_blank" rel="noopener" class="btn btn-sm journal-buy">Buy on Amazon</a>`
       : "";
