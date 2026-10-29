@@ -487,7 +487,26 @@ const journalReady = fetch("blog/index.html").then(r=>r.text()).then(html=>{
 // and the buy button is a separate sibling <a> - two independent click targets,
 // no nesting, matching how Penguin's site keeps "buy this book" always its own
 // clickable element rather than nested inside a bigger link.
+function dedupeJournalItems(items){
+  const seenAsin = new Set();
+  const seenStem = new Set();
+  return items.filter(p => {
+    const asin = (p.asin || "").trim();
+    if (asin){
+      if (seenAsin.has(asin)) return false;
+      seenAsin.add(asin);
+    }
+    const stem = (p.title || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim().slice(0, 48);
+    if (stem){
+      if (seenStem.has(stem)) return false;
+      seenStem.add(stem);
+    }
+    return true;
+  });
+}
+
 Promise.all([catalogReady, journalReady]).then(([, items])=>{
+  items = dedupeJournalItems(items);
   if (!items.length){ document.getElementById("journalShelf").style.display = "none"; return; }
   document.getElementById("journalGrid").innerHTML = items.map(p=>{
     const book = p.asin ? CATALOG.find(b=>b.asin===p.asin) : null;
