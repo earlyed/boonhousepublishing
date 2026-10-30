@@ -45,9 +45,7 @@
     "series": "Other",
     "asin": "B0G6TF6NJ3",
     "stream": "children",
-    "topics": [
-      "christmas"
-    ],
+    "topics": [],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "alice-in-christmasland",
@@ -187,9 +185,7 @@
     "series": "the alphabet abc series",
     "asin": "B0FLJCXLJG",
     "stream": "children",
-    "topics": [
-      "abc_alphabet"
-    ],
+    "topics": [],
     "cover": true,
     "cover_ratio": 1.0,
     "slug": "camping-abc-the-real-photobook-for-toddlers",
@@ -245,8 +241,7 @@
     "asin": "B0FRSXLYSM",
     "stream": "children",
     "topics": [
-      "christmas",
-      "abc_alphabet"
+      "christmas"
     ],
     "cover": true,
     "cover_ratio": 1.0,
@@ -288,8 +283,7 @@
     "asin": "B0FT2YZZW4",
     "stream": "children",
     "topics": [
-      "diwali",
-      "abc_alphabet"
+      "diwali"
     ],
     "cover": true,
     "cover_ratio": 1.0,
@@ -303,8 +297,7 @@
     "asin": "B0FMK19TDR",
     "stream": "children",
     "topics": [
-      "diwali",
-      "abc_alphabet"
+      "diwali"
     ],
     "cover": true,
     "cover_ratio": 1.0,
@@ -473,8 +466,7 @@
     "asin": "B0G4S831R4",
     "stream": "children",
     "topics": [
-      "kindness",
-      "gentle_voice"
+      "kindness"
     ],
     "cover": true,
     "cover_ratio": 1.0,
@@ -645,8 +637,7 @@
     "stream": "children",
     "topics": [
       "mid_autumn",
-      "autumn",
-      "abc_alphabet"
+      "autumn"
     ],
     "cover": true,
     "cover_ratio": 1.0,
@@ -1334,7 +1325,8 @@
     "asin": "B0GY2QQZRR",
     "stream": "children",
     "topics": [
-      "bullying"
+      "religion",
+      "faith"
     ],
     "cover": true,
     "cover_ratio": 1.0,
